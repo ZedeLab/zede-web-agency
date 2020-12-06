@@ -19,7 +19,7 @@ import "../src/utils/style/webflow.css";
 
 // Core components
 import Nav from "../src/components/Navigation";
-
+import Footer from "../src/components/Footer";
 export default function MyApp(props) {
   const { Component, pageProps } = props;
 
@@ -41,7 +41,7 @@ export default function MyApp(props) {
   return (
     <React.Fragment>
       <Head>
-        <meta charset='utf-8' />
+        <meta charSet='utf-8' />
         <title>Zede agency</title>
         <meta content='Zede agency is ....' name='description' />
         <meta content='width=device-width, initial-scale=1' name='viewport' />
@@ -67,6 +67,7 @@ export default function MyApp(props) {
       <CssBaseline />
       <Nav />
       <Component {...pageProps} />
+      <Footer />
     </React.Fragment>
   );
 }

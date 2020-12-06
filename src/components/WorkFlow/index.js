@@ -1,4 +1,4 @@
-const HowWeWork = (params) => {
+const WorkFlow = (params) => {
   return (
     <div className='section no-bottom-padding'>
       <div className='wrapper'>
@@ -132,4 +132,4 @@ const HowWeWork = (params) => {
   );
 };
 
-export default HowWeWork;
+export default WorkFlow;
