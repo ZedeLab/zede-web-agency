@@ -13,6 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "@material-ui/core": "^4.11.1",
+    "@material-ui/icons": "^4.11.2",
+    "classnames": "^2.2.6",
     "fg-loadcss": "^3.1.0",
     "next": "^10.0.3",
     "react": "^17.0.1",

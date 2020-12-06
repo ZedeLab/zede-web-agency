@@ -1,4 +1,80 @@
-const navigation = (params) => {
+import Link from "next/link";
+import PropTypes from "prop-types";
+
+// Material-ui components
+import {
+  Fade,
+  Hidden,
+  IconButton,
+  makeStyles,
+  Paper,
+  Slide,
+  Typography,
+  useScrollTrigger,
+} from "@material-ui/core";
+
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import MenuIcon from "@material-ui/icons/Menu";
+import CloseIcon from "@material-ui/icons/Close";
+// Core components
+import NavLink from "./NavLink/NavLink";
+import { useState } from "react";
+
+const useStyle = makeStyles((theme) => ({
+  appBar: {
+    height: theme.mixins.toolbar,
+    padding: `${theme.spacing(2)}px ${theme.spacing(2)}px`,
+  },
+  toolbar: {
+    display: "flex",
+    flexDirections: "row",
+  },
+  linkWrapper: {
+    display: "flex",
+    flexDirection: "row",
+
+    [theme.breakpoints.down("sm")]: {
+      flexDirection: "column",
+    },
+  },
+
+  mobNavWrapper: {
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    backgroundColor: theme.palette.primary.light,
+    padding: `${theme.spacing(2)}px 0`,
+  },
+}));
+
+const navigation = (props) => {
+  const classes = useStyle();
+  const [showMobNav, setShowMobNav] = useState(false);
+
+  const navLinks = (
+    <div className={classes.linkWrapper}>
+      <NavLink path='/'>
+        <Typography>Home</Typography>
+      </NavLink>
+      <NavLink path='/'>
+        <Typography>About Us</Typography>
+      </NavLink>
+      <NavLink path='/'>
+        <Typography>Our Team</Typography>
+      </NavLink>
+      <NavLink path='/'>
+        <Typography>Blog</Typography>
+      </NavLink>
+      <NavLink path='/'>
+        <Typography>Portfolio</Typography>
+      </NavLink>
+      <NavLink path='/'>
+        <Typography>Contact Us</Typography>
+      </NavLink>
+    </div>
+  );
   return (
     <div
       data-collapse='medium'
@@ -6,43 +82,62 @@ const navigation = (params) => {
       data-duration='400'
       className='nav-bar w-nav'
     >
-      <div className='wrapper navbar-2 w-container'>
-        <div className='logo-area'>
-          <a href='#' className='nav-logo w-inline-block'>
-            <img src='images/duduk.svg' width='106' alt='' />
-          </a>
-        </div>
-        <nav role='navigation' className='nav-menu-2 w-nav-menu'>
-          <a href='index.html' className='nav-link w-nav-link w--current'>
-            Home
-          </a>
-          <a href='about-us.html' className='nav-link w-nav-link'>
-            About Us
-          </a>
-          <a href='our-team.html' className='nav-link w-nav-link'>
-            Our Team
-          </a>
-          <a href='blog.html' className='nav-link w-nav-link'>
-            Blog
-          </a>
-          <a href='portfolio.html' className='nav-link w-nav-link'>
-            Portfolio
-          </a>
-          <div className='nav-cta-button-container'>
-            <a
-              href='contact-us.html'
-              className='nav-link-2 border cta w-nav-link'
-            >
-              Contact Us
-            </a>
-          </div>
-        </nav>
-        <div className='menu-button-2 w-nav-button'>
-          <div className='burger-icon w-icon-nav-menu'></div>
-        </div>
-      </div>
+      <HideOnScroll {...props}>
+        <AppBar className={classes.appBar}>
+          <Toolbar className={classes.toolbar}>
+            <div className='logo-area'>
+              <NavLink path='/' className='nav-logo w-inline-block'>
+                <img src='images/Zede-logo.svg' width='106' alt='' />
+              </NavLink>
+            </div>
+            <Hidden smDown>{navLinks}</Hidden>
+            <Hidden mdUp>
+              <IconButton
+                style={{ backgroundColor: "transparent" }}
+                onClick={() => setShowMobNav(!showMobNav)}
+              >
+                <Fade in={!showMobNav}>
+                  <MenuIcon />
+                </Fade>
+                <Fade in={showMobNav}>
+                  <CloseIcon />
+                </Fade>
+              </IconButton>
+            </Hidden>
+          </Toolbar>
+          <Slide direction='down' in={showMobNav}>
+            {showMobNav ? (
+              <Paper variant='outlined' className={classes.mobNavWrapper}>
+                {navLinks}
+              </Paper>
+            ) : (
+              <div />
+            )}
+          </Slide>
+        </AppBar>
+      </HideOnScroll>
+      <Toolbar />
     </div>
   );
 };
 
+function HideOnScroll(props) {
+  const { children, window } = props;
+
+  const trigger = useScrollTrigger();
+  return (
+    <Slide appear={false} direction='down' in={!trigger}>
+      {children}
+    </Slide>
+  );
+}
+
+HideOnScroll.propTypes = {
+  children: PropTypes.element.isRequired,
+  /**
+   * Injected by the documentation to work in an iframe.
+   * You won't need it on your project.
+   */
+  window: PropTypes.func,
+};
 export default navigation;
