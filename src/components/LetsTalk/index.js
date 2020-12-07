@@ -1,4 +1,17 @@
+import { Button, makeStyles, Typography } from "@material-ui/core";
+import clx from "classnames";
+
+const useStyle = makeStyles((theme) => ({
+  button: {
+    color: theme.palette.common.white,
+    paddingTop: "16px",
+    paddingBottom: "16px",
+    boxShadow: "0 4px 11px 0 rgba(117, 69, 1, 0.33)",
+  },
+}));
+
 const LetsTalk = (params) => {
+  const classes = useStyle();
   return (
     <>
       <div className='section-divider'>
@@ -16,21 +29,31 @@ const LetsTalk = (params) => {
             <div className='col-2 lg-6 md-3 xs-2 left-aligned'>
               <div className='contact-container'>
                 <div className='margin-bottom left-aligned'>
-                  <p className='micro-heading left-aligned'>
+                  <Typography
+                    variant='body1'
+                    className='micro-heading left-aligned'
+                  >
                     lets work together
-                  </p>
-                  <h2 className='section-header left-aligned short-paragraph'>
+                  </Typography>
+                  <Typography
+                    variant='h2'
+                    className='section-header left-aligned short-paragraph'
+                  >
                     Great vision without great people is irrelevant.
                     <br />
-                  </h2>
-                  <p className='short-paragraph'>
+                  </Typography>
+                  <Typography variant='body1' className='short-paragraph'>
                     A new project is an opportunity to create something unique.{" "}
                     <br />
-                  </p>
+                  </Typography>
                 </div>
-                <a href='contact-us.html' className='button w-button'>
+                <Button
+                  variant='contained'
+                  color='secondary'
+                  className={clx(classes.button, "button")}
+                >
                   Let&#x27;s Talk
-                </a>
+                </Button>
               </div>
             </div>
           </div>

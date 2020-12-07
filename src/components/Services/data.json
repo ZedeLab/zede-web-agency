@@ -1,0 +1,38 @@
+{
+    "sectionTitle": "Personalized Services",
+    "sectionMicroTitle": "DRIVEN BY DATA. FUELED BY PASSION.",
+    "sectionParagraph": "As a Premier Google Partner, we work with brands large and small across the World as well as with other agencies and traditional companies, serving as their digital marketing and solutions vendor.",
+    "services": {
+        "Branding": {
+            "img": "images/poster.svg",
+            "content": "A brand is so much more than a logo or a color. It’s how people feel and perceive your business, its products, and services. We aim to create brands that leave impressions that last for a lifetime."
+            
+        },
+        "Digital Marketing Strategy": {
+            "img": "images/idea.svg",
+            "content": "When it comes to marketing your brand or business we always make sure to look before we take off. We are working together with you to design and execute innovative, data-driven cross-channel strategies that win real results."
+            
+        },
+        "Web Development": {
+            "img": "images/web-page.svg",
+            "content": "Your web presence is one of the most important tools for communicating your brand and being able to acquire new clients. It must be able to engage visitors and make them take actions that convert into revenue."
+            
+        },
+        "Social Media Campaign": {
+            "img": "images/social-media.svg",
+            "content": "Social media give each us the power to converse, share and connect with each other. Knowing what your audience talk about and why allow you to reach strategically insights and help you to gain new leads."
+            
+        },
+        "Content Marketing": {
+            "img": "images/megaphone.svg",
+            "content": "Content marketing has flat-out become a fundamental part of connecting with your target audience and educating them on your offerings. To stay in touch with your audience has never been more important."
+            
+        },
+        "Public Relations": {
+            "img": "images/salesman.svg",
+            "content": "If you don’t take care of your partners, someone else will. We know how to assist you with your relationships, analyze and prevail, prevent or solve existing complications regardless if they are internal or external."
+            
+        }
+    }
+
+}

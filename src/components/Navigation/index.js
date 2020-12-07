@@ -23,12 +23,12 @@ import { useState } from "react";
 
 const useStyle = makeStyles((theme) => ({
   appBar: {
-    height: theme.mixins.toolbar,
-    padding: `${theme.spacing(2)}px ${theme.spacing(2)}px`,
+    // ,
   },
   toolbar: {
     display: "flex",
     flexDirections: "row",
+    padding: `${theme.spacing(2)}px ${theme.spacing(2)}px`,
   },
   linkWrapper: {
     display: "flex",
@@ -40,12 +40,12 @@ const useStyle = makeStyles((theme) => ({
   },
 
   mobNavWrapper: {
-    width: "100%",
+    width: "100vw",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     backgroundColor: theme.palette.primary.light,
-    padding: `${theme.spacing(2)}px 0`,
+    paddingTop: `${theme.spacing(15)}px `,
   },
 }));
 
@@ -76,13 +76,8 @@ const navigation = (props) => {
     </div>
   );
   return (
-    <div
-      data-collapse='medium'
-      data-animation='default'
-      data-duration='400'
-      className='nav-bar w-nav'
-    >
-      <HideOnScroll {...props}>
+    <HideOnScroll {...props}>
+      <div>
         <AppBar className={classes.appBar}>
           <Toolbar className={classes.toolbar}>
             <div className='logo-area'>
@@ -96,28 +91,41 @@ const navigation = (props) => {
                 style={{ backgroundColor: "transparent" }}
                 onClick={() => setShowMobNav(!showMobNav)}
               >
-                <Fade in={!showMobNav}>
+                <Fade
+                  in={!showMobNav}
+                  unmountOnExit
+                  timeout={{
+                    enter: 600,
+                    exit: 100,
+                  }}
+                >
                   <MenuIcon />
                 </Fade>
-                <Fade in={showMobNav}>
+                <Fade
+                  in={showMobNav}
+                  unmountOnExit
+                  timeout={{
+                    enter: 500,
+                    exit: 200,
+                  }}
+                >
                   <CloseIcon />
                 </Fade>
               </IconButton>
             </Hidden>
           </Toolbar>
-          <Slide direction='down' in={showMobNav}>
-            {showMobNav ? (
-              <Paper variant='outlined' className={classes.mobNavWrapper}>
-                {navLinks}
-              </Paper>
-            ) : (
-              <div />
-            )}
-          </Slide>
         </AppBar>
-      </HideOnScroll>
-      <Toolbar />
-    </div>
+        <Hidden mdUp>
+          <Slide direction='down' in={showMobNav} unmountOnExit>
+            <Paper variant='outlined' className={classes.mobNavWrapper}>
+              {navLinks}
+            </Paper>
+          </Slide>
+        </Hidden>
+
+        {!showMobNav ? <Toolbar /> : null}
+      </div>
+    </HideOnScroll>
   );
 };
 

@@ -557,9 +557,7 @@ figcaption {
 
 .button {
   padding: 16px 25px;
-  border: 1px none #096ad0;
   border-radius: 40px;
-  background-color: #926000;
   box-shadow: 0 4px 11px 0 rgba(146, 96, 0, 0.35);
   -webkit-transition: all 200ms ease;
   transition: all 200ms ease;
@@ -571,13 +569,12 @@ figcaption {
 }
 
 .button:hover {
-  border: 1px none #096ad0;
-  background-color: #3f3700;
+  
   box-shadow: 0 6px 20px 0 rgba(1, 58, 117, 0.33);
   -webkit-transform: translate(0px, -4px);
   -ms-transform: translate(0px, -4px);
   transform: translate(0px, -4px);
-  color: #fff;
+  
 }
 
 .button.ghost {

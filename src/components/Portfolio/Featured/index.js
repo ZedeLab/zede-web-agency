@@ -35,7 +35,7 @@ const Featuredortfolios = () => {
 
           <div className='col-2 lg-6'>
             <PortfolioSummery
-              large
+              // large
               imgUrl='images/colonization.jpg'
               imgSrcSet='images/photo-1522733603432-44910cfd6773-p-500.jpeg 500w, images/photo-1522733603432-44910cfd6773-p-800.jpeg 800w, images/photo-1522733603432-44910cfd6773.jpeg 934w'
               title='Colonization by Colors'
@@ -43,7 +43,7 @@ const Featuredortfolios = () => {
             />
             <PortfolioSummery
               imgUrl='images/sruvs.jpeg'
-              // imgSrcSet='images/colonization-p-500.jpeg 500w, images/colonization.jpg 640w'
+              imgSrcSet='images/colonization-p-500.jpeg 500w, images/colonization.jpg 640w'
               title='Surveillance People by Sruvs'
               discription='wallpaper media'
             />
