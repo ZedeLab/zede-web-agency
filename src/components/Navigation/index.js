@@ -58,19 +58,16 @@ const navigation = (props) => {
       <NavLink path='/'>
         <Typography>Home</Typography>
       </NavLink>
-      <NavLink path='/'>
+      <NavLink path='/aboutus'>
         <Typography>About Us</Typography>
       </NavLink>
-      <NavLink path='/'>
+      <NavLink path='/team'>
         <Typography>Our Team</Typography>
       </NavLink>
-      <NavLink path='/'>
-        <Typography>Blog</Typography>
-      </NavLink>
-      <NavLink path='/'>
+      <NavLink path='/portfolio'>
         <Typography>Portfolio</Typography>
       </NavLink>
-      <NavLink path='/'>
+      <NavLink path='/contactus'>
         <Typography>Contact Us</Typography>
       </NavLink>
     </div>

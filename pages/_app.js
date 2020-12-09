@@ -12,9 +12,9 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import mainTheme from "../src/utils/ThemeProvider";
 
 // Global css styles
-import "../src/utils/style/main.css";
-import "../src/utils/style/normalize.css";
-import "../src/utils/style/webflow.css";
+import "../src/utils/style/css/main.css";
+import "../src/utils/style/css/normalize.css";
+import "../src/utils/style/css/webflow.css";
 // import "bootstrap/dist/css/bootstrap.min.css";
 
 // Core components

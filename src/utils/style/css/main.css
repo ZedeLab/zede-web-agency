@@ -388,7 +388,7 @@ figcaption {
 
 .section.full-screen.background-image-side {
   background-color: rgba(9, 106, 208, 0.2);
-  background-image: url('../../../public/images/background-image.svg');
+  background-image: url('../../../../public/images/background-image.svg');
   background-position: 100% 100%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -459,7 +459,7 @@ figcaption {
 
 .section.bg-article-1 {
   min-height: 600px;
-  background-image: url('../../../public/images/plush-design-studio-483666-unsplash.jpg');
+  background-image: url('../../../../public/images/plush-design-studio-483666-unsplash.jpg');
   background-position: 50% 100%;
   background-size: cover;
   background-repeat: repeat-x;
@@ -1149,29 +1149,29 @@ figcaption {
 .section-2.page-header.image {
   margin-top: 0px;
   padding-bottom: 160px;
-  background-image: url('../../../public/images/danielle-macinnes-222441-unsplash.jpg');
+  /* background-image: url('../../../../public/images/danielle-macinnes-222441-unsplash.jpg'); */
   background-position: 50% 50%;
   background-size: cover;
 }
 
 .section-2.page-header.image.bgcontact {
-  background-image: url('../../../public/images/contact.jpg');
+  /* background-image: url('../../../../public/images/contact.jpg'); */
   background-size: cover;
 }
 
 .section-2.page-header.image.header-team {
-  background-image: url('../../../public/images/alex-kotliarskyi-361081-unsplash.jpg');
+  /* background-image: url('../../../../public/images/alex-kotliarskyi-361081-unsplash.jpg'); */
   background-size: cover;
 }
 
 .section-2.page-header.image.header-single-portfolio {
-  background-image: url('../../../public/images/matt-saling-212458-unsplash.jpg');
+  /* background-image: url('../../../../public/images/matt-saling-212458-unsplash.jpg'); */
   background-position: 50% 0%;
   background-size: cover;
 }
 
 .section-2.page-header.image.header-work {
-  background-image: url('../../../public/images/starwars.jpg');
+  /* background-image: url('../../../../public/images/starwars.jpg'); */
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1179,7 +1179,7 @@ figcaption {
 
 .section-2.background-image {
   height: 600px;
-  background-image: url('../../../public/images/cinematic---big.svg');
+  background-image: url('../../../../public/images/cinematic---big.svg');
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1400,41 +1400,41 @@ figcaption {
   -ms-flex-pack: end;
   justify-content: flex-end;
   background-color: #000;
-  background-image: url('../../../public/images/photo-1526570207772-784d36084510.jpeg');
+  background-image: url('../../../../public/images/photo-1526570207772-784d36084510.jpeg');
   background-position: 0px 0px;
   background-size: cover;
 }
 
 .blog-card.img1 {
-  background-image: url('../../../public/images/bench-accounting-49027-unsplash.jpg');
+  background-image: url('../../../../public/images/bench-accounting-49027-unsplash.jpg');
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .blog-card.img2 {
-  background-image: url('../../../public/images/art-art-materials-bright-743986.jpg');
+  background-image: url('../../../../public/images/art-art-materials-bright-743986.jpg');
   background-position: 100% 50%;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .blog-card.img3 {
-  background-image: url('../../../public/images/ecology.jpg');
+  background-image: url('../../../../public/images/ecology.jpg');
   background-position: 50% 0%;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .blog-card.img4 {
-  background-image: url('../../../public/images/art-asian-blue.jpg');
+  background-image: url('../../../../public/images/art-asian-blue.jpg');
   background-position: 100% 50%;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .blog-card.img5 {
-  background-image: url('../../../public/images/art-artsy-.jpg');
+  background-image: url('../../../../public/images/art-artsy-.jpg');
   background-position: 50% 0%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1837,6 +1837,7 @@ figcaption {
 
 .no-margins.page-title {
   color: #fff;
+  width: f;
 }
 
 .no-bottom-margins-2 {
@@ -2113,7 +2114,7 @@ figcaption {
 .map {
   overflow: hidden;
   border-radius: 6px;
-  /* background-image: url('../../../public/images/example-bg.png'); */
+  /* background-image: url('../../../../public/images/example-bg.png'); */
   background-position: 0px 0px;
   background-size: 125px;
 }

@@ -11,7 +11,7 @@ const useStyle = makeStyles((theme) => ({
     color: theme.palette.text.primary,
   },
   selected: {
-    color: theme.palette.text.secondary,
+    color: theme.palette.secondary.main,
   },
 }));
 
