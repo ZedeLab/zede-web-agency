@@ -1881,7 +1881,7 @@ figcaption {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  padding-top: 2rem;
+  padding-top: 1rem;
   
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;

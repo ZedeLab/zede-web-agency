@@ -28,12 +28,13 @@ const useStyle = makeStyles((theme) => ({
     borderRadius: "5px",
     backgroundColor: "#f3d940",
     opacity: 0.9,
+    overflow: "scroll",
   },
   discriptionHidder: {
     width: "100%",
     display: "flex",
     justifyContent: "center",
-    paddingTop: theme.spacing(3),
+    paddingTop: theme.spacing(1),
   },
   jobTitle: {
     marginBottom: theme.spacing(1),
