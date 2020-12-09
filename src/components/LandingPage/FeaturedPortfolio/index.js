@@ -1,4 +1,4 @@
-import PortfolioSummery from "../Summary";
+import PortfolioSummery from "../../Portfolio/Summary";
 
 const Featuredortfolios = () => {
   return (

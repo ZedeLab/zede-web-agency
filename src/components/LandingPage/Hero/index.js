@@ -1,11 +1,27 @@
 import { Button, makeStyles, Typography } from "@material-ui/core";
 import Lottie from "react-lottie";
-import * as animationData from "../../../public/animations/heroAnim.json";
+import * as animationData from "../../../../public/animations/heroAnim.json";
 import clx from "classnames";
 const useStyle = makeStyles((theme) => ({
+  container: {
+    // backgroundColor: "red",
+    position: "relative",
+    width: "100vw",
+  },
   button: {
     margin: theme.spacing(2),
     borderRadius: theme.spacing(5),
+  },
+  animBackground: {
+    // border: "blue solid 10px",
+    margin: "auto",
+    width: "100%",
+    height: "500px",
+    position: "absolute",
+    opacity: 0.5,
+    zIndex: -1,
+    bottom: 0,
+    left: 0,
   },
 }));
 
@@ -24,7 +40,7 @@ const Hero = (params) => {
     <div className='section full-screen background-image-side hero'>
       <div className='wrapper'>
         <div className='row'>
-          <div className='col'>
+          <div className={clx("col", classes.container)}>
             <div className='hero-content'>
               <Typography variant='h1' className='hero-title'>
                 Come to us with a vision. <br />
@@ -53,12 +69,14 @@ const Hero = (params) => {
               </div>
             </div>
 
-            <Lottie
-              options={defaultOptions}
-              height={500}
-              width={500}
-              className='hero-image'
-            />
+            <div className={classes.animBackground}>
+              <Lottie
+                options={defaultOptions}
+                height='100%'
+                width='100%'
+                maxHeight='500'
+              />
+            </div>
           </div>
         </div>
       </div>

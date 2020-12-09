@@ -1,12 +1,13 @@
-import Landing from "../src/components/Hero";
-import WorkFlow from "../src/components/WorkFlow";
-import FeaturedPortfolios from "../src/components/Portfolio/Featured";
-import Services from "../src/components/Services";
-import LetsTalk from "../src/components/LetsTalk";
+import Hero from "../src/components/LandingPage/Hero";
+import WorkFlow from "../src/components/LandingPage/WorkFlow";
+import FeaturedPortfolios from "../src/components/LandingPage/FeaturedPortfolio";
+import Services from "../src/components/LandingPage/Services";
+import LetsTalk from "../src/components/LandingPage/LetsTalk";
+
 const Home = (params) => {
   return (
     <>
-      <Landing />
+      <Hero />
       <WorkFlow />
       <Services />
       <FeaturedPortfolios />

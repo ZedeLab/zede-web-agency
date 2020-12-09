@@ -16,6 +16,7 @@
     "@material-ui/icons": "^4.11.2",
     "classnames": "^2.2.6",
     "fg-loadcss": "^3.1.0",
+    "lodash": "^4.17.20",
     "next": "^10.0.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

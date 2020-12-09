@@ -2,7 +2,7 @@ import { Button, makeStyles, Typography } from "@material-ui/core";
 import Lottie from "react-lottie";
 import data from "./data.json";
 import clx from "classnames";
-
+import { uniqueId } from "lodash";
 const useStyle = makeStyles((theme) => ({
   button: {
     borderRadius: theme.spacing(5),
@@ -50,7 +50,11 @@ const Services = (params) => {
           </Button>
         </div>
         {Object.keys(data.services).map((title) => (
-          <div id='w-node-f3c27ee0b5e0-1508a948' className='margin-bottom'>
+          <div
+            id='w-node-f3c27ee0b5e0-1508a948'
+            className='margin-bottom'
+            key={uniqueId()}
+          >
             <img
               src={data.services[title].img}
               width='64'
