@@ -9,6 +9,8 @@ const useStyle = makeStyles((theme) => ({
     ...theme.typography.link,
     marginLeft: theme.spacing(2),
     color: theme.palette.text.primary,
+    fontSize: "1.1rem",
+    color: "#333",
   },
   selected: {
     color: theme.palette.secondary.main,

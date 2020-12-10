@@ -1,20 +1,22 @@
 import { makeStyles } from "@material-ui/core";
 import clx from "classnames";
 
-const useStyle = makeStyles((theme) => ({
-  wrapper: {
-    margin: `${theme.spacing(1)}px ${theme.spacing(3)}px`,
-  },
-  imageContainer: {
-    overflow: "hidden",
-    boxShadow: theme.shadows[8],
-    marginBottom: theme.spacing(1),
-    maxWidth: "400px",
-  },
-}));
-
 const PortfolioSummary = ({ large, imgUrl, imgSrcSet, title, description }) => {
+  const useStyle = makeStyles((theme) => ({
+    wrapper: {
+      margin: `${theme.spacing(1)}px ${theme.spacing(3)}px`,
+    },
+    imageContainer: {
+      overflow: "hidden",
+      boxShadow: theme.shadows[8],
+      marginBottom: theme.spacing(1),
+      maxWidth: "400px",
+      maxHeight: !imgSrcSet ? "400px" : "auto",
+    },
+  }));
+
   const classes = useStyle();
+
   const imageSize = large
     ? "(max-width: 479px) 81vw, (max-width: 767px) 88vw, (max-width: 991px) 44vw, 45vw"
     : "(max-width: 479px) 81vw, (max-width: 744px) 86vw, (max-width: 767px) 640px, (max-width: 991px) 44vw, 45vw";

@@ -20,6 +20,7 @@
     "next": "^10.0.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-lottie": "^1.2.3"
+    "react-lottie": "^1.2.3",
+    "react-material-ui-carousel": "^2.1.1"
   }
 }

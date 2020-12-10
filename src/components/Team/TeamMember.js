@@ -1,4 +1,5 @@
 import {
+  ClickAwayListener,
   Fade,
   IconButton,
   makeStyles,
@@ -60,52 +61,56 @@ const TeamMembers = ({
             data-w-id='3e6dc9f0-f4eb-a269-2dbe-629385073029'
             className={clsx(classes.descriptionContainer)}
           >
-            <div
-              data-w-id='3e6dc9f0-f4eb-a269-2dbe-62938507302a'
-              className='team-detail-container'
-            >
-              <Typography variant='h4' className='no-bottom-margins-2'>
-                {name}
-              </Typography>
-              <Typography variant='h5' className={classes.jobTitle}>
-                {jobTitle}
-              </Typography>
-              <Typography className='paragraph-small'>{discription}</Typography>
-              <div className='social-media-icons-container'>
-                {facebook ? (
-                  <a
-                    target='_blank'
-                    href={facebook}
-                    className='footer-link w-inline-block'
-                  >
-                    <FacebookIcon />
-                  </a>
-                ) : null}
-                {linkedIn ? (
-                  <a
-                    target='_blank'
-                    href={linkedIn}
-                    className='footer-link w-inline-block'
-                  >
-                    <LinkedInIcon />
-                  </a>
-                ) : null}
-                {github ? (
-                  <a
-                    target='_blank'
-                    href={github}
-                    className='footer-link w-inline-block'
-                  >
-                    <GitHubIcon />
-                  </a>
-                ) : null}
+            <ClickAwayListener onClickAway={() => setshowDitail(false)}>
+              <div
+                data-w-id='3e6dc9f0-f4eb-a269-2dbe-62938507302a'
+                className='team-detail-container'
+              >
+                <Typography variant='h4' className='no-bottom-margins-2'>
+                  {name}
+                </Typography>
+                <Typography variant='h5' className={classes.jobTitle}>
+                  {jobTitle}
+                </Typography>
+                <Typography className='paragraph-small'>
+                  {discription}
+                </Typography>
+                <div className='social-media-icons-container'>
+                  {facebook ? (
+                    <a
+                      target='_blank'
+                      href={facebook}
+                      className='footer-link w-inline-block'
+                    >
+                      <FacebookIcon />
+                    </a>
+                  ) : null}
+                  {linkedIn ? (
+                    <a
+                      target='_blank'
+                      href={linkedIn}
+                      className='footer-link w-inline-block'
+                    >
+                      <LinkedInIcon />
+                    </a>
+                  ) : null}
+                  {github ? (
+                    <a
+                      target='_blank'
+                      href={github}
+                      className='footer-link w-inline-block'
+                    >
+                      <GitHubIcon />
+                    </a>
+                  ) : null}
+                </div>
+                <div className={classes.discriptionHidder}>
+                  <IconButton onClick={() => setshowDitail(false)}>
+                    <CancelIcon fontSize='large' />
+                  </IconButton>
+                </div>
               </div>
-              <div className={classes.discriptionHidder}>
-                <IconButton onClick={() => setshowDitail(false)}>
-                  <CancelIcon fontSize='large' />
-                </IconButton>
-              </div>
-            </div>
+            </ClickAwayListener>
           </div>
         </Slide>
         <img

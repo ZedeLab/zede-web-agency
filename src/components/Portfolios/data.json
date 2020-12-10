@@ -1,0 +1,64 @@
+{
+    "Colonization by Colors":{
+        "imgUrl": "/images/colonization.jpg",
+        "imgSrcSet": "/images/colonization-p-500.jpeg 500w, /images/colonization.jpg 640w",
+        "description": "video campaign",
+        "coverImgUrl": "",
+        "featured": true,
+        "detail": {
+            "url": "",
+            "github": "",
+            "date": "",
+            "technologies": []
+        }
+    },
+    
+    "Surveillance People by Sruvs":{
+        "imgUrl": "/images/sruvs.jpeg",
+        "imgSrcSet": "",
+        "description": "wallpaper media",
+        "featured": true,
+        "detail": {
+            "url": "",
+            "github": "",
+            "date": "",
+            "technologies": []
+        }
+    },
+    "Low Poly Radioactive Mask":{
+        "imgUrl": "/images/photo-1522733603432-44910cfd6773.jpeg",
+        "imgSrcSet": "/images/photo-1522733603432-44910cfd6773-p-500.jpeg 500w, /images/photo-1522733603432-44910cfd6773-p-800.jpeg 800w, /images/photo-1522733603432-44910cfd6773.jpeg 934w",
+        "description": "awareness programme",
+        "featured": true,
+        "detail": {
+            "url": "",
+            "github": "",
+            "date": "",
+            "technologies": []
+        }
+    },
+    "Low Radioactive Mask":{
+        "imgUrl": "/images/photo-1522733603432-44910cfd6773.jpeg",
+        "imgSrcSet": "/images/photo-1522733603432-44910cfd6773-p-500.jpeg 500w, /images/photo-1522733603432-44910cfd6773-p-800.jpeg 800w, /images/photo-1522733603432-44910cfd6773.jpeg 934w",
+        "description": "awareness programme",
+        "featured": false,
+        "detail": {
+            "url": "",
+            "github": "",
+            "date": "",
+            "technologies": []
+        }
+    },
+    "Surveillance by Sruvs":{
+        "imgUrl": "/images/sruvs.jpeg",
+        "imgSrcSet": "",
+        "description": "wallpaper media",
+        "featured": false,
+        "detail": {
+            "url": "",
+            "github": "",
+            "date": "",
+            "technologies": []
+        }
+    }
+}

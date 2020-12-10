@@ -9,6 +9,8 @@ import {
   makeStyles,
   Paper,
   Slide,
+  Tab,
+  Tabs,
   Typography,
   useScrollTrigger,
 } from "@material-ui/core";
@@ -53,23 +55,19 @@ const navigation = (props) => {
   const classes = useStyle();
   const [showMobNav, setShowMobNav] = useState(false);
 
+  const [value, setValue] = useState(0);
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   const navLinks = (
     <div className={classes.linkWrapper}>
-      <NavLink path='/'>
-        <Typography>Home</Typography>
-      </NavLink>
-      <NavLink path='/aboutus'>
-        <Typography>About Us</Typography>
-      </NavLink>
-      <NavLink path='/team'>
-        <Typography>Our Team</Typography>
-      </NavLink>
-      <NavLink path='/portfolio'>
-        <Typography>Portfolio</Typography>
-      </NavLink>
-      <NavLink path='/contactus'>
-        <Typography>Contact Us</Typography>
-      </NavLink>
+      <NavLink path='/'>Home</NavLink>
+      <NavLink path='/aboutus'>About Us</NavLink>
+      <NavLink path='/team'>Our Team</NavLink>
+      <NavLink path='/portfolios'>Portfolio</NavLink>
+      <NavLink path='/contactus'>Contact Us</NavLink>
     </div>
   );
   return (
@@ -79,7 +77,7 @@ const navigation = (props) => {
           <Toolbar className={classes.toolbar}>
             <div className='logo-area'>
               <NavLink path='/' className='nav-logo w-inline-block'>
-                <img src='images/Zede-logo.svg' width='106' alt='' />
+                <img src='/images/Zede-logo.svg' width='106' alt='' />
               </NavLink>
             </div>
             <Hidden smDown>{navLinks}</Hidden>

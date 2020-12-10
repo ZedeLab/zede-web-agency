@@ -1,5 +1,5 @@
 import Header from "../../src/components/PageHeader";
-import Portfolios from "../../src/components/Portfolio";
+import Portfolios from "../../src/components/Portfolios";
 const Portfolio = (params) => {
   return (
     <>

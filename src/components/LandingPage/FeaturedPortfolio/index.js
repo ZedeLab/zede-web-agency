@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core";
-import PortfolioSummery from "../../Portfolio/Summary";
-import data from "../../Portfolio/data.json";
+import PortfolioSummery from "../../Portfolios/Summary";
+import data from "../../Portfolios/data.json";
 import { uniqueId } from "lodash";
 const useStyle = makeStyles((theme) => ({
   blogsWrapper: {
