@@ -2,6 +2,9 @@ import { Button, makeStyles, Typography } from "@material-ui/core";
 import clx from "classnames";
 
 const useStyle = makeStyles((theme) => ({
+  wrapper: {
+    backgroundColor: theme.palette.primary.main,
+  },
   button: {
     color: theme.palette.common.white,
     paddingTop: "16px",
@@ -14,16 +17,13 @@ const LetsTalk = (params) => {
   const classes = useStyle();
   return (
     <>
-      <div className='section-divider'>
-        <img
-          src='images/triangle-topright.png'
-          srcSet='images/triangle-topright-p-500.png 500w, images/triangle-topright.png 1920w'
-          sizes='100vw'
-          alt=''
-          className='bg-divider'
-        />
-      </div>
-      <div className='section bgaccent-color section-triangle'>
+      <div className={classes.sectionDivider}></div>
+      <div
+        className={clx(
+          classes.wrapper,
+          "section bgaccent-color section-triangle"
+        )}
+      >
         <div className='wrapper'>
           <div className='row left-aligned'>
             <div className='col-2 lg-6 md-3 xs-2 left-aligned'>

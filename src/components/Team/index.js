@@ -1,6 +1,7 @@
 import { Typography } from "@material-ui/core";
 import TeamMember from "./TeamMember";
 import data from "./data.json";
+import { uniqueId } from "lodash";
 const OurTeam = (params) => {
   return (
     <div className='section'>
@@ -16,6 +17,7 @@ const OurTeam = (params) => {
         <div className='row-2'>
           {Object.keys(data).map((member) => (
             <TeamMember
+              key={uniqueId()}
               name={member}
               jobTitle={data[member].jobTitle}
               imgUrl={data[member].imgUrl}

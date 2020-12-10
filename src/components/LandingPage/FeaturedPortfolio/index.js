@@ -1,6 +1,19 @@
+import { makeStyles } from "@material-ui/core";
 import PortfolioSummery from "../../Portfolio/Summary";
+import data from "../../Portfolio/data.json";
+import { uniqueId } from "lodash";
+const useStyle = makeStyles((theme) => ({
+  blogsWrapper: {
+    width: "100%",
+    // backgroundColor: "red",
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "center",
+  },
+}));
 
-const Featuredortfolios = () => {
+const FeaturePortfolios = () => {
+  const classes = useStyle();
   return (
     <div className='section no-top-padding'>
       <div className='wrapper'>
@@ -17,41 +30,24 @@ const Featuredortfolios = () => {
             </div>
           </div>
         </div>
-        <div className='row no-bottom-margins'>
-          <div className='col-2 lg-6'>
-            <PortfolioSummery
-              imgUrl='images/colonization.jpg'
-              imgSrcSet='images/colonization-p-500.jpeg 500w, images/colonization.jpg 640w'
-              title='Colonization by Colors'
-              discription='video campaign'
-            />
-            <PortfolioSummery
-              imgUrl='images/art-background-blur-1964471.jpg'
-              imgSrcSet='images/art-background-blur-1964471-p-500.jpeg 500w, images/art-background-blur-1964471.jpg 640w'
-              title='Neon Pops and Dos'
-              discription='interactive advertisement'
-            />
-          </div>
-
-          <div className='col-2 lg-6'>
-            <PortfolioSummery
-              // large
-              imgUrl='images/colonization.jpg'
-              imgSrcSet='images/photo-1522733603432-44910cfd6773-p-500.jpeg 500w, images/photo-1522733603432-44910cfd6773-p-800.jpeg 800w, images/photo-1522733603432-44910cfd6773.jpeg 934w'
-              title='Colonization by Colors'
-              discription='video campaign'
-            />
-            <PortfolioSummery
-              imgUrl='images/sruvs.jpeg'
-              imgSrcSet='images/colonization-p-500.jpeg 500w, images/colonization.jpg 640w'
-              title='Surveillance People by Sruvs'
-              discription='wallpaper media'
-            />
-          </div>
+        <div className={classes.blogsWrapper}>
+          {Object.keys(data).map((blogTitle) => {
+            if (data[blogTitle].featured) {
+              return (
+                <PortfolioSummery
+                  key={uniqueId()}
+                  imgUrl={data[blogTitle].imgUrl}
+                  imgSrcSet={data[blogTitle].imgSrcSet}
+                  title={blogTitle}
+                  description={data[blogTitle].description}
+                />
+              );
+            }
+          })}
         </div>
       </div>
     </div>
   );
 };
 
-export default Featuredortfolios;
+export default FeaturePortfolios;

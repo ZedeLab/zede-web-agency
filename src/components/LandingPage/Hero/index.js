@@ -3,6 +3,9 @@ import Lottie from "react-lottie";
 import * as animationData from "../../../../public/animations/heroAnim.json";
 import clx from "classnames";
 const useStyle = makeStyles((theme) => ({
+  wrapper: {
+    backgroundColor: theme.palette.primary.main,
+  },
   container: {
     // backgroundColor: "red",
     position: "relative",
@@ -37,7 +40,12 @@ const Hero = (params) => {
   };
 
   return (
-    <div className='section full-screen background-image-side hero'>
+    <div
+      className={clx(
+        classes.wrapper,
+        "section full-screen background-image-side hero"
+      )}
+    >
       <div className='wrapper'>
         <div className='row'>
           <div className={clx("col", classes.container)}>

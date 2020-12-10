@@ -3,7 +3,11 @@ import Lottie from "react-lottie";
 import data from "./data.json";
 import clx from "classnames";
 import { uniqueId } from "lodash";
+
 const useStyle = makeStyles((theme) => ({
+  wrapper: {
+    backgroundColor: theme.palette.primary.main,
+  },
   button: {
     borderRadius: theme.spacing(5),
   },
@@ -20,7 +24,7 @@ const Services = (params) => {
   });
 
   return (
-    <div className='section services bgaccent-color'>
+    <div className={clx(classes.wrapper, "section services bgaccent-color")}>
       <div className='w-layout-grid grid'>
         <div
           id='w-node-a90a4bea48e4-1508a948'

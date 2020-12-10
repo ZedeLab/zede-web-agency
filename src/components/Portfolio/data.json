@@ -1,0 +1,26 @@
+{
+    "Colonization by Colors":{
+        "imgUrl": "images/colonization.jpg",
+        "imgSrcSet": "images/colonization-p-500.jpeg 500w, images/colonization.jpg 640w",
+        "description": "video campaign",
+        "featured": true
+    },
+    "Neon Pops and Dos":{
+        "imgUrl": "mages/art-background-blur-1964471.jpg",
+        "imgSrcSet": "images/art-background-blur-1964471-p-500.jpeg 500w, images/art-background-blur-1964471.jpg 640w",
+        "description": "interactive advertisement",
+        "featured": true
+    },
+    "Surveillance People by Sruvs":{
+        "imgUrl": "images/sruvs.jpeg",
+        "imgSrcSet": "",
+        "description": "wallpaper media",
+        "featured": true
+    },
+    "Low Poly Radioactive Mask":{
+        "imgUrl": "images/photo-1522733603432-44910cfd6773.jpeg",
+        "imgSrcSet": "images/photo-1522733603432-44910cfd6773-p-500.jpeg 500w, images/photo-1522733603432-44910cfd6773-p-800.jpeg 800w, images/photo-1522733603432-44910cfd6773.jpeg 934w",
+        "description": "awareness programme",
+        "featured": true
+    }
+}
