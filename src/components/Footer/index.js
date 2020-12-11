@@ -95,13 +95,7 @@ const Footer = (params) => {
                   Let&#x27;s Meet
                 </a>
               </h5>
-              <p className='footer-paragraph'>+62 31 7987202 (8276)</p>
-              <p className='footer-paragraph'>hello@duduksampean.com</p>
-              <p className='footer-paragraph'>
-                Jl. Raya Duduk Sampeyan
-                <br />
-                Gresik, Indonesia — 6021876
-              </p>
+              <p className='footer-paragraph'>h1@zede.com</p>
             </div>
             <div>
               <Icon

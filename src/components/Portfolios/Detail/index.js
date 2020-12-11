@@ -95,14 +95,10 @@ const PortfolioDetail = ({ prevId, nextId, portfolioData }) => {
   const theme = useTheme();
   const imgStyle = (imgUrl) => ({
     backgroundImage: `url(${imgUrl})`,
-    backgroundSize: "cover",
-    backgroundPosition: "5% 35%",
+    backgroundSize: "contain",
+    // backgroundPosition: "5% 35%",
   });
-  const items = [
-    "/images/colonization.jpg",
-    "/images/sruvs.jpeg",
-    "/images/photo-1522733603432-44910cfd6773.jpeg",
-  ];
+
   return (
     <Grid container direction='column' className={classes.wrapper}>
       <Grid xs={12} item className={classes.sectionWrapper}>
@@ -117,9 +113,6 @@ const PortfolioDetail = ({ prevId, nextId, portfolioData }) => {
             <ArrowForwardIosIcon className={classes.icon} />
           </Link>
         </IconButton>
-        {/* <IconButton className={classes.button}>
-          <CloseIcon className={classes.icon} />
-        </IconButton> */}
       </Grid>
       <Grid item xs={12}>
         <Grid container justify='space-between' spacing={6}>

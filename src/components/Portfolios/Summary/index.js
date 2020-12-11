@@ -11,21 +11,20 @@ const PortfolioSummary = ({
 }) => {
   const useStyle = makeStyles((theme) => ({
     wrapper: {
-      margin: `${theme.spacing(1)}px ${theme.spacing(3)}px`,
+      // margin: `${theme.spacing(1)}px ${theme.spacing(3)}px`,
     },
     imageContainer: {
       overflow: "hidden",
       width: "500px",
       height: "500px",
-      boxShadow: theme.shadows[2],
-      marginBottom: theme.spacing(5),
-      marginRight: theme.spacing(5),
+      boxShadow: theme.shadows[1],
+      // marginBottom: theme.spacing(5),
+      margin: theme.spacing(2),
     },
     image: {
       width: "100%",
       height: "400px",
       overflow: "hidden",
-
       filter: "grayscale(60%)",
       "&:hover, &:active": {
         filter: "grayscale(0%)",

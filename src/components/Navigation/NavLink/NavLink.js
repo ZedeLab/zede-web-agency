@@ -20,12 +20,12 @@ const useStyle = makeStyles((theme) => ({
 const Cutomlink = ({ lable, path, children }) => {
   const classes = useStyle();
   const router = useRouter();
+  console.log(router.pathname);
   return (
     <Link href={path}>
       <a
-        //   active={router.pathname === "/"}
         className={cNames(classes.link, {
-          [`${classes.selected}`]: router === path,
+          [`${classes.selected}`]: router.pathname == path,
         })}
       >
         {children}

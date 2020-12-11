@@ -19,7 +19,7 @@ const useStyle = makeStyles((theme) => ({
     // border: "blue solid 10px",
     margin: "auto",
     width: "100%",
-    height: "500px",
+    // height: "500px",
     position: "absolute",
     opacity: 0.5,
     zIndex: -1,
@@ -50,7 +50,7 @@ const Hero = (params) => {
         <div className='row'>
           <div className={clx("col", classes.container)}>
             <div className='hero-content'>
-              <Typography variant='h1' className='hero-title'>
+              <Typography variant='h2' className='hero-title'>
                 Come to us with a vision. <br />
                 We’ll help you craft it.
                 <br />

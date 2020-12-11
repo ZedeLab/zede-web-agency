@@ -1,50 +1,27 @@
 {
-    "Doris Fox": {
+    "Eyob Tariku": {
         "jobTitle": "CEO",
-        "imgUrl" : "images/Screen-Shot-2019-05-23-at-16.17.27.png",
+        "imgUrl" : "images/eyob.jpg",
         "description": "Decrepit enlightenment society chaos ultimate merciful. Merciful truth snare inexpedient sea insofar.Decrepit enlightenment society chaos ultimate merciful. Merciful truth snare inexpedient sea insofar.",
         "facebook": "https://www.facebook.com/",
         "linkedIn": "https://www.linkedin.com/",
         "github": "https://github.com/"
     },
-    "Boyd Bidwell": {
-        "jobTitle": "Digital Marketer",
-        "imgUrl" : "images/Screen-Shot-2019-05-23-at-16.19.02.png",
+    "Abel Sintaro": {
+        "jobTitle": "Web developer",
+        "imgUrl" : "images/abel.jpg",
          "description": "Decrepit enlightenment society chaos ultimate merciful. Merciful truth snare inexpedient sea insofar.Decrepit enlightenment society chaos ultimate merciful. Merciful truth snare inexpedient sea insofar.",
         "facebook": "https://www.facebook.com/",
         "linkedIn": "https://www.linkedin.com/",
         "github": "https://github.com/"
     },
-    "Howard Thornton": {
-        "jobTitle": "Phyton Developer",
-        "imgUrl" : "images/Screen-Shot-2019-05-23-at-16.18.07.png",
+    "Simon Sisay": {
+        "jobTitle": "App Developer",
+        "imgUrl" : "images/simon.jpg",
         "description": "Decrepit enlightenment society chaos ultimate merciful. Merciful truth snare inexpedient sea insofar.Decrepit enlightenment society chaos ultimate merciful. Merciful truth snare inexpedient sea insofar.",
-        "facebook": "https://www.facebook.com/",
-        "linkedIn": "https://www.linkedin.com/",
-        "github": "https://github.com/"
-    },
-    "Marie Curie": {
-        "jobTitle": "Community Manager",
-         "description": "Decrepit enlightenment society chaos ultimate merciful. Merciful truth snare inexpedient sea insofar.Decrepit enlightenment society chaos ultimate merciful. Merciful truth snare inexpedient sea insofar.",
-        "imgUrl" : "images/Screen-Shot-2019-05-23-at-16.18.21.png",
-        "facebook": "https://www.facebook.com/",
-        "linkedIn": "https://www.linkedin.com/",
-        "github": "https://github.com/"
-    },
-    "Clayton Odom": {
-        "jobTitle": "UI/UX Designer",
-         "description": "Decrepit enlightenment society chaos ultimate merciful. Merciful truth snare inexpedient sea insofar.Decrepit enlightenment society chaos ultimate merciful. Merciful truth snare inexpedient sea insofar.",
-        "imgUrl" : "images/Screen-Shot-2019-05-23-at-16.17.49.png",
-        "facebook": "https://www.facebook.com/",
-        "linkedIn": "https://www.linkedin.com/",
-        "github": "https://github.com/"
-    },
-    "Harold Jones": {
-        "jobTitle": "Content Writer",
-         "description": "Decrepit enlightenment society chaos ultimate merciful. Merciful truth snare inexpedient sea insofar.Decrepit enlightenment society chaos ultimate merciful. Merciful truth snare inexpedient sea insofar.",
-        "imgUrl" : "images/Screen-Shot-2019-05-23-at-16.18.36.png",
         "facebook": "https://www.facebook.com/",
         "linkedIn": "https://www.linkedin.com/",
         "github": "https://github.com/"
     }
+    
 }
