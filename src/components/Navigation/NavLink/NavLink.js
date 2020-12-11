@@ -7,7 +7,7 @@ import { Typography } from "@material-ui/core";
 const useStyle = makeStyles((theme) => ({
   link: {
     ...theme.typography.link,
-    marginLeft: theme.spacing(2),
+    marginLeft: theme.spacing(4),
     color: theme.palette.text.primary,
     fontSize: "1.1rem",
     color: "#333",
@@ -25,7 +25,7 @@ const Cutomlink = ({ lable, path, children }) => {
       <a
         //   active={router.pathname === "/"}
         className={cNames(classes.link, {
-          [`${classes.selected}`]: router.pathname === path,
+          [`${classes.selected}`]: router === path,
         })}
       >
         {children}

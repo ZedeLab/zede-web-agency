@@ -53,7 +53,7 @@ export default function MyApp(props) {
           rel='stylesheet'
         />
         <link
-          href='images/Duduk-Thumb.gif'
+          href='/images/Duduk-Thumb.gif'
           rel='shortcut icon'
           type='image/x-icon'
         />

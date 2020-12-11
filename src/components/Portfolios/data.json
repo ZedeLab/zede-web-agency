@@ -1,64 +1,46 @@
 {
-    "Colonization by Colors":{
-        "imgUrl": "/images/colonization.jpg",
-        "imgSrcSet": "/images/colonization-p-500.jpeg 500w, /images/colonization.jpg 640w",
-        "description": "video campaign",
-        "coverImgUrl": "",
+    "Rekik Engineering":{
+        "id": "1",
+        "imgUrl": ["https://eyobofficial-portfolio.s3.amazonaws.com/media/services-slide.jpg", "https://eyobofficial-portfolio.s3.amazonaws.com/media/process-slide.jpg", "https://eyobofficial-portfolio.s3.amazonaws.com/media/contact-slide.jpg" ],
+        "imgSrcSet": "",
+        "description": "A portfolio website for a local civil engineering consultant firm called Rekik Engineering.",
+        "coverImgUrl": "https://eyobofficial-portfolio.s3.amazonaws.com/media/hero-slide.jpg",
         "featured": true,
         "detail": {
-            "url": "",
-            "github": "",
-            "date": "",
-            "technologies": []
+            "url": "http://www.rekikeng.com",
+            "github": "https://github.com/eyobofficial/rekikeng",
+            "date": "April 4, 2019",
+            "technologies": ["CSS", "Django", "JavaScript", "Python", "SQLite", "jQuery"]
         }
     },
     
-    "Surveillance People by Sruvs":{
-        "imgUrl": "/images/sruvs.jpeg",
+    "Woreket Payment Tracker":{
+        "id": "2",
+        "imgUrl": ["https://eyobofficial-portfolio.s3.amazonaws.com/media/4.jpg", "https://eyobofficial-portfolio.s3.amazonaws.com/media/2.jpg", "https://eyobofficial-portfolio.s3.amazonaws.com/media/1.jpg"],
         "imgSrcSet": "",
         "description": "wallpaper media",
+        "coverImgUrl": "https://blog.dpogroup.com/wp-content/uploads/2018/12/1-11.png",
         "featured": true,
         "detail": {
-            "url": "",
-            "github": "",
-            "date": "",
-            "technologies": []
+            "url": "http://www.woreket.com",
+            "github": " https://bit.ly/2YnSe8n",
+            "date": " March 1, 2020",
+            "technologies": ["Bootstrap", "CSS", "Django", "Docker", "HTML", "JavaScript", "MYSQL", "Python", "jQuery"]
         }
     },
-    "Low Poly Radioactive Mask":{
-        "imgUrl": "/images/photo-1522733603432-44910cfd6773.jpeg",
+    "Resume Website API":{
+        "id": "3",
+        "imgUrl": ["/images/photo-1522733603432-44910cfd6773.jpeg"],
         "imgSrcSet": "/images/photo-1522733603432-44910cfd6773-p-500.jpeg 500w, /images/photo-1522733603432-44910cfd6773-p-800.jpeg 800w, /images/photo-1522733603432-44910cfd6773.jpeg 934w",
-        "description": "awareness programme",
+        "description": "A REST APIs for my resume website to retrieve & create past projects, testimonials, and e-mail subscriptions.",
+        "coverImgUrl": "https://www.bbvaapimarket.com/wp-content/uploads/2016/06/bbva-open4u-que-hace-una-api-por-mi-negocio.png",
         "featured": true,
         "detail": {
-            "url": "",
-            "github": "",
-            "date": "",
-            "technologies": []
-        }
-    },
-    "Low Radioactive Mask":{
-        "imgUrl": "/images/photo-1522733603432-44910cfd6773.jpeg",
-        "imgSrcSet": "/images/photo-1522733603432-44910cfd6773-p-500.jpeg 500w, /images/photo-1522733603432-44910cfd6773-p-800.jpeg 800w, /images/photo-1522733603432-44910cfd6773.jpeg 934w",
-        "description": "awareness programme",
-        "featured": false,
-        "detail": {
-            "url": "",
-            "github": "",
-            "date": "",
-            "technologies": []
-        }
-    },
-    "Surveillance by Sruvs":{
-        "imgUrl": "/images/sruvs.jpeg",
-        "imgSrcSet": "",
-        "description": "wallpaper media",
-        "featured": false,
-        "detail": {
-            "url": "",
-            "github": "",
-            "date": "",
-            "technologies": []
+            "url": "https://eyobtech.pythonanywhere.com/",
+            "github": " https://github.com/eyobofficial/my-resume",
+            "date": "July 30, 2020",
+            "technologies": ["AWS", "DRF", "Django", "Python", "SQLite", "Sendgrid API"]
         }
     }
+    
 }

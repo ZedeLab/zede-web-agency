@@ -1,4 +1,4 @@
-import { makeStyles, Typography } from "@material-ui/core";
+import { makeStyles, Paper, Typography } from "@material-ui/core";
 import clsx from "classnames";
 
 const PageHeader = ({ pageTitle, backgroundImgUrl }) => {
@@ -14,6 +14,7 @@ const PageHeader = ({ pageTitle, backgroundImgUrl }) => {
     },
   }));
   const classes = useStyle();
+
   return (
     <div className={clsx("section-2 page-header ", classes.background)}>
       <div className='banner-overlay'></div>

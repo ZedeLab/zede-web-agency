@@ -20,7 +20,7 @@ const Footer = (params) => {
         <div className='row-2'>
           <div className='col-2 lg-3 md-4'>
             <a href='#' data-ix='logo' className='footer-logo-2 w-nav-brand'>
-              <img src='images/Zede-logo-white.svg' width='104' alt='' />
+              <img src='/images/Zede-logo-white.svg' width='104' alt='' />
             </a>
             <p className='ondark'>
               From empowering challenger brands to think big to helping global

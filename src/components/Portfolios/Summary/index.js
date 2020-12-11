@@ -1,43 +1,65 @@
-import { makeStyles } from "@material-ui/core";
+import { Grid, makeStyles, Paper } from "@material-ui/core";
 import clx from "classnames";
-
-const PortfolioSummary = ({ large, imgUrl, imgSrcSet, title, description }) => {
+import Link from "next/link";
+const PortfolioSummary = ({
+  id,
+  large,
+  imgUrl,
+  imgSrcSet,
+  title,
+  description,
+}) => {
   const useStyle = makeStyles((theme) => ({
     wrapper: {
       margin: `${theme.spacing(1)}px ${theme.spacing(3)}px`,
     },
     imageContainer: {
       overflow: "hidden",
-      boxShadow: theme.shadows[8],
-      marginBottom: theme.spacing(1),
-      maxWidth: "400px",
-      maxHeight: !imgSrcSet ? "400px" : "auto",
+      width: "500px",
+      height: "500px",
+      boxShadow: theme.shadows[2],
+      marginBottom: theme.spacing(5),
+      marginRight: theme.spacing(5),
+    },
+    image: {
+      width: "100%",
+      height: "400px",
+      overflow: "hidden",
+
+      filter: "grayscale(60%)",
+      "&:hover, &:active": {
+        filter: "grayscale(0%)",
+        transform: "scale(1.02)",
+      },
+    },
+    info: {
+      padding: theme.spacing(2),
     },
   }));
 
   const classes = useStyle();
+  const imgStyle = {
+    backgroundImage: `url(${imgUrl})`,
+    backgroundSize: "cover",
+    backgroundPosition: "5% 5%",
+  };
 
-  const imageSize = large
-    ? "(max-width: 479px) 81vw, (max-width: 767px) 88vw, (max-width: 991px) 44vw, 45vw"
-    : "(max-width: 479px) 81vw, (max-width: 744px) 86vw, (max-width: 767px) 640px, (max-width: 991px) 44vw, 45vw";
   return (
-    <div className={clx(classes.wrapper, "big-blog-thumbnail-container")}>
-      <a href='#' className='works-link w-inline-block'>
-        <div className={classes.imageContainer}>
-          <img
-            src={imgUrl}
-            srcSet={imgSrcSet}
-            sizes={imageSize}
-            alt=''
-            className='column-image'
-          />
-        </div>
-        <div className='centre-align'>
+    <Link href={`portfolios/${id}`}>
+      <Grid container direction='row' className={classes.imageContainer}>
+        <Grid item xs={12}>
+          <Paper
+            variant='outlined'
+            className={classes.image}
+            style={imgStyle}
+          ></Paper>
+        </Grid>
+        <Grid item xs={12} className={classes.info}>
           <h4 className='no-bottom-margins'>{title}</h4>
           <p className='low-opacity'>{description}</p>
-        </div>
-      </a>
-    </div>
+        </Grid>
+      </Grid>
+    </Link>
   );
 };
 

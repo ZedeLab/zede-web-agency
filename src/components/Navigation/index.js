@@ -24,13 +24,15 @@ import NavLink from "./NavLink/NavLink";
 import { useState } from "react";
 
 const useStyle = makeStyles((theme) => ({
-  appBar: {
-    // ,
-  },
   toolbar: {
     display: "flex",
     flexDirections: "row",
+    alignItems: "center",
+    justifyContent: "space-around",
     padding: `${theme.spacing(2)}px ${theme.spacing(2)}px`,
+    [theme.breakpoints.down("sm")]: {
+      justifyContent: "space-between",
+    },
   },
   linkWrapper: {
     display: "flex",
@@ -75,11 +77,9 @@ const navigation = (props) => {
       <div>
         <AppBar className={classes.appBar}>
           <Toolbar className={classes.toolbar}>
-            <div className='logo-area'>
-              <NavLink path='/' className='nav-logo w-inline-block'>
-                <img src='/images/Zede-logo.svg' width='106' alt='' />
-              </NavLink>
-            </div>
+            <NavLink path='/' className='nav-logo w-inline-block'>
+              <img src='/images/Zede-logo.svg' width='106' alt='' />
+            </NavLink>
             <Hidden smDown>{navLinks}</Hidden>
             <Hidden mdUp>
               <IconButton

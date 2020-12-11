@@ -4,7 +4,7 @@ import data from "./data.json";
 import { uniqueId } from "lodash";
 const useStyle = makeStyles((theme) => ({
   blogsWrapper: {
-    width: "80%",
+    width: "90%",
     // backgroundColor: "red",
     display: "flex",
     flexWrap: "wrap",
@@ -21,7 +21,8 @@ const PortFolio = (params) => {
       {Object.keys(data).map((blogTitle) => (
         <PortfolioSummery
           key={uniqueId()}
-          imgUrl={data[blogTitle].imgUrl}
+          id={data[blogTitle].id}
+          imgUrl={data[blogTitle].coverImgUrl}
           title={blogTitle}
           description={data[blogTitle].description}
         />

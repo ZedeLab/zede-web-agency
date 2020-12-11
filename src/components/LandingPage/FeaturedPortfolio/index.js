@@ -36,7 +36,8 @@ const FeaturePortfolios = () => {
               return (
                 <PortfolioSummery
                   key={uniqueId()}
-                  imgUrl={data[blogTitle].imgUrl}
+                  id={data[blogTitle].id}
+                  imgUrl={data[blogTitle].coverImgUrl}
                   imgSrcSet={data[blogTitle].imgSrcSet}
                   title={blogTitle}
                   description={data[blogTitle].description}

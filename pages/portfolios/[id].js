@@ -1,12 +1,51 @@
 import Header from "../../src/components/PageHeader";
 import Portfolio from "../../src/components/Portfolios/Detail";
-const PortfolioDetail = (params) => {
+import data from "../../src/components/Portfolios/data.json";
+const PortfolioDetail = ({ title, portfolio, prev, next }) => {
+  console.log("prev: ", prev, "    next: ", next);
   return (
     <>
-      <Header pageTitle='Our Work' backgroundImgUrl='/images/our-work.jpg' />
-      <Portfolio />
+      <Header pageTitle={title} backgroundImgUrl={portfolio.coverImgUrl} />
+      <Portfolio portfolioData={portfolio} nextId={next} prevId={prev} />
     </>
   );
 };
+
+export async function getStaticPaths() {
+  const paths = Object.keys(data).map((post) => ({
+    params: { id: `${data[post].id}` },
+  }));
+
+  return { paths, fallback: false };
+}
+
+export async function getStaticProps({ params }) {
+  const titleKeys = Object.keys(data);
+  const portfolioTitle = titleKeys.filter(
+    (title) => data[title].id === params.id
+  );
+  const currentIndex = titleKeys.indexOf(portfolioTitle[0]);
+  let nextPortFolioId = null,
+    prevPortFolioId = null;
+  if (currentIndex === 0) {
+    nextPortFolioId = data[titleKeys[currentIndex + 1]].id;
+  } else if (currentIndex === titleKeys.length) {
+    prevPortFolioId = data[titleKeys[currentIndex - 1]].id;
+  } else {
+    nextPortFolioId = data[titleKeys[currentIndex + 1]].id;
+    prevPortFolioId = data[titleKeys[currentIndex - 1]].id;
+  }
+
+  const portfolio = data[portfolioTitle];
+
+  return {
+    props: {
+      title: portfolioTitle,
+      portfolio: portfolio,
+      next: nextPortFolioId,
+      prev: prevPortFolioId,
+    }, // will be passed to the page component as props
+  };
+}
 
 export default PortfolioDetail;
