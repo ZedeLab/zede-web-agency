@@ -68,7 +68,7 @@ const useStyle = makeStyles((theme) => ({
 
 const Hero = (params) => {
   const classes = useStyle();
-  const defaultOptions = {
+  const animOptions = {
     loop: true,
     autoplay: true,
     animationData: animationData.default,
@@ -116,46 +116,15 @@ const Hero = (params) => {
           </div>
         </Grid>
       </Grid>
-      {/* <div className={classes.container}>
-        <Typography variant='h2' className='hero-title'>
-          Come to us with a vision. <br />
-          We’ll help you craft it.
-          <br />
-        </Typography>
-        <p className='hero-description'>
-          We build digital product, from idea to design, development to
-          marketing &amp; PR to post launch support
-        </p>
-        <div className='value-proposition-buttons'>
-          <Button
-            className={clx(classes.button, "button")}
-            variant='contained'
-            color='secondary'
-          >
-            Get free consultation
-          </Button>
-
-          <Button className={clx(classes.button, "button")} variant='outlined'>
-            Learn more
-          </Button>
-        </div>
-      </div> */}
 
       <div className={classes.animBackground}>
         <Lottie
-          options={defaultOptions}
+          options={animOptions}
           height='100%'
           width='100%'
           maxHeight='500'
         />
       </div>
-      {/* <Paper className='wrapper'>
-        <div className='row'>
-          <div className={clx("col", classes.container)}>
-            
-          </div>
-        </div>
-      </Paper> */}
     </Paper>
   );
 };

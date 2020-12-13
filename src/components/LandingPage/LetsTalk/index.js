@@ -1,23 +1,91 @@
-import { Button, makeStyles, Typography } from "@material-ui/core";
+import {
+  Button,
+  Grid,
+  Hidden,
+  makeStyles,
+  Paper,
+  Typography,
+} from "@material-ui/core";
 import clx from "classnames";
-
-const useStyle = makeStyles((theme) => ({
-  wrapper: {
-    backgroundColor: theme.palette.primary.main,
-  },
-  button: {
-    color: theme.palette.common.white,
-    paddingTop: "16px",
-    paddingBottom: "16px",
-    boxShadow: "0 4px 11px 0 rgba(117, 69, 1, 0.33)",
-  },
-}));
+import useCommonStyle from "../../../utils/style/js/sharedStyle";
+import Lottie from "react-lottie";
+import * as animationData from "../../../../public/animations/contactUs.json";
+const useStyle = makeStyles((theme) => {
+  const mainStyle = useCommonStyle();
+  return {
+    wrapper: {
+      ...mainStyle.wrapper,
+      backgroundColor: theme.palette.primary.main,
+    },
+    container: {
+      ...mainStyle.container,
+    },
+    sectionHeading: {
+      ...theme.typography.sectionHeading,
+      marginBottom: theme.spacing(3),
+    },
+    text: {
+      marginBottom: theme.spacing(5),
+    },
+    button: {
+      // color: theme.palette.common.white,
+      paddingTop: "16px",
+      paddingBottom: "16px",
+      boxShadow: "0 4px 11px 0 rgba(117, 69, 1, 0.33)",
+    },
+  };
+});
 
 const LetsTalk = (params) => {
   const classes = useStyle();
+
+  const animOptions = {
+    loop: true,
+    autoplay: true,
+    animationData: animationData.default,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
   return (
-    <>
-      <div className={classes.sectionDivider}></div>
+    <Paper className={classes.wrapper}>
+      <Grid
+        container
+        direction='row'
+        alignItems='center'
+        className={classes.container}
+      >
+        <Grid item xs={12} md={6}>
+          <Typography color='textPrimary' className={classes.microHeading}>
+            lets work together
+          </Typography>
+          <Typography variant='h2' className={classes.sectionHeading}>
+            Great vision without great people is irrelevant.
+            <br />
+          </Typography>
+          <Typography variant='body1' className={classes.text}>
+            A new project is an opportunity to create something unique. <br />
+          </Typography>
+          <Button
+            variant='contained'
+            color='secondary'
+            className={clx(classes.button, "button")}
+          >
+            Let&#x27;s Talk
+          </Button>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <Hidden smDown>
+            <Lottie
+              options={animOptions}
+              height='100%'
+              width='100%'
+              maxHeight='500'
+            />
+          </Hidden>
+        </Grid>
+
+        {/* <div className={classes.sectionDivider}></div>
       <div
         className={clx(
           classes.wrapper,
@@ -122,8 +190,9 @@ const LetsTalk = (params) => {
             className='contact-letters letter-c'
           />
         </div>
-      </div>
-    </>
+      </div> */}
+      </Grid>
+    </Paper>
   );
 };
 

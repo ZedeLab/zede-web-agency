@@ -60,6 +60,19 @@ const theme = (mode = "light") => {
         fontSize: "14px",
         lineHeight: "34px",
       },
+      sectionHeading: {
+        fontFamily: "Montserrat, sans-serif",
+        fontSize: "36px",
+        lineHeight: 1.15,
+      },
+      microHeading: {
+        fontFamily: "Montserrat, sans-serif",
+
+        fontSize: "11px",
+        fontWeight: 600,
+        letterSpacing: "2px",
+        textTransform: "uppercase",
+      },
       link: {
         textDecoration: "none",
         fontFamily: "Montserrat",
