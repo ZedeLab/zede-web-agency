@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 
 // Material-ui components
 import {
+  Button,
+  ClickAwayListener,
   Fade,
   Hidden,
   IconButton,
@@ -22,8 +24,19 @@ import CloseIcon from "@material-ui/icons/Close";
 // Core components
 import NavLink from "./NavLink/NavLink";
 import { useState } from "react";
+import { Router, useRouter } from "next/router";
 
 const useStyle = makeStyles((theme) => ({
+  wrapper: {
+    padding: 0,
+    margin: 0,
+  },
+  appBar: {
+    // position: "relative",
+    height: "fit-content",
+    width: "100vw",
+    overflow: "hidden",
+  },
   toolbar: {
     display: "flex",
     flexDirections: "row",
@@ -44,27 +57,31 @@ const useStyle = makeStyles((theme) => ({
   },
 
   mobNavWrapper: {
+    position: "fixed",
+    zIndex: 200,
     width: "100vw",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     backgroundColor: theme.palette.primary.light,
-    paddingTop: `${theme.spacing(15)}px `,
+    paddingTop: theme.spacing(15),
+    boxShadow: theme.shadows[0],
   },
 }));
 
 const navigation = (props) => {
   const classes = useStyle();
   const [showMobNav, setShowMobNav] = useState(false);
-
-  const [value, setValue] = useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
+  const route = useRouter();
+  const trigger = useScrollTrigger();
+  const clicked = (path) => {
+    route.push(path);
   };
-
   const navLinks = (
-    <div className={classes.linkWrapper}>
+    <div
+      className={classes.linkWrapper}
+      onClickCapture={() => setShowMobNav(false)}
+    >
       <NavLink path='/'>Home</NavLink>
       <NavLink path='/aboutus'>About Us</NavLink>
       <NavLink path='/team'>Our Team</NavLink>
@@ -73,12 +90,17 @@ const navigation = (props) => {
     </div>
   );
   return (
-    <HideOnScroll {...props}>
+    <Slide
+      appear={false}
+      direction='down'
+      in={!trigger}
+      className={classes.wrapper}
+    >
       <div>
         <AppBar className={classes.appBar}>
           <Toolbar className={classes.toolbar}>
             <NavLink path='/' className='nav-logo w-inline-block'>
-              <img src='/images/Zede-logo.svg' width='106' alt='' />
+              <img src='/images/Zede-logo-white.svg' width='106' alt='' />
             </NavLink>
             <Hidden smDown>{navLinks}</Hidden>
             <Hidden mdUp>
@@ -94,7 +116,7 @@ const navigation = (props) => {
                     exit: 100,
                   }}
                 >
-                  <MenuIcon />
+                  <MenuIcon color='secondary' />
                 </Fade>
                 <Fade
                   in={showMobNav}
@@ -104,43 +126,24 @@ const navigation = (props) => {
                     exit: 200,
                   }}
                 >
-                  <CloseIcon />
+                  <CloseIcon color='secondary' />
                 </Fade>
               </IconButton>
             </Hidden>
           </Toolbar>
         </AppBar>
         <Hidden mdUp>
-          <Slide direction='down' in={showMobNav} unmountOnExit>
+          <Slide direction='down' in={showMobNav && !trigger} unmountOnExit>
             <Paper variant='outlined' className={classes.mobNavWrapper}>
-              {navLinks}
+              <ClickAwayListener onClickAway={() => setShowMobNav(false)}>
+                {navLinks}
+              </ClickAwayListener>
             </Paper>
           </Slide>
         </Hidden>
-
-        {!showMobNav ? <Toolbar /> : null}
       </div>
-    </HideOnScroll>
-  );
-};
-
-function HideOnScroll(props) {
-  const { children, window } = props;
-
-  const trigger = useScrollTrigger();
-  return (
-    <Slide appear={false} direction='down' in={!trigger}>
-      {children}
     </Slide>
   );
-}
-
-HideOnScroll.propTypes = {
-  children: PropTypes.element.isRequired,
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  window: PropTypes.func,
 };
+
 export default navigation;

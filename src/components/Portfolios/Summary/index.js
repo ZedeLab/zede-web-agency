@@ -25,9 +25,8 @@ const PortfolioSummary = ({
       width: "100%",
       height: "400px",
       overflow: "hidden",
-      filter: "grayscale(60%)",
+
       "&:hover, &:active": {
-        filter: "grayscale(0%)",
         transform: "scale(1.02)",
       },
     },

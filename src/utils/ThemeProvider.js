@@ -1,15 +1,21 @@
 import { useTheme } from "@material-ui/core";
 
 const theme = (mode = "light") => {
+  // const theme = useTheme();
+
   return {
     palette: {
       type: "light",
 
       primary: {
-        main: "#f3d940",
+        main: "#2c2925",
       },
       secondary: {
-        main: "#926000",
+        main: "#f3d940",
+      },
+      text: {
+        primary: "rgba(255, 255, 255)",
+        secondary: "rgba(0, 0, 0)",
       },
     },
     typography: {
@@ -33,7 +39,7 @@ const theme = (mode = "light") => {
         marginTop: "20px",
         marginBottom: "10px",
         fontFamily: "Montserrat",
-        color: "#000",
+
         fontSize: "24px",
         lineHeight: 1.15,
         fontWeight: 700,
@@ -42,7 +48,7 @@ const theme = (mode = "light") => {
         marginTop: "10px",
         marginBottom: "10px",
         fontFamily: "Montserrat",
-        color: "#333",
+
         fontSize: "18px",
         lineHeight: "24px",
         fontWeight: 700,

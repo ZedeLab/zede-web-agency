@@ -1,5 +1,5 @@
 import { Button, makeStyles, Typography } from "@material-ui/core";
-import Lottie from "react-lottie";
+
 import data from "./data.json";
 import clx from "classnames";
 import { uniqueId } from "lodash";
@@ -8,20 +8,23 @@ const useStyle = makeStyles((theme) => ({
   wrapper: {
     backgroundColor: theme.palette.primary.main,
   },
+  text: {
+    color: theme.palette.text.primary,
+    marginBottom: theme.spacing(2),
+  },
+
+  title: {
+    fontFamily: "Montserrat, sans-serif",
+    lineHeight: 1.15,
+    color: theme.palette.text.primary,
+    marginBottom: theme.spacing(5),
+  },
   button: {
     borderRadius: theme.spacing(5),
   },
 }));
 const Services = (params) => {
   const classes = useStyle();
-  const animOptions = (anim) => ({
-    loop: true,
-    autoplay: true,
-    animationData: anim,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  });
 
   return (
     <div className={clx(classes.wrapper, "section services bgaccent-color")}>
@@ -30,18 +33,21 @@ const Services = (params) => {
           id='w-node-a90a4bea48e4-1508a948'
           className='div-block-10 margin-bottom'
         >
-          <Typography variant='body2' className='micro-heading'>
+          <Typography
+            variant='body2'
+            className={clx(classes.text, "micro-heading")}
+          >
             {data.sectionMicroTitle}
           </Typography>
           <Typography
             variant='h3'
-            className='section-heading left-aligned no-margin-top'
+            className={clx(classes.title, "left-aligned no-margin-top")}
           >
             {data.sectionTitle}
           </Typography>
           <Typography
-            variant='body2'
-            className='section-title fullwidth-grid margin-bottom'
+            variant='subtitle1'
+            className={clx(classes.text, "fullwidth-grid margin-bottom")}
           >
             {data.sectionParagraph}
           </Typography>
@@ -65,7 +71,9 @@ const Services = (params) => {
               alt=''
               className='small-margin-bottom'
             />
-            <Typography variant='h4'>{title}</Typography>
+            <Typography variant='h4' color='secondary'>
+              {title}
+            </Typography>
             <Typography
               variant='body1'
               className='paragraph-small short-paragraph'

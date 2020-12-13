@@ -38,15 +38,16 @@ const useStyle = makeStyles((theme) => ({
   button: {
     padding: "0.3rem",
     borderRadius: theme.spacing(1),
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.secondary.main,
     marginLeft: theme.spacing(1),
     border: `solid ${theme.palette.grey[500]} ${theme.spacing(1)}`,
     "&:hover, &:active": {
-      backgroundColor: theme.palette.primary.dark,
+      backgroundColor: theme.palette.secondary.dark,
       color: theme.palette.text.secondary,
     },
   },
   icon: {
+    // backgroundColor: theme.palette.secondary.main,
     fontSize: theme.spacing(3),
     [theme.breakpoints.down("sm")]: {
       fontSize: theme.spacing(2),
@@ -67,7 +68,7 @@ const useStyle = makeStyles((theme) => ({
   },
   infoSection: {
     borderRadius: theme.spacing(2),
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.primary.light,
     padding: `${theme.spacing(5)}px ${theme.spacing(2)}px`,
   },
   info: {
@@ -78,7 +79,7 @@ const useStyle = makeStyles((theme) => ({
   },
   link: {
     textDecoration: "none",
-    color: theme.palette.info.dark,
+    color: theme.palette.secondary.light,
   },
   infoIcon: {
     fontSize: theme.spacing(2),
@@ -87,6 +88,7 @@ const useStyle = makeStyles((theme) => ({
   subTitle: {},
   tag: {
     marginRight: theme.spacing(1),
+    marginBottom: theme.spacing(2),
   },
 }));
 
@@ -122,10 +124,10 @@ const PortfolioDetail = ({ prevId, nextId, portfolioData }) => {
               animation='slide'
               navButtonsAlwaysVisible
               activeIndicatorProps={{
-                style: { color: theme.palette.primary.dark },
+                style: { color: theme.palette.secondary.dark },
               }}
               indicatorProps={{
-                style: { color: theme.palette.primary.light },
+                style: { color: theme.palette.secondary.light },
               }}
             >
               {portfolioData.imgUrl.map((item, i) => (
@@ -141,6 +143,7 @@ const PortfolioDetail = ({ prevId, nextId, portfolioData }) => {
             <Paper className={classes.infoSection}>
               <Typography
                 variant='h4'
+                color='textPrimary'
                 className={clx(classes.info, classes.title)}
               >
                 Summary

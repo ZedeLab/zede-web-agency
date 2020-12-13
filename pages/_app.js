@@ -13,7 +13,7 @@ import mainTheme from "../src/utils/ThemeProvider";
 
 // Global css styles
 import "../src/utils/style/css/main.css";
-import "../src/utils/style/css/normalize.css";
+// import "../src/utils/style/css/normalize.css";
 import "../src/utils/style/css/webflow.css";
 // import "bootstrap/dist/css/bootstrap.min.css";
 

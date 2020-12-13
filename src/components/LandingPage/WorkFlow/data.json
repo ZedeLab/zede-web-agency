@@ -1,0 +1,30 @@
+{
+    "intro": "We are creatives, designers, developers and marketers from Surabaja Indonesia driven by a common purpose to inspire, create and launch ground-breaking ideas.",
+    "quote": "We love taking your vision to reality. Here is how we work:",
+    "sections" : {
+        "one": {
+            "title": "We find the right users, so you don't have to",
+            "paragraphs": {
+                "one": "Zede technology determines the right contacts to target based on your company&#x27;s workflow.",
+                "two": "When it comes to marketing your brand or business we always make sure to look before we take off. We are working together with you to design and execute innovative, data-driven cross-channel strategies that win real results."
+            },
+            "media": "/images/funnels.png"
+        },
+        "two": {
+            "title": "We start the advertising campaign programme",
+            "paragraphs": {
+                "one": "We work with you to determine the best verbiage that will make the biggest impact.",
+                "two": "Using text, email, and voice, Duduk will personally reach out on your behalf until your customers respond.If you don’t takecare of your partners, someone else will. We know how to assist you with your relationships, analyze and prevail, prevent or solve existing complications regardless if they are internal or external."
+            },
+            "media": "/images/adv.png"
+        },
+        "three": {
+            "title": "Finally... you dunk it to the basket ring",
+            "paragraphs": {
+                "one": "This is where you pick up the conversation and close more deals.",
+                "two": "Your web presence is one of the most important tools for communicating your brand and being able to acquire new clients. It must be able to engage visitors and make them take actions that convert into revenue."
+            },
+            "media": "/images/basket0.5x.png"
+        }
+    }
+}

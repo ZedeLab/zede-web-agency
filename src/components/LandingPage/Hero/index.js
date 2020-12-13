@@ -1,16 +1,54 @@
-import { Button, makeStyles, Typography } from "@material-ui/core";
+import { Button, Grid, makeStyles, Paper, Typography } from "@material-ui/core";
 import Lottie from "react-lottie";
 import * as animationData from "../../../../public/animations/heroAnim.json";
-import clx from "classnames";
+import clsx from "classnames";
 const useStyle = makeStyles((theme) => ({
   wrapper: {
-    backgroundColor: theme.palette.primary.main,
-  },
-  container: {
-    // backgroundColor: "red",
+    backgroundColor: theme.palette.primary.dark,
     position: "relative",
     width: "100vw",
+    height: "100vh",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 0,
   },
+  container: {
+    zIndex: 1,
+    margin: 0,
+  },
+  section: {
+    display: "flex",
+    alignSelf: "center",
+    flexDirection: "column",
+    textAlign: "center",
+  },
+  text: {
+    padding: theme.spacing(1),
+    color: theme.palette.text.primary,
+  },
+
+  heroTitle: {
+    fontFamily: "Montserrat, sans-serif",
+    fontSize: "3rem",
+    lineHeight: 1.1,
+    fontWeight: 900,
+    textTransform: "uppercase",
+    marginBottom: theme.spacing(3),
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "2.5rem",
+    },
+  },
+  herodescription: {
+    maxWidth: "700px",
+    marginRight: "auto",
+    marginBottom: "0px",
+    marginLeft: "auto",
+    fontSize: "22px",
+    lineHeight: 1.4,
+    fontWeight: 400,
+  },
+
   button: {
     margin: theme.spacing(2),
     borderRadius: theme.spacing(5),
@@ -19,11 +57,11 @@ const useStyle = makeStyles((theme) => ({
     // border: "blue solid 10px",
     margin: "auto",
     width: "100%",
-    // height: "500px",
+    height: "90vh",
     position: "absolute",
     opacity: 0.5,
-    zIndex: -1,
-    bottom: 0,
+    zIndex: 0,
+    top: 0,
     left: 0,
   },
 }));
@@ -40,55 +78,85 @@ const Hero = (params) => {
   };
 
   return (
-    <div
-      className={clx(
-        classes.wrapper,
-        "section full-screen background-image-side hero"
-      )}
-    >
-      <div className='wrapper'>
+    <Paper className={classes.wrapper}>
+      <Grid
+        container
+        direction='column'
+        alignItems='center'
+        className={classes.container}
+        spacing={5}
+      >
+        <Grid item className={classes.section}>
+          <Typography className={clsx(classes.text, classes.heroTitle)}>
+            Come to us with a vision. <br />
+            We’ll help you craft it.
+            <br />
+          </Typography>
+          <Typography className={clsx(classes.text, classes.herodescription)}>
+            We build digital product, from idea to design, development to
+            marketing &amp; PR to post launch support
+          </Typography>
+        </Grid>
+        <Grid item className={classes.section}>
+          <div>
+            <Button
+              className={clsx(classes.button, "button")}
+              variant='contained'
+              color='secondary'
+            >
+              Get free consultation
+            </Button>
+
+            <Button
+              className={clsx(classes.button, "button")}
+              variant='contained'
+            >
+              Learn more
+            </Button>
+          </div>
+        </Grid>
+      </Grid>
+      {/* <div className={classes.container}>
+        <Typography variant='h2' className='hero-title'>
+          Come to us with a vision. <br />
+          We’ll help you craft it.
+          <br />
+        </Typography>
+        <p className='hero-description'>
+          We build digital product, from idea to design, development to
+          marketing &amp; PR to post launch support
+        </p>
+        <div className='value-proposition-buttons'>
+          <Button
+            className={clx(classes.button, "button")}
+            variant='contained'
+            color='secondary'
+          >
+            Get free consultation
+          </Button>
+
+          <Button className={clx(classes.button, "button")} variant='outlined'>
+            Learn more
+          </Button>
+        </div>
+      </div> */}
+
+      <div className={classes.animBackground}>
+        <Lottie
+          options={defaultOptions}
+          height='100%'
+          width='100%'
+          maxHeight='500'
+        />
+      </div>
+      {/* <Paper className='wrapper'>
         <div className='row'>
           <div className={clx("col", classes.container)}>
-            <div className='hero-content'>
-              <Typography variant='h2' className='hero-title'>
-                Come to us with a vision. <br />
-                We’ll help you craft it.
-                <br />
-              </Typography>
-              <p className='hero-description'>
-                We build digital product, from idea to design, development to
-                marketing &amp; PR to post launch support
-              </p>
-              <div className='value-proposition-buttons'>
-                <Button
-                  className={clx(classes.button, "button")}
-                  variant='contained'
-                  color='secondary'
-                >
-                  Get free consultation
-                </Button>
-
-                <Button
-                  className={clx(classes.button, "button")}
-                  variant='outlined'
-                >
-                  Learn more
-                </Button>
-              </div>
-            </div>
-
-            <div className={classes.animBackground}>
-              <Lottie
-                options={defaultOptions}
-                height='100%'
-                width='100%'
-                maxHeight='500'
-              />
-            </div>
+            
           </div>
         </div>
-      </div>
-    </div>
+      </Paper> */}
+    </Paper>
   );
 };
 

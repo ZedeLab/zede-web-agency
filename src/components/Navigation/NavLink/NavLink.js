@@ -10,7 +10,6 @@ const useStyle = makeStyles((theme) => ({
     marginLeft: theme.spacing(4),
     color: theme.palette.text.primary,
     fontSize: "1.1rem",
-    color: "#333",
   },
   selected: {
     color: theme.palette.secondary.main,
@@ -20,7 +19,7 @@ const useStyle = makeStyles((theme) => ({
 const Cutomlink = ({ lable, path, children }) => {
   const classes = useStyle();
   const router = useRouter();
-  console.log(router.pathname);
+
   return (
     <Link href={path}>
       <a

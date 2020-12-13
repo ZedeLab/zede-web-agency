@@ -15,6 +15,7 @@ body {
   color: #333;
   font-size: 18px;
   line-height: 1.15;
+ 
 }
 
 h1 {
@@ -605,8 +606,8 @@ figcaption {
   padding-top: 16px;
   padding-bottom: 16px;
   border-style: none;
-  border-color: #926000;
-  background-color: #926000;
+  border-color: #141414;
+  /* background-color: #926000; */
   box-shadow: 0 4px 11px 0 rgba(117, 69, 1, 0.33);
   -webkit-transition-duration: 700ms;
   transition-duration: 700ms;

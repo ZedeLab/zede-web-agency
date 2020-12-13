@@ -3,34 +3,47 @@ import clsx from "classnames";
 
 const PageHeader = ({ pageTitle, backgroundImgUrl }) => {
   const useStyle = makeStyles((theme) => ({
+    wrapper: {
+      position: "relative",
+      width: "100vw",
+      height: "60vh",
+      display: "flex",
+      alignItems: "center",
+
+      overflow: "hidden",
+      borderRadius: 0,
+
+      paddingTop: theme.spacing(5),
+    },
     background: {
       backgroundImage: `url(${backgroundImgUrl})`,
       backgroundSize: "cover",
+      backgroundRepeat: "no-repeat",
       backgroundPosition: "5% 35%",
-      paddingBottom: "160px",
+      filter: " blur(2px)",
+      width: "100%",
+      height: "100%",
+
+      position: "absolute",
+      zIndex: 0,
     },
     title: {
-      width: "500px",
+      position: "relative",
+      zIndex: 1,
+      width: "90%",
+      margin: "auto",
+      color: theme.palette.secondary.main,
     },
   }));
   const classes = useStyle();
 
   return (
-    <div className={clsx("section-2 page-header ", classes.background)}>
-      <div className='banner-overlay'></div>
-      <div className='wrapper left-aligned'>
-        <div className='row-2'>
-          <div className='col-2 lg-6 md-4'>
-            <Typography
-              variant='h1'
-              className={clsx("no-margins page-title", classes.title)}
-            >
-              {pageTitle}
-            </Typography>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Paper className={classes.wrapper}>
+      <div className={classes.background} />
+      <Typography variant='h1' className={classes.title}>
+        {pageTitle}
+      </Typography>
+    </Paper>
   );
 };
 
