@@ -4,7 +4,8 @@ import { uniqueId } from "lodash";
 import data from "./data.json";
 import useMainStyle from "../../../utils/style/js/sharedStyle";
 import { useOnScreen } from "../../../utils/hooks/useOnScreen";
-import Section from "./WorkFlowSection";
+import Header from "./Header";
+import Section from "./Section";
 
 const useStyle = makeStyles((theme) => {
   const mainStyle = useMainStyle();
@@ -41,10 +42,9 @@ const useStyle = makeStyles((theme) => {
 });
 
 const WorkFlow = (params) => {
-  const [setRef, visible] = useOnScreen({ threshold: "0.1" });
   const classes = useStyle();
   return (
-    <Paper className={classes.wrapper} ref={setRef}>
+    <Paper className={classes.wrapper}>
       <Grid
         container
         direction='column'
@@ -58,21 +58,7 @@ const WorkFlow = (params) => {
         }}
       >
         <Grid item>
-          <Slide direction='up' in={visible} timeout={800}>
-            <Typography
-              variant='h3'
-              className={clx(classes.intro, classes.sectionTitle)}
-            >
-              {data.intro}
-            </Typography>
-          </Slide>
-        </Grid>
-        <Grid item>
-          <Slide direction='up' in={visible} timeout={1000}>
-            <Typography className={clx(classes.intro, classes.quote)}>
-              {data.quote}
-            </Typography>
-          </Slide>
+          <Header intro={data.intro} quote={data.quote} />
         </Grid>
 
         <Grid item className={classes.subSection}>

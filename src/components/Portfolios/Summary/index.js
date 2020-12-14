@@ -1,9 +1,7 @@
 import { Grid, makeStyles, Paper, Slide, Typography } from "@material-ui/core";
-import clx from "classnames";
-import { entries } from "lodash";
 import Link from "next/link";
-import { useCallback, useEffect } from "react";
 import { useOnScreen } from "../../../utils/hooks/useOnScreen";
+
 const useStyle = makeStyles((theme) => ({
   wrapper: {
     width: "100%",
@@ -20,16 +18,10 @@ const useStyle = makeStyles((theme) => ({
     height: "fit-content",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2),
+    opacity: 0.8,
   },
 }));
-const PortfolioSummary = ({
-  id,
-  large,
-  imgUrl,
-  imgSrcSet,
-  title,
-  description,
-}) => {
+const PortfolioSummary = ({ id, imgUrl, title }) => {
   const classes = useStyle();
   const imgStyle = {
     backgroundImage: `url(${imgUrl})`,
@@ -37,7 +29,7 @@ const PortfolioSummary = ({
     backgroundPosition: "5% 5%",
   };
 
-  const [setRef, visible] = useOnScreen({ threshold: "0.25" });
+  const [setRef, visible] = useOnScreen({ threshold: "0" });
 
   return (
     <Link href={`portfolios/${id}`}>
