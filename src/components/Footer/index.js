@@ -2,9 +2,10 @@ import { Grid, Icon, makeStyles, Paper, Typography } from "@material-ui/core";
 import { loadCSS } from "fg-loadcss";
 import { useEffect } from "react";
 import clsx from "classnames";
-import useCommonStyle from "../../utils/style/js/sharedStyle";
+import sharedStyle from "../../utils/style/js/sharedStyle";
+
 const useStyle = makeStyles((theme) => {
-  const mainStyle = useCommonStyle();
+  const mainStyle = sharedStyle();
   return {
     wrapper: {
       width: "100vw",
