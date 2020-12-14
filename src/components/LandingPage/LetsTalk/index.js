@@ -20,10 +20,14 @@ const useStyle = makeStyles((theme) => {
     container: {
       ...mainStyle.container,
     },
+    microHeading: {
+      ...mainStyle.microHeading,
+    },
     sectionHeading: {
-      ...theme.typography.sectionHeading,
+      ...mainStyle.sectionHeading,
       marginBottom: theme.spacing(3),
     },
+
     text: {
       marginBottom: theme.spacing(5),
     },

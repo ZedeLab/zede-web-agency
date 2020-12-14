@@ -92,7 +92,9 @@ const TeamMembers = ({
               <Typography variant='h5' className={classes.jobTitle}>
                 {jobTitle}
               </Typography>
-              <Typography className='paragraph-small'>{discription}</Typography>
+              <Typography color='textSecondary' className='paragraph-small'>
+                {discription}
+              </Typography>
               <div className='social-media-icons-container'>
                 {facebook ? (
                   <a

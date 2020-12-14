@@ -1,8 +1,10 @@
-import { Grid, makeStyles, Paper, Typography } from "@material-ui/core";
+import { Grid, makeStyles, Paper, Slide, Typography } from "@material-ui/core";
 import clx from "classnames";
 import { uniqueId } from "lodash";
 import data from "./data.json";
 import useMainStyle from "../../../utils/style/js/sharedStyle";
+import { useOnScreen } from "../../../utils/hooks/useOnScreen";
+import Section from "./WorkFlowSection";
 
 const useStyle = makeStyles((theme) => {
   const mainStyle = useMainStyle();
@@ -35,23 +37,14 @@ const useStyle = makeStyles((theme) => {
       width: "90%",
       paddingTop: theme.spacing(5),
     },
-    subSectionContainer: {
-      width: "100%",
-    },
-    subSectionTitle: {
-      paddingBottom: theme.spacing(3),
-    },
-    subSectionParagraph: {
-      color: theme.palette.text.secondary,
-      paddingBottom: theme.spacing(2),
-    },
   };
 });
 
 const WorkFlow = (params) => {
+  const [setRef, visible] = useOnScreen({ threshold: "0.1" });
   const classes = useStyle();
   return (
-    <Paper className={classes.wrapper}>
+    <Paper className={classes.wrapper} ref={setRef}>
       <Grid
         container
         direction='column'
@@ -61,56 +54,36 @@ const WorkFlow = (params) => {
         style={{
           backgroundImage: `url(/images/dashed-path.png)`,
           backgroundSize: "contain",
+          // backgroundRepeat: matches ? "repeat" : "no-repeat",
         }}
       >
         <Grid item>
-          <Typography
-            variant='h3'
-            className={clx(classes.intro, classes.sectionTitle)}
-          >
-            {data.intro}
-          </Typography>
+          <Slide direction='up' in={visible} timeout={800}>
+            <Typography
+              variant='h3'
+              className={clx(classes.intro, classes.sectionTitle)}
+            >
+              {data.intro}
+            </Typography>
+          </Slide>
         </Grid>
         <Grid item>
-          <Typography className={clx(classes.intro, classes.quote)}>
-            {data.quote}
-          </Typography>
+          <Slide direction='up' in={visible} timeout={1000}>
+            <Typography className={clx(classes.intro, classes.quote)}>
+              {data.quote}
+            </Typography>
+          </Slide>
         </Grid>
+
         <Grid item className={classes.subSection}>
           {Object.keys(data.sections).map((section, index) => (
-            <Grid
+            <Section
               key={uniqueId()}
-              container
-              alignItems='center'
-              direction={index % 2 === 0 ? "row" : "row-reverse"}
-              className={classes.subSectionContainer}
-            >
-              <Grid item xs={12} sm={6}>
-                <Typography variant='h3' className={classes.subSectionTitle}>
-                  {data.sections[section].title}
-                </Typography>
-                {Object.keys(data.sections[section].paragraphs).map(
-                  (paragraph) => (
-                    <Typography
-                      key={uniqueId()}
-                      className={classes.subSectionParagraph}
-                    >
-                      {data.sections[section].paragraphs[paragraph]}
-                    </Typography>
-                  )
-                )}
-              </Grid>
-              <Grid item xs={12} sm={6}>
-                <img
-                  src={data.sections[section].media}
-                  width='571'
-                  // srcSet='images/funnels-p-500.png 500w, images/funnels-p-800.png 800w, images/funnels.png 877w'
-                  sizes='(max-width: 479px) 81vw, (max-width: 767px) 88vw, (max-width: 991px) 44vw, 37vw'
-                  alt=''
-                  // className='value-proposition-hero-image'
-                />
-              </Grid>
-            </Grid>
+              index={index}
+              title={data.sections[section].title}
+              mediaUrl={data.sections[section].media}
+              paragraphs={data.sections[section].paragraphs}
+            />
           ))}
         </Grid>
       </Grid>

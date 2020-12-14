@@ -1,6 +1,27 @@
-import { Grid, makeStyles, Paper } from "@material-ui/core";
+import { Grid, makeStyles, Paper, Slide, Typography } from "@material-ui/core";
 import clx from "classnames";
+import { entries } from "lodash";
 import Link from "next/link";
+import { useCallback, useEffect } from "react";
+import { useOnScreen } from "../../../utils/hooks/useOnScreen";
+const useStyle = makeStyles((theme) => ({
+  wrapper: {
+    width: "100%",
+    height: "20rem",
+    overflow: "hidden",
+    boxShadow: theme.shadows[5],
+  },
+  container: {
+    height: "100%",
+  },
+  section: {
+    backgroundColor: theme.palette.secondary.light,
+    heigh: "10%",
+    height: "fit-content",
+    boxShadow: theme.shadows[5],
+    padding: theme.spacing(2),
+  },
+}));
 const PortfolioSummary = ({
   id,
   large,
@@ -9,32 +30,6 @@ const PortfolioSummary = ({
   title,
   description,
 }) => {
-  const useStyle = makeStyles((theme) => ({
-    wrapper: {
-      // margin: `${theme.spacing(1)}px ${theme.spacing(3)}px`,
-    },
-    imageContainer: {
-      overflow: "hidden",
-      width: "500px",
-      height: "500px",
-      boxShadow: theme.shadows[1],
-      // marginBottom: theme.spacing(5),
-      margin: theme.spacing(2),
-    },
-    image: {
-      width: "100%",
-      height: "400px",
-      overflow: "hidden",
-
-      "&:hover, &:active": {
-        transform: "scale(1.02)",
-      },
-    },
-    info: {
-      padding: theme.spacing(2),
-    },
-  }));
-
   const classes = useStyle();
   const imgStyle = {
     backgroundImage: `url(${imgUrl})`,
@@ -42,21 +37,22 @@ const PortfolioSummary = ({
     backgroundPosition: "5% 5%",
   };
 
+  const [setRef, visible] = useOnScreen({ threshold: "0.25" });
+
   return (
     <Link href={`portfolios/${id}`}>
-      <Grid container direction='row' className={classes.imageContainer}>
-        <Grid item xs={12}>
-          <Paper
-            variant='outlined'
-            className={classes.image}
-            style={imgStyle}
-          ></Paper>
-        </Grid>
-        <Grid item xs={12} className={classes.info}>
-          <h4 className='no-bottom-margins'>{title}</h4>
-          <p className='low-opacity'>{description}</p>
-        </Grid>
-      </Grid>
+      <Paper
+        ref={setRef}
+        variant='outlined'
+        className={classes.wrapper}
+        style={imgStyle}
+      >
+        <Slide direction='down' in={visible}>
+          <Grid item className={classes.section}>
+            <Typography variant='h4'>{title}</Typography>
+          </Grid>
+        </Slide>
+      </Paper>
     </Link>
   );
 };
