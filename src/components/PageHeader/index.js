@@ -6,7 +6,7 @@ const PageHeader = ({ pageTitle, backgroundImgUrl }) => {
     wrapper: {
       position: "relative",
       width: "100vw",
-      height: "60vh",
+      height: "50vh",
       display: "flex",
       alignItems: "center",
 

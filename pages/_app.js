@@ -7,9 +7,16 @@ import {
   ThemeProvider,
   createMuiTheme,
   useMediaQuery,
+  Paper,
 } from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import mainTheme from "../src/utils/ThemeProvider";
+
+// Global css styles
+// import "../src/utils/style/css/style.module.css";
+// import "../src/utils/style/css/normalize.css";
+// import "../src/utils/style/css/webflow.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
 
 // Core components
 import Nav from "../src/components/Navigation";
@@ -33,7 +40,7 @@ export default function MyApp(props) {
   }, []);
 
   return (
-    <React.Fragment>
+    <>
       <Head>
         <meta charSet='utf-8' />
         <title>Zede agency</title>
@@ -48,7 +55,7 @@ export default function MyApp(props) {
         />
         <link
           href={
-            prefersDarkMode == "dark"
+            prefersDarkMode === "dark"
               ? "/images/Zede-logo-white.svg"
               : "/images/Zede-logo.svg"
           }
@@ -63,13 +70,15 @@ export default function MyApp(props) {
           crossorigin='anonymous'
         /> */}
       </Head>
-      <ThemeProvider theme={theme}>
+      <Paper>
         <CssBaseline />
-        <Nav />
-        <Component {...pageProps} />
-        <Footer />
-      </ThemeProvider>
-    </React.Fragment>
+        <ThemeProvider theme={theme}>
+          <Nav />
+          <Component {...pageProps} />
+          <Footer />
+        </ThemeProvider>
+      </Paper>
+    </>
   );
 }
 

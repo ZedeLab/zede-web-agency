@@ -11,6 +11,8 @@ const Footer = (params) => {
       wrapper: {
         ...mainStyle.wrapper,
         backgroundColor: theme.palette.primary.dark,
+        position: "relative",
+        bottom: 0,
       },
       container: {
         ...mainStyle.container,
@@ -55,32 +57,16 @@ const Footer = (params) => {
           <div className='footer-links-container'>
             <Typography className='footer-heading'>Let&#x27;s Meet</Typography>
             <Typography className={clsx(classes.email, "footer-paragraph")}>
-              h1@zede.tech
+              hello@zede.tech
             </Typography>
           </div>
         </Grid>
         <Grid item>
           <Grid container justify='space-around'>
-            <Icon
-              className='social-media-link w-inline-block'
-              className='fab fa-facebook-f'
-              color='secondary'
-            />
-            <Icon
-              className='social-media-link w-inline-block'
-              className='fab fa-instagram'
-              color='secondary'
-            />
-            <Icon
-              className='social-media-link w-inline-block'
-              className='fab fa-twitter'
-              color='secondary'
-            />
-            <Icon
-              className='social-media-link w-inline-block'
-              className='fab fa-linkedin-in'
-              color='secondary'
-            />
+            <Icon className='fab fa-facebook-f' color='secondary' />
+            <Icon className='fab fa-instagram' color='secondary' />
+            <Icon className='fab fa-twitter' color='secondary' />
+            <Icon className='fab fa-linkedin-in' color='secondary' />
           </Grid>
         </Grid>
       </Grid>
