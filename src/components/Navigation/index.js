@@ -41,8 +41,9 @@ const useStyle = makeStyles((theme) => ({
     display: "flex",
     flexDirections: "row",
     alignItems: "center",
+    width: "100%",
     justifyContent: "space-around",
-    padding: `${theme.spacing(2)}px ${theme.spacing(2)}px`,
+    padding: `${theme.spacing(1)}px ${theme.spacing(2)}px`,
     [theme.breakpoints.down("sm")]: {
       justifyContent: "space-between",
     },
@@ -53,6 +54,7 @@ const useStyle = makeStyles((theme) => ({
 
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
+      // width: "100%",
     },
   },
 
@@ -65,6 +67,7 @@ const useStyle = makeStyles((theme) => ({
     alignItems: "center",
     backgroundColor: theme.palette.primary.light,
     paddingTop: theme.spacing(15),
+    paddingBottom: theme.spacing(2),
     boxShadow: theme.shadows[0],
   },
 }));
@@ -82,11 +85,21 @@ const navigation = (props) => {
       className={classes.linkWrapper}
       onClickCapture={() => setShowMobNav(false)}
     >
-      <NavLink path='/'>Home</NavLink>
-      <NavLink path='/aboutus'>About Us</NavLink>
-      <NavLink path='/team'>Our Team</NavLink>
-      <NavLink path='/portfolios'>Portfolio</NavLink>
-      <NavLink path='/contactus'>Contact Us</NavLink>
+      <NavLink path='/' underLine>
+        Home
+      </NavLink>
+      <NavLink path='/aboutus' underLine>
+        About Us
+      </NavLink>
+      <NavLink path='/team' underLine>
+        Our Team
+      </NavLink>
+      <NavLink path='/portfolios' underLine>
+        Portfolio
+      </NavLink>
+      <NavLink path='/contactus' underLine>
+        Contact Us
+      </NavLink>
     </div>
   );
   return (
@@ -99,7 +112,7 @@ const navigation = (props) => {
       <div>
         <AppBar className={classes.appBar}>
           <Toolbar className={classes.toolbar}>
-            <NavLink path='/' className='nav-logo w-inline-block'>
+            <NavLink path='/'>
               <img src='/images/Zede-logo-white.svg' width='106' alt='' />
             </NavLink>
             <Hidden smDown>{navLinks}</Hidden>

@@ -4,19 +4,29 @@ import { makeStyles } from "@material-ui/core/styles";
 import cNames from "classnames";
 import Link from "next/link";
 import { Typography } from "@material-ui/core";
-const useStyle = makeStyles((theme) => ({
-  link: {
-    ...theme.typography.link,
-    marginLeft: theme.spacing(4),
-    color: theme.palette.text.primary,
-    fontSize: "1.1rem",
-  },
-  selected: {
-    color: theme.palette.secondary.main,
-  },
-}));
 
-const Cutomlink = ({ lable, path, children }) => {
+const Cutomlink = ({ lable, path, children, underLine }) => {
+  const useStyle = makeStyles((theme) => ({
+    link: {
+      ...theme.typography.link,
+      marginLeft: theme.spacing(4),
+      color: theme.palette.text.primary,
+      textAlign: "center",
+      fontSize: "1.1rem",
+      [theme.breakpoints.down("sm")]: {
+        marginBottom: theme.spacing(2),
+        marginLeft: 0,
+      },
+    },
+    selected: {
+      color: theme.palette.secondary.main,
+      paddingBottom: theme.spacing(1),
+
+      borderBottom: underLine
+        ? `2px solid ${theme.palette.secondary.light}`
+        : "none",
+    },
+  }));
   const classes = useStyle();
   const router = useRouter();
 
