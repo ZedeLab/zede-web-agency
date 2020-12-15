@@ -47,6 +47,7 @@ const WorkFlowHeader = ({ intro, quote }) => {
         <Slide direction='up' in={visible} timeout={800}>
           <Typography
             variant='h3'
+            color='textSecondary'
             className={clx(classes.intro, classes.sectionTitle)}
           >
             {intro}

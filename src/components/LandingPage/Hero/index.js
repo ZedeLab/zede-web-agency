@@ -100,7 +100,7 @@ const Hero = (params) => {
         <Grid item className={classes.section}>
           <div>
             <Button
-              className={clsx(classes.button, "button")}
+              className={classes.button}
               variant='contained'
               color='secondary'
             >

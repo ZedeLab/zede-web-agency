@@ -11,12 +11,6 @@ import {
 import CssBaseline from "@material-ui/core/CssBaseline";
 import mainTheme from "../src/utils/ThemeProvider";
 
-// Global css styles
-import "../src/utils/style/css/main.css";
-// import "../src/utils/style/css/normalize.css";
-import "../src/utils/style/css/webflow.css";
-// import "bootstrap/dist/css/bootstrap.min.css";
-
 // Core components
 import Nav from "../src/components/Navigation";
 import Footer from "../src/components/Footer";
@@ -53,7 +47,11 @@ export default function MyApp(props) {
           rel='stylesheet'
         />
         <link
-          href='/images/Duduk-Thumb.gif'
+          href={
+            prefersDarkMode == "dark"
+              ? "/images/Zede-logo-white.svg"
+              : "/images/Zede-logo.svg"
+          }
           rel='shortcut icon'
           type='image/x-icon'
         />

@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core";
 import { uniqueId } from "lodash";
 import { useOnScreen } from "../../../../utils/hooks/useOnScreen";
+import { ReactSVG } from "react-svg";
 
 const useStyle = makeStyles((theme) => ({
   title: {
@@ -25,6 +26,13 @@ const useStyle = makeStyles((theme) => ({
   button: {
     borderRadius: theme.spacing(5),
     width: "fit-content",
+  },
+  svgContainer: {
+    "& svg": {
+      width: "64px",
+      height: "64px",
+      fill: theme.palette.secondary.main,
+    },
   },
 }));
 const ServicesSection = ({ services }) => {
@@ -49,7 +57,10 @@ const ServicesSection = ({ services }) => {
           <Grid item xs={matchSmallScreen ? 12 : 4} key={uniqueId()}>
             <Slide direction='left' in={visible} timeout={(timeout += 300)}>
               <div className={classes.serviceContainer}>
-                <img src={services[title].img} width='64' alt='' />
+                <ReactSVG
+                  className={classes.svgContainer}
+                  src={services[title].img}
+                />
                 <Typography variant='h4' color='secondary'>
                   {title}
                 </Typography>

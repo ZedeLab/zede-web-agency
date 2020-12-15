@@ -1,6 +1,8 @@
 import { Grid, makeStyles, Slide, Typography } from "@material-ui/core";
 import { uniqueId } from "lodash";
 import { useOnScreen } from "../../../../utils/hooks/useOnScreen";
+import { ReactSVG } from "react-svg";
+
 const useStyle = makeStyles((theme) => ({
   sectionTitle: {
     fontFamily: "'Open Sans', sans-serif",
@@ -27,6 +29,16 @@ const useStyle = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
     paddingBottom: theme.spacing(2),
   },
+  svgContainer: {
+    "& svg": {
+      width: "100%",
+      maxHeight: "450px",
+      fill: theme.palette.secondary.main,
+      stroke: theme.palette.primary.main,
+      strokeWidth: "20px",
+      textShadow: "5px",
+    },
+  },
 }));
 
 const WorkFlowSection = ({ index, title, mediaUrl, paragraphs }) => {
@@ -50,7 +62,11 @@ const WorkFlowSection = ({ index, title, mediaUrl, paragraphs }) => {
             timeout={1000}
           >
             <div>
-              <Typography variant='h3' className={classes.subSectionTitle}>
+              <Typography
+                variant='h3'
+                color='textSecondary'
+                className={classes.subSectionTitle}
+              >
                 {title}
               </Typography>
               {Object.keys(paragraphs).map((paragraph) => (
@@ -70,14 +86,7 @@ const WorkFlowSection = ({ index, title, mediaUrl, paragraphs }) => {
             in={visible}
             timeout={1000}
           >
-            <img
-              src={mediaUrl}
-              width='571'
-              // srcSet='images/funnels-p-500.png 500w, images/funnels-p-800.png 800w, images/funnels.png 877w'
-              sizes='(max-width: 479px) 81vw, (max-width: 767px) 88vw, (max-width: 991px) 44vw, 37vw'
-              alt=''
-              // className='value-proposition-hero-image'
-            />
+            <ReactSVG className={classes.svgContainer} src={mediaUrl} />
           </Slide>
         </Grid>
       </Grid>

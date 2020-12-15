@@ -1,6 +1,7 @@
 import {
   ClickAwayListener,
   Fade,
+  Grid,
   IconButton,
   makeStyles,
   Paper,
@@ -53,8 +54,19 @@ const useStyle = makeStyles((theme) => ({
     justifyContent: "center",
     // paddingTop: theme.spacing(1),
   },
+  text: {
+    color: theme.palette.text.secondary,
+  },
   jobTitle: {
-    marginBottom: theme.spacing(1),
+    color: theme.palette.primary.light,
+  },
+  link: {
+    color: theme.palette.primary.dark,
+  },
+  closerContainer: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
   },
 }));
 const TeamMembers = ({
@@ -82,54 +94,53 @@ const TeamMembers = ({
           className={clsx(classes.descriptionContainer)}
         >
           <ClickAwayListener onClickAway={() => setshowDitail(false)}>
-            <div
-              data-w-id='3e6dc9f0-f4eb-a269-2dbe-62938507302a'
-              className='team-detail-container'
-            >
-              <Typography variant='h4' className='no-bottom-margins-2'>
-                {name}
-              </Typography>
-              <Typography variant='h5' className={classes.jobTitle}>
-                {jobTitle}
-              </Typography>
-              <Typography color='textSecondary' className='paragraph-small'>
-                {discription}
-              </Typography>
-              <div className='social-media-icons-container'>
-                {facebook ? (
-                  <a
-                    target='_blank'
-                    href={facebook}
-                    className='footer-link w-inline-block'
-                  >
-                    <FacebookIcon />
-                  </a>
-                ) : null}
-                {linkedIn ? (
-                  <a
-                    target='_blank'
-                    href={linkedIn}
-                    className='footer-link w-inline-block'
-                  >
-                    <LinkedInIcon />
-                  </a>
-                ) : null}
-                {github ? (
-                  <a
-                    target='_blank'
-                    href={github}
-                    className='footer-link w-inline-block'
-                  >
-                    <GitHubIcon />
-                  </a>
-                ) : null}
-              </div>
-              <div className={classes.discriptionHidder}>
+            <Grid container direction='column' spacing={1}>
+              <Grid item>
+                <Typography
+                  variant='h4'
+                  className={clsx(classes.text, classes.name)}
+                >
+                  {name}
+                </Typography>
+              </Grid>
+              <Grid item>
+                <Typography
+                  variant='h5'
+                  className={clsx(classes.text, classes.jobTitle)}
+                >
+                  {jobTitle}
+                </Typography>
+              </Grid>
+              <Grid item>
+                <Typography className={clsx(classes.text, classes.description)}>
+                  {discription}
+                </Typography>
+              </Grid>
+              <Grid item>
+                <Grid container justify='space-around'>
+                  <Grid item>
+                    <a target='_blank' href={facebook} className={classes.link}>
+                      <FacebookIcon />
+                    </a>
+                  </Grid>
+                  <Grid item>
+                    <a target='_blank' href={linkedIn} className={classes.link}>
+                      <LinkedInIcon />
+                    </a>
+                  </Grid>
+                  <Grid item>
+                    <a target='_blank' href={github} className={classes.link}>
+                      <GitHubIcon />
+                    </a>
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Grid item className={classes.closerContainer}>
                 <IconButton onClick={() => setshowDitail(false)}>
                   <CancelIcon fontSize='large' />
                 </IconButton>
-              </div>
-            </div>
+              </Grid>
+            </Grid>
           </ClickAwayListener>
         </div>
       </Slide>

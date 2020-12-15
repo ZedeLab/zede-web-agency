@@ -43,10 +43,18 @@ const AboutZede = (params) => {
             style={{ overflow: "hidden" }}
           >
             <Grid item md={8} xs={12}>
-              <Typography variant='h3' className={classes.title}>
+              <Typography
+                variant='h3'
+                color='textSecondary'
+                className={classes.title}
+              >
                 {data.sectionOne.title}
               </Typography>
-              <Typography variant='h4' className={classes.subTitle}>
+              <Typography
+                variant='h4'
+                color='textSecondary'
+                className={classes.subTitle}
+              >
                 {data.sectionOne.subTitle}
               </Typography>
 
@@ -81,7 +89,11 @@ const AboutZede = (params) => {
               </Grid>
             </Grid>
             <Grid item md={5} sm={12}>
-              <Typography variant='h3' className={classes.title}>
+              <Typography
+                variant='h3'
+                color='textSecondary'
+                className={classes.title}
+              >
                 {data.sectionTwo.title}
               </Typography>
 

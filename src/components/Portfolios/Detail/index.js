@@ -98,8 +98,8 @@ const PortfolioDetail = ({ prevId, nextId, portfolioData }) => {
 
   const imgStyle = (imgUrl) => ({
     backgroundImage: `url(${imgUrl})`,
-    backgroundSize: "contain",
-    // backgroundPosition: "5% 35%",
+    backgroundSize: "cover",
+    backgroundRepeat: "no-repeat",
   });
 
   return (

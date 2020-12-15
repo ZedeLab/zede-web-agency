@@ -2,7 +2,7 @@
     "Rekik Engineering":{
         "id": "1",
         "imgUrl": ["https://eyobofficial-portfolio.s3.amazonaws.com/media/services-slide.jpg", "https://eyobofficial-portfolio.s3.amazonaws.com/media/process-slide.jpg", "https://eyobofficial-portfolio.s3.amazonaws.com/media/contact-slide.jpg" ],
-        "imgSrcSet": "",
+        
         "description": "A portfolio website for a local civil engineering consultant firm called Rekik Engineering.",
         "coverImgUrl": "https://eyobofficial-portfolio.s3.amazonaws.com/media/hero-slide.jpg",
         "featured": true,
@@ -17,7 +17,7 @@
     "Woreket Payment Tracker":{
         "id": "2",
         "imgUrl": ["https://eyobofficial-portfolio.s3.amazonaws.com/media/4.jpg", "https://eyobofficial-portfolio.s3.amazonaws.com/media/2.jpg", "https://eyobofficial-portfolio.s3.amazonaws.com/media/1.jpg"],
-        "imgSrcSet": "",
+        
         "description": "wallpaper media",
         "coverImgUrl": "https://blog.dpogroup.com/wp-content/uploads/2018/12/1-11.png",
         "featured": true,
@@ -30,8 +30,8 @@
     },
     "Resume Website API":{
         "id": "3",
-        "imgUrl": ["/images/photo-1522733603432-44910cfd6773.jpeg"],
-        "imgSrcSet": "/images/photo-1522733603432-44910cfd6773-p-500.jpeg 500w, /images/photo-1522733603432-44910cfd6773-p-800.jpeg 800w, /images/photo-1522733603432-44910cfd6773.jpeg 934w",
+        "imgUrl": ["https://www.rspcansw.org.au/wp-content/uploads/noPhotoFound.png"],
+        
         "description": "A REST APIs for my resume website to retrieve & create past projects, testimonials, and e-mail subscriptions.",
         "coverImgUrl": "https://www.bbvaapimarket.com/wp-content/uploads/2016/06/bbva-open4u-que-hace-una-api-por-mi-negocio.png",
         "featured": true,
@@ -45,8 +45,8 @@
 
     "Resume Website API_2":{
         "id": "4",
-        "imgUrl": ["/images/photo-1522733603432-44910cfd6773.jpeg"],
-        "imgSrcSet": "/images/photo-1522733603432-44910cfd6773-p-500.jpeg 500w, /images/photo-1522733603432-44910cfd6773-p-800.jpeg 800w, /images/photo-1522733603432-44910cfd6773.jpeg 934w",
+        "imgUrl": ["https://www.rspcansw.org.au/wp-content/uploads/noPhotoFound.png"],
+        
         "description": "A REST APIs for my resume website to retrieve & create past projects, testimonials, and e-mail subscriptions.",
         "coverImgUrl": "https://www.bbvaapimarket.com/wp-content/uploads/2016/06/bbva-open4u-que-hace-una-api-por-mi-negocio.png",
         "featured": true,
@@ -60,8 +60,8 @@
     
     "Resume Website API_3":{
         "id": "5",
-        "imgUrl": ["/images/photo-1522733603432-44910cfd6773.jpeg"],
-        "imgSrcSet": "/images/photo-1522733603432-44910cfd6773-p-500.jpeg 500w, /images/photo-1522733603432-44910cfd6773-p-800.jpeg 800w, /images/photo-1522733603432-44910cfd6773.jpeg 934w",
+        "imgUrl": ["https://www.rspcansw.org.au/wp-content/uploads/noPhotoFound.png"],
+        
         "description": "A REST APIs for my resume website to retrieve & create past projects, testimonials, and e-mail subscriptions.",
         "coverImgUrl": "https://www.bbvaapimarket.com/wp-content/uploads/2016/06/bbva-open4u-que-hace-una-api-por-mi-negocio.png",
         "featured": true,
@@ -74,8 +74,8 @@
     },
     "Resume Website API_4":{
         "id": "6",
-        "imgUrl": ["/images/photo-1522733603432-44910cfd6773.jpeg"],
-        "imgSrcSet": "/images/photo-1522733603432-44910cfd6773-p-500.jpeg 500w, /images/photo-1522733603432-44910cfd6773-p-800.jpeg 800w, /images/photo-1522733603432-44910cfd6773.jpeg 934w",
+        "imgUrl": ["https://www.rspcansw.org.au/wp-content/uploads/noPhotoFound.png"],
+        
         "description": "A REST APIs for my resume website to retrieve & create past projects, testimonials, and e-mail subscriptions.",
         "coverImgUrl": "https://www.bbvaapimarket.com/wp-content/uploads/2016/06/bbva-open4u-que-hace-una-api-por-mi-negocio.png",
         "featured": true,
@@ -88,8 +88,8 @@
     },
     "Resume Website API_5":{
         "id": "7",
-        "imgUrl": ["/images/photo-1522733603432-44910cfd6773.jpeg"],
-        "imgSrcSet": "/images/photo-1522733603432-44910cfd6773-p-500.jpeg 500w, /images/photo-1522733603432-44910cfd6773-p-800.jpeg 800w, /images/photo-1522733603432-44910cfd6773.jpeg 934w",
+        "imgUrl": ["https://www.rspcansw.org.au/wp-content/uploads/noPhotoFound.png"],
+        
         "description": "A REST APIs for my resume website to retrieve & create past projects, testimonials, and e-mail subscriptions.",
         "coverImgUrl": "https://www.bbvaapimarket.com/wp-content/uploads/2016/06/bbva-open4u-que-hace-una-api-por-mi-negocio.png",
         "featured": true,

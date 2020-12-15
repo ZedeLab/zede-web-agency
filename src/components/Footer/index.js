@@ -53,11 +53,7 @@ const Footer = (params) => {
         </Grid>
         <Grid item>
           <div className='footer-links-container'>
-            <Typography className='footer-heading'>
-              <a href='#' className='no-underline'>
-                Let&#x27;s Meet
-              </a>
-            </Typography>
+            <Typography className='footer-heading'>Let&#x27;s Meet</Typography>
             <Typography className={clsx(classes.email, "footer-paragraph")}>
               h1@zede.tech
             </Typography>

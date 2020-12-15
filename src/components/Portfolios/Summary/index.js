@@ -41,7 +41,9 @@ const PortfolioSummary = ({ id, imgUrl, title }) => {
       >
         <Slide direction='down' in={visible}>
           <Grid item className={classes.section}>
-            <Typography variant='h4'>{title}</Typography>
+            <Typography variant='h4' color='textSecondary'>
+              {title}
+            </Typography>
           </Grid>
         </Slide>
       </Paper>
