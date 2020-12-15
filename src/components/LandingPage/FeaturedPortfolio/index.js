@@ -36,7 +36,11 @@ const FeaturePortfolios = () => {
           </Typography>
         </Grid>
         <Grid item>
-          <Typography variant='h3' className={classes.sectionHeading}>
+          <Typography
+            variant='h3'
+            color='textSecondary'
+            className={classes.sectionHeading}
+          >
             See what&#x27;s cooking at our labs
           </Typography>
         </Grid>

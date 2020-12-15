@@ -33,7 +33,7 @@
         "imgUrl": ["https://www.rspcansw.org.au/wp-content/uploads/noPhotoFound.png"],
         
         "description": "A REST APIs for my resume website to retrieve & create past projects, testimonials, and e-mail subscriptions.",
-        "coverImgUrl": "https://www.bbvaapimarket.com/wp-content/uploads/2016/06/bbva-open4u-que-hace-una-api-por-mi-negocio.png",
+        "coverImgUrl": "https://www.visionmate.se/en/wp-content/uploads/sites/2/2019/01/online-shopping.jpg",
         "featured": true,
         "detail": {
             "url": "https://eyobtech.pythonanywhere.com/",
@@ -43,7 +43,7 @@
         }
     },
 
-    "Resume Website API_2":{
+    "Example portfolio":{
         "id": "4",
         "imgUrl": ["https://www.rspcansw.org.au/wp-content/uploads/noPhotoFound.png"],
         
@@ -64,7 +64,7 @@
         
         "description": "A REST APIs for my resume website to retrieve & create past projects, testimonials, and e-mail subscriptions.",
         "coverImgUrl": "https://www.bbvaapimarket.com/wp-content/uploads/2016/06/bbva-open4u-que-hace-una-api-por-mi-negocio.png",
-        "featured": true,
+        "featured": false,
         "detail": {
             "url": "https://eyobtech.pythonanywhere.com/",
             "github": " https://github.com/eyobofficial/my-resume",
@@ -78,7 +78,7 @@
         
         "description": "A REST APIs for my resume website to retrieve & create past projects, testimonials, and e-mail subscriptions.",
         "coverImgUrl": "https://www.bbvaapimarket.com/wp-content/uploads/2016/06/bbva-open4u-que-hace-una-api-por-mi-negocio.png",
-        "featured": true,
+        "featured": false,
         "detail": {
             "url": "https://eyobtech.pythonanywhere.com/",
             "github": " https://github.com/eyobofficial/my-resume",
@@ -92,7 +92,7 @@
         
         "description": "A REST APIs for my resume website to retrieve & create past projects, testimonials, and e-mail subscriptions.",
         "coverImgUrl": "https://www.bbvaapimarket.com/wp-content/uploads/2016/06/bbva-open4u-que-hace-una-api-por-mi-negocio.png",
-        "featured": true,
+        "featured": false,
         "detail": {
             "url": "https://eyobtech.pythonanywhere.com/",
             "github": " https://github.com/eyobofficial/my-resume",
