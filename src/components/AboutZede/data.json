@@ -1,0 +1,14 @@
+{
+    "sectionOne": {
+        "title": "History",
+        "subTitle": "Zede Digital Agency was founded in 2020 as a one-man internet consulting firm.",
+        "paragraph": "Today, Duduk has growninto a full-fledged internet marketing firm with services including website development, graphic design, internet marketing and website support. We have developed and supported over 2,000 websites and countless campaigns for our clients in all industries from local startups to international Fortune 500 companies.Today, Duduk has growninto a full-fledged internet marketing firm with services including website development, graphic design, internet marketing and website support. We have developed and supported over 2,000 websites and countless campaigns for our clients in all industries from local startups to international Fortune 500 companies.",
+        "medial": "/images/Zede-logo.svg"
+    },
+    "sectionTwo": {
+        "title": "Platforms and technologies we use",
+        "paragraph": "Today, Duduk has growninto a full-fledged internet marketing firm with services including website development, graphic design, internet marketing and website support. We have developed and supported over 2,000 websites and countless campaigns for our clients in all industries from local startups to international Fortune 500 companies.Today, Duduk has growninto a full-fledged internet marketing firm with services including website development, graphic design, internet marketing and website support. We have developed and supported over 2,000 websites and countless campaigns for our clients in all industries from local startups to international Fortune 500 companies.",
+        "medial": ["https://cdn.svgporn.com/logos/nextjs.svg", "https://cdn.svgporn.com/logos/react.svg", "https://cdn.svgporn.com/logos/python.svg", "https://cdn.svgporn.com/logos/nodejs-icon.svg", "https://cdn.svgporn.com/logos/angular-icon.svg", "https://cdn.svgporn.com/logos/django.svg", "https://cdn.svgporn.com/logos/material-ui.svg", "https://cdn.svgporn.com/logos/materializecss.svg", "https://cdn.svgporn.com/logos/gatsby.svg"]
+    }
+
+}

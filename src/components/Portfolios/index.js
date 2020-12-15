@@ -7,10 +7,6 @@ import Pagination from "@material-ui/lab/Pagination";
 import { useRef, useState } from "react";
 
 const PortFolio = (params) => {
-  const [page, setPage] = useState(1);
-  const handlePageChange = (event, value) => {
-    setPage(value);
-  };
   const useStyle = makeStyles((theme) => {
     const mainStyle = sharedStyle();
 
@@ -33,12 +29,17 @@ const PortFolio = (params) => {
     };
   });
   const classes = useStyle();
+  const [page, setPage] = useState(1);
+  const perPage = 6;
+  const handlePageChange = (event, value) => {
+    setPage(value);
+  };
   return (
     <Paper className={classes.wrapper}>
-      <Grid container spacing={5} className={classes.container}>
+      <Grid container spacing={perPage} className={classes.container}>
         <Grid item xs={12} className={classes.paginationContainer}>
           <Pagination
-            count={Math.ceil(Object.keys(data).length / 5)}
+            count={Math.ceil(Object.keys(data).length / perPage)}
             siblingCount={0}
             page={page}
             variant='outlined'
@@ -48,19 +49,21 @@ const PortFolio = (params) => {
           />
         </Grid>
 
-        <Grid container spacing={5}>
-          {Object.keys(data)
-            .splice((page - 1) * 5, (page - 1) * 5 + 5)
-            .map((blogTitle) => (
-              <Grid key={uniqueId()} item sm={12} md={6}>
-                <PortfolioSummery
-                  id={data[blogTitle].id}
-                  imgUrl={data[blogTitle].coverImgUrl}
-                  title={blogTitle}
-                  description={data[blogTitle].description}
-                />
-              </Grid>
-            ))}
+        <Grid item xs={12}>
+          <Grid container spacing={perPage}>
+            {Object.keys(data)
+              .splice((page - 1) * perPage, (page - 1) * perPage + perPage)
+              .map((blogTitle) => (
+                <Grid key={uniqueId()} item xs={12} sm={12} md={6}>
+                  <PortfolioSummery
+                    id={data[blogTitle].id}
+                    imgUrl={data[blogTitle].coverImgUrl}
+                    title={blogTitle}
+                    description={data[blogTitle].description}
+                  />
+                </Grid>
+              ))}
+          </Grid>
         </Grid>
       </Grid>
     </Paper>

@@ -4,29 +4,26 @@ import { useEffect } from "react";
 import clsx from "classnames";
 import sharedStyle from "../../utils/style/js/sharedStyle";
 
-const useStyle = makeStyles((theme) => {
-  const mainStyle = sharedStyle();
-  return {
-    wrapper: {
-      width: "100vw",
-      padding: `${theme.spacing(5)}px ${theme.spacing(2)}px`,
-      backgroundColor: theme.palette.common.black,
-      borderRadius: 0,
-    },
-    container: {
-      ...mainStyle.container,
-    },
-    text: {
-      maxWidth: theme.spacing(55),
-      marginBottom: theme.spacing(5),
-    },
-    email: {
-      marginBottom: theme.spacing(2),
-    },
-  };
-});
-
 const Footer = (params) => {
+  const useStyle = makeStyles((theme) => {
+    const mainStyle = sharedStyle();
+    return {
+      wrapper: {
+        ...mainStyle.wrapper,
+        backgroundColor: theme.palette.primary.dark,
+      },
+      container: {
+        ...mainStyle.container,
+      },
+      text: {
+        maxWidth: theme.spacing(55),
+        marginBottom: theme.spacing(5),
+      },
+      email: {
+        marginBottom: theme.spacing(2),
+      },
+    };
+  });
   const classes = useStyle();
   useEffect(() => {
     const node = loadCSS(

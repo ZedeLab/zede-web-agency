@@ -93,8 +93,9 @@ const useStyle = makeStyles((theme) => ({
 }));
 
 const PortfolioDetail = ({ prevId, nextId, portfolioData }) => {
-  const classes = useStyle();
   const theme = useTheme();
+  const classes = useStyle();
+
   const imgStyle = (imgUrl) => ({
     backgroundImage: `url(${imgUrl})`,
     backgroundSize: "contain",
