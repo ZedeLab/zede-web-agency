@@ -15,17 +15,20 @@ import { ReactSVG } from "react-svg";
 const useStyle = makeStyles((theme) => {
   const mainStyle = useCommonStyle();
   return {
+    root: {
+      boxShadow: theme.shadows[0],
+      width: "100vw",
+    },
     svgContainer: {
       position: "relative",
     },
     svg: {
       position: "relative",
       bottom: "-0.48rem",
-
+      left: 0,
       "& svg": {
         fill: theme.palette.primary.main,
         // stroke: theme.palette.primary.main,
-        margin: 0,
       },
     },
     wrapper: {
@@ -68,7 +71,7 @@ const LetsTalk = (params) => {
     },
   };
   return (
-    <Paper>
+    <Paper className={classes.root}>
       <div className={classes.svgContainer}>
         <ReactSVG className={classes.svg} src='/images/divider-right.svg' />
       </div>

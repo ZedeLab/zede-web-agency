@@ -20,14 +20,14 @@ const useStyle = makeStyles((theme) => {
   return {
     root: {
       boxShadow: theme.shadows[0],
+      width: "100vw",
     },
     svgContainer: {
       position: "relative",
     },
     svg: {
       position: "relative",
-      bottom: "-0.4rem",
-
+      bottom: "-0.48rem",
       "& svg": {
         fill: theme.palette.primary.main,
 
