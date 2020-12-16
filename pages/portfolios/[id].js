@@ -1,12 +1,22 @@
 import Header from "../../src/components/PageHeader";
 import Portfolio from "../../src/components/Portfolios/Detail";
 import data from "../../src/components/Portfolios/data.json";
+import { motion } from "framer-motion";
+import routeAnim from "../../public/animations/routingAnim.json";
+
 const PortfolioDetail = ({ title, portfolio, prev, next }) => {
   return (
-    <>
-      <Header pageTitle={title} backgroundImgUrl={portfolio.coverImgUrl} />
-      <Portfolio portfolioData={portfolio} nextId={next} prevId={prev} />
-    </>
+    <motion.div exit={{ opacity: 0 }} initial='initial' animate='animate'>
+      <motion.div variants={routeAnim.stagger}>
+        <motion.div variants={routeAnim.fadeInUp}>
+          <Header pageTitle={title} backgroundImgUrl={portfolio.coverImgUrl} />
+        </motion.div>
+
+        <motion.div variants={routeAnim.fadeInUp}>
+          <Portfolio portfolioData={portfolio} nextId={next} prevId={prev} />
+        </motion.div>
+      </motion.div>
+    </motion.div>
   );
 };
 

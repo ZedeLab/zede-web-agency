@@ -12,11 +12,7 @@ import {
 import CssBaseline from "@material-ui/core/CssBaseline";
 import mainTheme from "../src/utils/ThemeProvider";
 
-// Global css styles
-// import "../src/utils/style/css/style.module.css";
-// import "../src/utils/style/css/normalize.css";
-// import "../src/utils/style/css/webflow.css";
-// import "bootstrap/dist/css/bootstrap.min.css";
+import { AnimatePresence } from "framer-motion";
 
 // Core components
 import Nav from "../src/components/Navigation";
@@ -63,18 +59,14 @@ export default function MyApp(props) {
           type='image/x-icon'
         />
         <link href='images/Duduk-Thumb-big.gif' rel='apple-touch-icon' />
-        {/* <link
-          rel='stylesheet'
-          href='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css'
-          integrity='sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk'
-          crossorigin='anonymous'
-        /> */}
       </Head>
       <Paper>
         <CssBaseline />
         <ThemeProvider theme={theme}>
           <Nav />
-          <Component {...pageProps} />
+          <AnimatePresence exitBeforeEnter>
+            <Component {...pageProps} />
+          </AnimatePresence>
           <Footer />
         </ThemeProvider>
       </Paper>

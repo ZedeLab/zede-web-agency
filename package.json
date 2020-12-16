@@ -17,6 +17,7 @@
     "@material-ui/lab": "^4.0.0-alpha.57",
     "classnames": "^2.2.6",
     "fg-loadcss": "^3.1.0",
+    "framer-motion": "^2.9.5",
     "lodash": "^4.17.20",
     "next": "^10.0.3",
     "react": "^17.0.1",
