@@ -7,7 +7,7 @@ const useStyle = makeStyles((theme) => ({
   wrapper: {
     position: "relative",
     width: "100vw",
-    height: "50vh",
+    height: "35vh",
 
     "& > *": {
       boxShadow: theme.shadows[0],
@@ -25,7 +25,7 @@ const useStyle = makeStyles((theme) => ({
   grid: {
     position: "relative",
     width: "100vw",
-    height: "50vh",
+    height: "35vh",
     zIndex: 1,
     opacity: 1,
     textAlign: "center",
@@ -36,7 +36,11 @@ const useStyle = makeStyles((theme) => ({
     justifyContent: "center",
   },
   title: {
+    paddingTop: theme.spacing(8),
     color: "black",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "42px",
+    },
   },
 }));
 

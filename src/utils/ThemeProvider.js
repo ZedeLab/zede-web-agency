@@ -17,6 +17,7 @@ const theme = (mode = "light") => {
         primary: "rgba(255, 255, 255)",
         secondary: "rgba(0, 0, 0)",
       },
+      divider: "#f3d940",
     },
     typography: {
       h1: {

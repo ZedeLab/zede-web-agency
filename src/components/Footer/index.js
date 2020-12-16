@@ -1,4 +1,16 @@
-import { Grid, Icon, makeStyles, Paper, Typography } from "@material-ui/core";
+import {
+  Button,
+  Divider,
+  Grid,
+  Icon,
+  InputBase,
+  makeStyles,
+  Paper,
+  TextField,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@material-ui/core";
 import { loadCSS } from "fg-loadcss";
 import { useEffect } from "react";
 import clsx from "classnames";
@@ -19,14 +31,31 @@ const Footer = (params) => {
       },
       text: {
         maxWidth: theme.spacing(55),
-        marginBottom: theme.spacing(5),
+        marginTop: theme.spacing(2),
+        marginBottom: theme.spacing(2),
+        width: "90%",
+      },
+      subTitle: {
+        marginBottom: theme.spacing(2),
+      },
+      linkContainer: {
+        display: "flex",
+        "& >*": {
+          marginRight: theme.spacing(1),
+        },
       },
       email: {
         marginBottom: theme.spacing(2),
+        color: theme.palette.secondary.light,
+      },
+      copyright: {
+        textAlign: "center",
       },
     };
   });
   const classes = useStyle();
+  const theme = useTheme();
+  const match = useMediaQuery(theme.breakpoints.down("sm"));
   useEffect(() => {
     const node = loadCSS(
       "https://use.fontawesome.com/releases/v5.12.0/css/all.css",
@@ -42,32 +71,92 @@ const Footer = (params) => {
     <Paper className={classes.wrapper}>
       <Grid container direction='column' className={classes.container}>
         <Grid item>
-          <a href='#' data-ix='logo' className='footer-logo-2 w-nav-brand'>
-            <img src='/images/Zede-logo.svg' width='104' alt='' />
-          </a>
-        </Grid>
-        <Grid item>
-          <Typography className={clsx(classes.text, "ondark")}>
-            From empowering challenger brands to think big to helping global
-            brands feel closer to home, we leverage technology to bring people
-            closer to the products, content, and experiences they love.
-          </Typography>
-        </Grid>
-        <Grid item>
-          <div className='footer-links-container'>
-            <Typography className='footer-heading'>Let&#x27;s Meet</Typography>
-            <Typography className={clsx(classes.email, "footer-paragraph")}>
-              hello@zede.tech
-            </Typography>
-          </div>
-        </Grid>
-        <Grid item>
-          <Grid container justify='space-around'>
-            <Icon className='fab fa-facebook-f' color='secondary' />
-            <Icon className='fab fa-instagram' color='secondary' />
-            <Icon className='fab fa-twitter' color='secondary' />
-            <Icon className='fab fa-linkedin-in' color='secondary' />
+          <Grid
+            container
+            direction={match ? "column" : "row"}
+            justify='space-between'
+            spacing={3}
+          >
+            <Grid item xs={match ? 10 : 6}>
+              <Grid container direction='column'>
+                <a
+                  href='#'
+                  data-ix='logo'
+                  className='footer-logo-2 w-nav-brand'
+                >
+                  <img src='/images/Zede-logo.svg' width='104' alt='' />
+                </a>
+                <Grid item>
+                  <Typography className={clsx(classes.text, "ondark")}>
+                    From empowering challenger brands to think big to helping
+                    global brands feel closer to home, we leverage technology to
+                    bring people closer to the products, content, and
+                    experiences they love.
+                  </Typography>
+                </Grid>
+              </Grid>
+            </Grid>
+            {match ? (
+              <Divider orientation='horizontal' variant='middle' />
+            ) : null}
+            <Grid item xs={3}>
+              <Grid container spacing={1} direction='column'>
+                <Grid item className={classes.subTitle}>
+                  <Typography>Find Us</Typography>
+                </Grid>
+
+                <Grid item className={classes.linkContainer}>
+                  <Icon
+                    className={clsx(classes.linkIcon, "fab fa-facebook-f")}
+                    color='secondary'
+                  />
+                  <Typography>facebook</Typography>
+                </Grid>
+                <Grid item className={classes.linkContainer}>
+                  <Icon
+                    className={clsx(classes.linkIcon, "fab fa-instagram")}
+                    color='secondary'
+                  />
+                  <Typography>instagram</Typography>
+                </Grid>
+                <Grid item className={classes.linkContainer}>
+                  <Icon
+                    className={clsx(classes.linkIcon, "fab fa-twitter")}
+                    color='secondary'
+                  />
+                  <Typography>twitter</Typography>
+                </Grid>
+                <Grid item className={classes.linkContainer}>
+                  <Icon
+                    className={clsx(classes.linkIcon, "fab fa-linkedin-in")}
+                    color='secondary'
+                  />
+                  <Typography>linkedIn</Typography>
+                </Grid>
+              </Grid>
+            </Grid>
+
+            <Grid item xs={3}>
+              <Grid container spacing={1} direction='column'>
+                <Grid item>
+                  <Typography className={classes.subTitle}>
+                    Let&#x27;s Talk
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Typography
+                    className={clsx(classes.email, "footer-paragraph")}
+                  >
+                    hello@zede.tech
+                  </Typography>
+                </Grid>
+              </Grid>
+            </Grid>
           </Grid>
+        </Grid>
+        <Divider />
+        <Grid item xs={12} className={classes.copyright}>
+          <small>©2020 Zede tech agency. All rights reserved.</small>
         </Grid>
       </Grid>
     </Paper>
