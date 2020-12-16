@@ -50,11 +50,7 @@ export default function MyApp(props) {
           rel='stylesheet'
         />
         <link
-          href={
-            prefersDarkMode === "dark"
-              ? "/images/Zede-logo-white.svg"
-              : "/images/Zede-logo.svg"
-          }
+          href={"/images/Zede-logo.svg"}
           rel='shortcut icon'
           type='image/x-icon'
         />

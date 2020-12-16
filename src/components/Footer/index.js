@@ -43,7 +43,7 @@ const Footer = (params) => {
       <Grid container direction='column' className={classes.container}>
         <Grid item>
           <a href='#' data-ix='logo' className='footer-logo-2 w-nav-brand'>
-            <img src='/images/Zede-logo-white.svg' width='104' alt='' />
+            <img src='/images/Zede-logo.svg' width='104' alt='' />
           </a>
         </Grid>
         <Grid item>
