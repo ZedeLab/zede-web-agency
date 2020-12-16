@@ -10,9 +10,7 @@ import {
 } from "@material-ui/core";
 
 import data from "./data.json";
-import clx from "classnames";
-import { uniqueId } from "lodash";
-import { useOnScreen } from "../../../utils/hooks/useOnScreen";
+import { ReactSVG } from "react-svg";
 import useCommonStyle from "../../../utils/style/js/sharedStyle";
 import Section from "./Section";
 import Header from "./Header";
@@ -20,6 +18,22 @@ import Header from "./Header";
 const useStyle = makeStyles((theme) => {
   const mainStyle = useCommonStyle();
   return {
+    root: {
+      boxShadow: theme.shadows[0],
+    },
+    svgContainer: {
+      position: "relative",
+    },
+    svg: {
+      position: "relative",
+      bottom: "-0.4rem",
+
+      "& svg": {
+        fill: theme.palette.primary.main,
+
+        margin: 0,
+      },
+    },
     wrapper: {
       ...mainStyle.wrapper,
       padding: `${theme.spacing(6)}px ${theme.spacing(5)}px`,
@@ -51,21 +65,26 @@ const Services = (params) => {
   const classes = useStyle();
 
   return (
-    <Paper className={classes.wrapper}>
-      <Grid container spacing={5}>
-        <Grid item xs={12} sm={4}>
-          <Grid container direction='column'>
-            <Header
-              microTitle={data.sectionMicroTitle}
-              title={data.sectionTitle}
-              text={data.sectionParagraph}
-            />
+    <Paper className={classes.root}>
+      <div className={classes.svgContainer}>
+        <ReactSVG className={classes.svg} src='/images/divider-left.svg' />
+      </div>
+      <Paper className={classes.wrapper}>
+        <Grid container spacing={5}>
+          <Grid item xs={12} sm={4}>
+            <Grid container direction='column'>
+              <Header
+                microTitle={data.sectionMicroTitle}
+                title={data.sectionTitle}
+                text={data.sectionParagraph}
+              />
+            </Grid>
+          </Grid>
+          <Grid item xs={12} sm={8}>
+            <Section services={data.services} />
           </Grid>
         </Grid>
-        <Grid item xs={12} sm={8}>
-          <Section services={data.services} />
-        </Grid>
-      </Grid>
+      </Paper>
     </Paper>
   );
 };

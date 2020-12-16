@@ -34,7 +34,7 @@ const useStyle = makeStyles((theme) => {
 const WorkFlowHeader = ({ intro, quote }) => {
   const classes = useStyle();
 
-  const [setRef, visible] = useOnScreen({ threshold: "1" });
+  const [setRef, visible] = useOnScreen({ threshold: "0.5" });
 
   return (
     <Grid

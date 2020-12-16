@@ -10,6 +10,7 @@ const theme = () => {
       padding: `${theme.spacing(6)}px 0px`,
       width: "100vw",
       overflow: "hidden",
+      boxShadow: theme.shadows[0],
     },
     container: {
       width: "70vw",

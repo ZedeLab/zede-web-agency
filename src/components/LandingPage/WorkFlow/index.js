@@ -1,6 +1,7 @@
 import { Grid, makeStyles, Paper, Slide, Typography } from "@material-ui/core";
 import clx from "classnames";
 import { uniqueId } from "lodash";
+
 import data from "./data.json";
 import useMainStyle from "../../../utils/style/js/sharedStyle";
 import { useOnScreen } from "../../../utils/hooks/useOnScreen";
@@ -13,6 +14,7 @@ const useStyle = makeStyles((theme) => {
     wrapper: {
       ...mainStyle.wrapper,
     },
+
     container: {
       ...mainStyle.container,
     },
