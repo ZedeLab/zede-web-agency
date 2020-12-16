@@ -113,7 +113,7 @@ const navigation = (props) => {
         <AppBar className={classes.appBar}>
           <Toolbar className={classes.toolbar}>
             <NavLink path='/'>
-              <img src='/images/Zede-logo.svg' width='106' alt='' />
+              <img src='/images/Zede-logo.svg' width='60' alt='' />
             </NavLink>
             <Hidden smDown>{navLinks}</Hidden>
             <Hidden mdUp>
