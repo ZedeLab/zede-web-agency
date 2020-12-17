@@ -30,11 +30,14 @@ const useStyle = makeStyles((theme) => ({
   wrapper: {
     padding: 0,
     margin: 0,
+    width: "100vw",
+    maxWidth: "100%",
   },
   appBar: {
     // position: "relative",
     height: "fit-content",
-    width: "100vw",
+
+    width: "100%",
     overflow: "hidden",
   },
   toolbar: {
@@ -61,8 +64,9 @@ const useStyle = makeStyles((theme) => ({
   mobNavWrapper: {
     position: "fixed",
     zIndex: 200,
-    width: "100vw",
+
     display: "flex",
+    width: "100%",
     flexDirection: "column",
     alignItems: "center",
     backgroundColor: theme.palette.primary.light,

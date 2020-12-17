@@ -7,6 +7,7 @@ const useStyle = makeStyles((theme) => ({
   wrapper: {
     position: "relative",
     width: "100vw",
+    maxWidth: "100%",
     height: "35vh",
 
     "& > *": {
@@ -25,6 +26,7 @@ const useStyle = makeStyles((theme) => ({
   grid: {
     position: "relative",
     width: "100vw",
+    maxWidth: "100%",
     height: "35vh",
     zIndex: 1,
     opacity: 1,

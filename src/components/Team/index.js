@@ -6,7 +6,7 @@ import { uniqueId } from "lodash";
 const useStyle = makeStyles((theme) => ({
   teamsWrapper: {
     width: "100vw",
-    // margin: "auto",
+    maxWidth: "100%",
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "center",

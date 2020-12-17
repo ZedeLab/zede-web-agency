@@ -9,12 +9,14 @@ const theme = () => {
       borderRadius: 0,
       padding: `${theme.spacing(6)}px 0px`,
       width: "100vw",
+      maxWidth: "100%",
       overflow: "hidden",
       boxShadow: theme.shadows[0],
     },
     container: {
       width: "70vw",
       margin: "auto",
+
       [theme.breakpoints.down("sm")]: {
         width: "90vw",
       },

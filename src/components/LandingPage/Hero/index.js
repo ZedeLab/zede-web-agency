@@ -7,6 +7,7 @@ const useStyle = makeStyles((theme) => ({
     backgroundColor: theme.palette.primary.dark,
     position: "relative",
     width: "100vw",
+    maxWidth: "100%",
     height: "100vh",
     display: "flex",
     alignItems: "center",

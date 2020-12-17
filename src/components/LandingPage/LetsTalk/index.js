@@ -18,6 +18,7 @@ const useStyle = makeStyles((theme) => {
     root: {
       boxShadow: theme.shadows[0],
       width: "100vw",
+      maxWidth: "100%",
     },
     svgContainer: {
       position: "relative",
