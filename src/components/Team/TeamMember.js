@@ -186,7 +186,6 @@ const TeamMembers = ({
       ) : null}
       <Fade in={imageLoaded} timeout={500} onEnter={() => setShowImage(true)}>
         <img
-          src={imgUrl}
           width='100%'
           alt=''
           style={showImage ? {} : { display: "none" }}
@@ -199,6 +198,7 @@ const TeamMembers = ({
             !showDetail ? setshowDitail(true) : null;
           }}
           onLoad={() => setImageLoaded(true)}
+          src={imgUrl}
         />
       </Fade>
     </Paper>
