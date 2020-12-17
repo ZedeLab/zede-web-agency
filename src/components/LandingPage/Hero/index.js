@@ -114,7 +114,8 @@ const Hero = (params) => {
 
             <Button
               className={clsx(classes.button, "button")}
-              variant='contained'
+              variant='outlined'
+              color='secondary'
             >
               Learn more
             </Button>

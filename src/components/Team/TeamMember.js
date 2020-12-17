@@ -8,6 +8,8 @@ import {
   Slide,
   Typography,
 } from "@material-ui/core";
+import Skeleton from "@material-ui/lab/Skeleton";
+
 import { useState } from "react";
 import clsx from "classnames";
 import FacebookIcon from "@material-ui/icons/Facebook";
@@ -68,6 +70,11 @@ const useStyle = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
   },
+  skeleton: {
+    "& .MuiSkeleton-wave": {
+      backgroundColor: theme.palette.secondary.main,
+    },
+  },
 }));
 const TeamMembers = ({
   name,
@@ -82,13 +89,8 @@ const TeamMembers = ({
 
   const [showDetail, setshowDitail] = useState(false);
   const [closeable, setCloseable] = useState(false);
-
+  const [imageLoaded, setImageLoaded] = useState(false);
   return (
-    // <div className='col-2 lg-4'>
-    //   <div className={clsx("portrait-container", classes.container)}>
-
-    //   </div>
-    // </div>
     <Paper
       className={classes.container}
       onMouseLeave={() => {
@@ -184,7 +186,17 @@ const TeamMembers = ({
         onMouseOver={() => {
           !showDetail ? setshowDitail(true) : null;
         }}
+        onLoad={() => setImageLoaded(true)}
       />
+      {!imageLoaded ? (
+        <Skeleton
+          className={classes.skeleton}
+          variant='rect'
+          animation='wave'
+          width='100%'
+          height='400px'
+        />
+      ) : null}
     </Paper>
   );
 };

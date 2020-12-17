@@ -38,9 +38,12 @@ export default function MyApp(props) {
   return (
     <>
       <Head>
-        <meta charSet='utf-8' />
+        <meta http='Content-Type' content='text/html; charSet=utf-8' />
         <title>Zede agency</title>
-        <meta content='Zede agency is ....' name='description' />
+        <meta
+          content='Zede agency is a web development federation that uses state of the art technologies.'
+          name='description'
+        />
         <meta content='width=device-width, initial-scale=1' name='viewport' />
         <meta content='Webflow' name='generator' />
         <link rel='preconnect' href='https://fonts.gstatic.com' />
@@ -50,22 +53,24 @@ export default function MyApp(props) {
           rel='stylesheet'
         />
         <link
-          href={"/images/Zede-logo.svg"}
+          href={"/images/zede-logo-colored.svg"}
           rel='shortcut icon'
           type='image/x-icon'
         />
-        <link href='images/Duduk-Thumb-big.gif' rel='apple-touch-icon' />
+        <link href='images/zede-logo-colored.svg' rel='apple-touch-icon' />
       </Head>
-      <Paper>
+      <bod>
         <CssBaseline />
-        <ThemeProvider theme={theme}>
-          <Nav />
-          <AnimatePresence exitBeforeEnter>
-            <Component {...pageProps} />
-          </AnimatePresence>
-          <Footer />
-        </ThemeProvider>
-      </Paper>
+        <Paper>
+          <ThemeProvider theme={theme}>
+            <Nav />
+            <AnimatePresence exitBeforeEnter>
+              <Component {...pageProps} />
+            </AnimatePresence>
+            <Footer />
+          </ThemeProvider>
+        </Paper>
+      </bod>
     </>
   );
 }
