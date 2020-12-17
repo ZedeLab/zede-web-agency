@@ -8,17 +8,19 @@ const useStyle = makeStyles((theme) => ({
     height: "20rem",
     overflow: "hidden",
     boxShadow: theme.shadows[5],
+    border: "none",
   },
   container: {
     height: "100%",
   },
   section: {
-    backgroundColor: theme.palette.secondary.light,
+    backgroundColor: theme.palette.primary.dark,
+
     heigh: "10%",
     height: "fit-content",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2),
-    opacity: 0.8,
+    opacity: 0.6,
   },
 }));
 const PortfolioSummary = ({ id, imgUrl, title }) => {
@@ -41,7 +43,7 @@ const PortfolioSummary = ({ id, imgUrl, title }) => {
       >
         <Slide direction='down' in={visible}>
           <Grid item className={classes.section}>
-            <Typography variant='h4' color='textSecondary'>
+            <Typography variant='h4' color='textPrimary'>
               {title}
             </Typography>
           </Grid>

@@ -26,7 +26,8 @@ const useStyle = makeStyles((theme) => {
     svg: {
       position: "relative",
       bottom: "-0.49rem",
-      left: 0,
+
+      right: 0,
       "& svg": {
         fill: theme.palette.primary.main,
         // stroke: theme.palette.primary.main,

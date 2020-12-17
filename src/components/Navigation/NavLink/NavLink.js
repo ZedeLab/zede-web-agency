@@ -11,20 +11,23 @@ const Cutomlink = ({ lable, path, children, underLine }) => {
       ...theme.typography.link,
       marginLeft: theme.spacing(4),
       color: theme.palette.text.primary,
-      textAlign: "center",
+      // textAlign: "center",
       fontSize: "1.1rem",
       [theme.breakpoints.down("sm")]: {
         marginBottom: theme.spacing(2),
         marginLeft: 0,
+        fontWeight: 600,
       },
     },
     selected: {
-      color: theme.palette.secondary.main,
-      paddingBottom: theme.spacing(1),
+      color: theme.palette.secondary.dark,
 
-      borderBottom: underLine
-        ? `2px solid ${theme.palette.secondary.light}`
-        : "none",
+      [theme.breakpoints.down("sm")]: {
+        borderBottom: underLine
+          ? `2px solid ${theme.palette.secondary.light}`
+          : "none",
+        paddingBottom: theme.spacing(1),
+      },
     },
   }));
   const classes = useStyle();

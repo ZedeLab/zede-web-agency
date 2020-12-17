@@ -25,6 +25,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import NavLink from "./NavLink/NavLink";
 import { useState } from "react";
 import { Router, useRouter } from "next/router";
+import { ReactSVG } from "react-svg";
 
 const useStyle = makeStyles((theme) => ({
   wrapper: {
@@ -68,11 +69,27 @@ const useStyle = makeStyles((theme) => ({
     display: "flex",
     width: "100%",
     flexDirection: "column",
-    alignItems: "center",
+    // alignItems: "center",
     backgroundColor: theme.palette.primary.light,
     paddingTop: theme.spacing(15),
+    paddingLeft: theme.spacing(5),
     paddingBottom: theme.spacing(2),
     boxShadow: theme.shadows[0],
+    border: "none",
+    borderRadius: 0,
+  },
+  svgContainer: {
+    "& svg": {
+      width: "64px",
+      height: "64px",
+      fill: theme.palette.secondary.dark,
+      "& #ze": {
+        stroke: theme.palette.primary.dark,
+      },
+      "& #de": {
+        stroke: theme.palette.secondary.dark,
+      },
+    },
   },
 }));
 
@@ -92,7 +109,7 @@ const navigation = (props) => {
       <NavLink path='/' underLine>
         Home
       </NavLink>
-      <NavLink path='/aboutus' underLine>
+      <NavLink path='/about' underLine>
         About Us
       </NavLink>
       <NavLink path='/team' underLine>
@@ -101,7 +118,7 @@ const navigation = (props) => {
       <NavLink path='/portfolios' underLine>
         Portfolio
       </NavLink>
-      <NavLink path='/contactus' underLine>
+      <NavLink path='/contact' underLine>
         Contact Us
       </NavLink>
     </div>
@@ -117,7 +134,11 @@ const navigation = (props) => {
         <AppBar className={classes.appBar}>
           <Toolbar className={classes.toolbar}>
             <NavLink path='/'>
-              <img src='/images/Zede-logo.svg' width='60' alt='' />
+              <ReactSVG
+                className={classes.svgContainer}
+                src='/images/Zede-logo.svg'
+              />
+              {/* <img src='/images/Zede-logo.svg' width='60' alt='' /> */}
             </NavLink>
             <Hidden smDown>{navLinks}</Hidden>
             <Hidden mdUp>

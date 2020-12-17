@@ -43,7 +43,7 @@ const useStyle = makeStyles((theme) => ({
     height: "100%",
     padding: theme.spacing(2),
     borderRadius: "5px",
-    backgroundColor: "#f3d940",
+    backgroundColor: theme.palette.secondary.light,
     opacity: 0.9,
     overflow: "auto",
     padding: theme.spacing(2),

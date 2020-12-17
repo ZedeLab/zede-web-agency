@@ -15,7 +15,9 @@ import { loadCSS } from "fg-loadcss";
 import { useEffect } from "react";
 import clsx from "classnames";
 import sharedStyle from "../../utils/style/js/sharedStyle";
-
+import { ReactSVG } from "react-svg";
+import Link from "next/link";
+import { useRouter } from "next/router";
 const Footer = (params) => {
   const useStyle = makeStyles((theme) => {
     const mainStyle = sharedStyle();
@@ -28,6 +30,19 @@ const Footer = (params) => {
       },
       container: {
         ...mainStyle.container,
+      },
+      svgContainer: {
+        "& svg": {
+          width: "64px",
+          height: "64px",
+          fill: theme.palette.secondary.dark,
+          "& #ze": {
+            stroke: theme.palette.primary.dark,
+          },
+          "& #de": {
+            stroke: theme.palette.secondary.dark,
+          },
+        },
       },
       text: {
         maxWidth: theme.spacing(55),
@@ -56,6 +71,8 @@ const Footer = (params) => {
   const classes = useStyle();
   const theme = useTheme();
   const match = useMediaQuery(theme.breakpoints.down("sm"));
+  const router = useRouter();
+
   useEffect(() => {
     const node = loadCSS(
       "https://use.fontawesome.com/releases/v5.12.0/css/all.css",
@@ -79,12 +96,11 @@ const Footer = (params) => {
           >
             <Grid item xs={match ? 10 : 6}>
               <Grid container direction='column'>
-                <a
-                  href='#'
-                  data-ix='logo'
-                  className='footer-logo-2 w-nav-brand'
-                >
-                  <img src='/images/Zede-logo.svg' width='104' alt='' />
+                <a href={router.pathname === "" ? "#" : "/"}>
+                  <ReactSVG
+                    className={classes.svgContainer}
+                    src='/images/Zede-logo.svg'
+                  />
                 </a>
                 <Grid item>
                   <Typography className={clsx(classes.text, "ondark")}>

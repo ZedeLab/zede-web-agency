@@ -28,6 +28,7 @@ const useStyle = makeStyles((theme) => {
     },
     svg: {
       position: "relative",
+      width: "75vw",
       bottom: "-0.48rem",
       "& svg": {
         fill: theme.palette.primary.main,

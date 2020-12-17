@@ -2,13 +2,13 @@ import { Grid, makeStyles, Paper, Typography } from "@material-ui/core";
 import clsx from "classnames";
 import { ReactSVG } from "react-svg";
 
-const url = "/images/background-wall.svg";
+const url = "/images/background.svg";
 const useStyle = makeStyles((theme) => ({
   wrapper: {
     position: "relative",
     width: "100vw",
     maxWidth: "100%",
-    height: "35vh",
+    height: "45vh",
 
     "& > *": {
       boxShadow: theme.shadows[0],
@@ -18,16 +18,18 @@ const useStyle = makeStyles((theme) => ({
     position: "absolute",
     width: "100%",
     height: "100%",
-    zIndex: 0,
+    // left: "-1rem",
 
-    backgroundImage: `url(${url})`,
-    opacity: 0.5,
+    zIndex: 0,
+    overflow: "hidden",
+    // backgroundImage: `url(${url})`,
+    opacity: 0.4,
   },
   grid: {
     position: "relative",
     width: "100vw",
     maxWidth: "100%",
-    height: "35vh",
+    height: "45vh",
     zIndex: 1,
     opacity: 1,
     textAlign: "center",
@@ -44,6 +46,20 @@ const useStyle = makeStyles((theme) => ({
       fontSize: "42px",
     },
   },
+
+  svgContainer: {
+    "& svg": {
+      width: "100%",
+      height: "100%",
+      transform: "scale(1.2)",
+      "& .dark": {
+        fill: theme.palette.primary.main,
+      },
+      "& .light": {
+        fill: theme.palette.secondary.main,
+      },
+    },
+  },
 }));
 
 const PageHeader = ({ pageTitle, backgroundImgUrl }) => {
@@ -51,7 +67,9 @@ const PageHeader = ({ pageTitle, backgroundImgUrl }) => {
 
   return (
     <div className={classes.wrapper}>
-      <Paper className={classes.background} />
+      <Paper className={classes.background}>
+        <ReactSVG className={classes.svgContainer} src={url} />
+      </Paper>
       <Paper className={classes.grid}>
         <Typography color='textPrimary' variant='h1' className={classes.title}>
           {pageTitle}

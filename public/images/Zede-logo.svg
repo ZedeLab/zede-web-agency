@@ -8,7 +8,7 @@
     </radialGradient>
   </defs>
   <path style="stroke: rgb(0, 0, 0); fill: rgb(44, 41, 37);" d="M 4.494 368.976 L 431.681 2.122 L 433.146 368.976 L 4.494 368.976 Z"/>
-  <path style="stroke: rgb(0, 0, 0); paint-order: stroke; fill: url(#gradient-0);" d="M 4.494 0.437 L 4.982 369.538 L 431.682 1.56 L 4.494 0.437 Z"/>
-  <text transform="matrix(1, 0, 0, 1.017595, 112.921349, 5.088071)" style="fill: rgb(44, 41, 37); font-family: Abel; font-size: 150px; font-weight: 700; text-anchor: end; white-space: pre;" x="64.607" y="145.381">ze</text>
-  <text style="fill: rgb(243, 217, 64); font-family: Abel; font-size: 150px; font-weight: 700; white-space: pre;" x="258.428" y="313.92">de</text>
+  <path  d="M 4.494 0.437 L 4.982 369.538 L 431.682 1.56 L 4.494 0.437 Z"/>
+  <text id="ze" transform="matrix(1, 0, 0, 1.017595, 112.921349, 5.088071)" style="fill: rgb(44, 41, 37); font-family: Abel; font-size: 150px; font-weight: 700; text-anchor: end; white-space: pre;" x="64.607" y="145.381">ze</text>
+  <text id="de" style=" font-family: Abel; font-size: 150px; font-weight: 700;  white-space: pre;" x="258.428" y="313.92">de</text>
 </svg>

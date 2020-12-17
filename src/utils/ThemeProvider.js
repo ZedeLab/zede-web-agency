@@ -2,7 +2,8 @@ import { useTheme } from "@material-ui/core";
 
 const theme = (mode = "light") => {
   // const theme = useTheme();
-
+  // #f3d940  yellow
+  // #2c2925 dark
   return {
     palette: {
       type: "light",
@@ -11,13 +12,13 @@ const theme = (mode = "light") => {
         main: "#2c2925",
       },
       secondary: {
-        main: "#f3d940",
+        main: "#73e8ff",
       },
       text: {
         primary: "rgba(255, 255, 255)",
         secondary: "rgba(0, 0, 0)",
       },
-      divider: "#f3d940",
+      divider: "#73e8ff",
     },
     typography: {
       h1: {
