@@ -89,8 +89,7 @@ const TeamMembers = ({
 
   const [showDetail, setshowDitail] = useState(false);
   const [closeable, setCloseable] = useState(false);
-  const [imageLoaded, setImageLoaded] = useState(false);
-  const [showImage, setShowImage] = useState(false);
+
   return (
     <Paper
       className={classes.container}
@@ -175,32 +174,19 @@ const TeamMembers = ({
         </div>
       </Slide>
 
-      {!imageLoaded ? (
-        <Skeleton
-          className={classes.skeleton}
-          variant='rect'
-          animation='wave'
-          width='100%'
-          height='400px'
-        />
-      ) : null}
-      <Fade in={imageLoaded} timeout={500} onEnter={() => setShowImage(true)}>
-        <img
-          width='100%'
-          alt=''
-          style={showImage ? {} : { display: "none" }}
-          className={clsx("team-photo", classes.photo)}
-          onClick={() => {
-            setshowDitail(true);
-            setCloseable(true);
-          }}
-          onMouseOver={() => {
-            !showDetail ? setshowDitail(true) : null;
-          }}
-          onLoad={() => setImageLoaded(true)}
-          src={imgUrl}
-        />
-      </Fade>
+      <img
+        width='100%'
+        alt=''
+        className={clsx("team-photo", classes.photo)}
+        onClick={() => {
+          setshowDitail(true);
+          setCloseable(true);
+        }}
+        onMouseOver={() => {
+          !showDetail ? setshowDitail(true) : null;
+        }}
+        src={imgUrl}
+      />
     </Paper>
   );
 };
