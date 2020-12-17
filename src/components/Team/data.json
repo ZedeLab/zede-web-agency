@@ -1,7 +1,7 @@
 {
     "Eyob Tariku": {
         "jobTitle": "CEO",
-        "imgUrl" : "https://www.eyob.tech/assets/img/mobile-cover.jpg",
+        "imgUrl" : "/images/eyob.jpg",
         "description": "Decrepit enlightenment society chaos ultimate merciful. Merciful truth snare inexpedient sea insofar.Decrepit enlightenment society chaos ultimate merciful. Merciful truth snare inexpedient sea insofar.",
         "facebook": "https://www.facebook.com/",
         "linkedIn": "https://www.linkedin.com/",
@@ -9,7 +9,7 @@
     },
     "Abel Sintaro": {
         "jobTitle": "Web developer",
-        "imgUrl" : "images/abel.jpg",
+        "imgUrl" : "/images/abel.jpg",
          "description": "Decrepit enlightenment society chaos ultimate merciful. Merciful truth snare inexpedient sea insofar.Decrepit enlightenment society chaos ultimate merciful. Merciful truth snare inexpedient sea insofar.",
         "facebook": "https://www.facebook.com/",
         "linkedIn": "https://www.linkedin.com/",
@@ -17,7 +17,7 @@
     },
     "Simon Sisay": {
         "jobTitle": "App Developer",
-        "imgUrl" : "images/simon.jpg",
+        "imgUrl" : "/images/simon.jpg",
         "description": "Decrepit enlightenment society chaos ultimate merciful. Merciful truth snare inexpedient sea insofar.Decrepit enlightenment society chaos ultimate merciful. Merciful truth snare inexpedient sea insofar.",
         "facebook": "https://www.facebook.com/",
         "linkedIn": "https://www.linkedin.com/",
