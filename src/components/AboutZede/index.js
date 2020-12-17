@@ -82,7 +82,7 @@ const AboutZede = (params) => {
                       in={visible}
                       timeout={(timeout += 300)}
                     >
-                      <img src={url} width='120' alt='' />
+                      <img src={url} width='100%' alt='' />
                     </Slide>
                   </Grid>
                 ))}

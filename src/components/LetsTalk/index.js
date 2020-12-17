@@ -2,6 +2,7 @@ import {
   Button,
   FormControl,
   Grid,
+  Icon,
   Input,
   makeStyles,
   Paper,
@@ -9,6 +10,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import sharedStyle from "../../utils/style/js/sharedStyle";
+import clsx from "classnames";
 
 const useStyle = makeStyles((theme) => {
   const mainStyle = sharedStyle();
@@ -19,36 +21,67 @@ const useStyle = makeStyles((theme) => {
     },
     container: {
       width: "70vw",
-      maxWidth: "600px",
       margin: "auto",
-      boxShadow: theme.shadows[8],
-      // backgroundColor: theme.palette.primary.main,
       [theme.breakpoints.down("sm")]: {
         width: "90vw",
       },
     },
+    text: {
+      color: theme.palette.text.secondary,
+      fontFamily: "Montserrat, sans-serif",
+      paddingBottom: theme.spacing(3),
+      width: "90%",
+    },
+    microText: {
+      ...mainStyle.microHeading,
+      color: theme.palette.text.secondary,
+    },
+    heighlightedText: {
+      color: theme.palette.secondary.dark,
+    },
     title: {
       ...mainStyle.sectionHeading,
+      fontWeight: 400,
+      padding: `${theme.spacing(3)}px 0px ${theme.spacing(2)}px 0px`,
     },
-    form: {
+
+    formContainer: {
       display: "flex",
       flexDirection: "column",
-      "& >*": {
-        color: theme.palette.primary.main,
-      },
-      // padding: theme.spacing(5),
     },
-    input: {
-      padding: theme.spacing(1),
-      borderRadius: theme.shape.borderRadius,
+
+    formItem: {
+      marginBottom: theme.spacing(1),
     },
-    submit: {
-      marginTop: theme.spacing(3),
-      marginBottom: theme.spacing(3),
-      padding: `${theme.spacing(1)}px ${theme.spacing(2)}px`,
-      borderRadius: theme.shape.borderRadius,
+
+    input: {},
+    button: {
       width: "fit-content",
-      alignSelf: "center",
+      marginTop: theme.spacing(2),
+      boxShadow: theme.shadows[5],
+    },
+
+    contact: {
+      backgroundColor: "red",
+    },
+
+    contactTitle: {
+      fontFamily: "Montserrat, sans-serif",
+      lineHeight: 1.15,
+      fontSize: "24px",
+      paddingTop: theme.spacing(8),
+    },
+    address: {
+      paddingBottom: theme.spacing(2),
+    },
+    subTitle: {
+      ...mainStyle.microHeading,
+      color: theme.palette.text.secondary,
+      fontWeight: 400,
+      paddingBottom: theme.spacing(1),
+    },
+    socialMedia: {
+      paddingRight: theme.spacing(2),
     },
   };
 });
@@ -62,66 +95,89 @@ const ContactUs = (params) => {
   };
   return (
     <Paper className={classes.wrapper}>
-      <Grid
-        container
-        direction='column'
-        justify='center'
-        spacing={3}
-        className={classes.container}
-      >
-        <Grid item xs={12}>
-          <Typography
-            variant='h3'
-            color='textSecondary'
-            className={classes.title}
-          >
-            Send us a message
-          </Typography>
-        </Grid>
-        <Grid item xs={12}>
-          <Typography color='textSecondary'>
-            Complete the form below so we can talk about your vision or goal and
-            how we might help.
-          </Typography>
-        </Grid>
-        <Grid item xs={12}>
-          <form className={classes.form} noValidate autoComplete='off'>
-            <FormControl className={classes.input}>
-              <TextField
-                id='standard-basic'
-                label='name'
-                variant='filled'
-                color='primary'
-              />
-            </FormControl>
-            <FormControl className={classes.input}>
-              <TextField
-                id='filled-basic'
-                variant='filled'
-                label='email'
-                color='primary'
-              />
-            </FormControl>
-            <FormControl className={classes.input}>
-              <TextField
-                id='outlined-basic'
-                variant='filled'
-                label='message'
-                color='primary'
-                multiline
-                rows={4}
-              />
-            </FormControl>
+      <Grid container justify='space-between' className={classes.container}>
+        <Grid item sm={6} xs={12} className={classes.section}>
+          <Grid item xs={12}>
+            <Typography
+              variant='h3'
+              color='textSecondary'
+              className={classes.title}
+            >
+              Hello let's get in touch
+            </Typography>
+          </Grid>
+          <Grid item xs={12}>
+            <Typography className={classes.text}>
+              Tell us about your vision and we’ll figure out the best option for
+              you and your project. Don't like Filling up forms ? Mail us then{" "}
+              <span className={classes.heighlightedText}>hello@zede.tech</span>
+            </Typography>
+          </Grid>
+          {/* Form section */}
+          <Grid item xs={12} className={classes.formContainer}>
+            <TextField
+              id='standard-basic'
+              label='name'
+              variant='standard'
+              className={clsx(classes.formItem, classes.input)}
+            />
+            <TextField
+              id='filled-basic'
+              variant='standard'
+              label='email'
+              className={clsx(classes.formItem, classes.input)}
+            />
+            <TextField
+              id='outlined-basic'
+              variant='standard'
+              label='message'
+              multiline
+              rows={4}
+              className={clsx(classes.formItem, classes.input)}
+            />
             <Button
               variant='contained'
               type='submit'
-              className={classes.submit}
+              className={clsx(classes.formItem, classes.button)}
               color='secondary'
               onSubmit={(event) => handleSubmit(event)}
             >
               Submit
             </Button>
-          </form>
+          </Grid>
+        </Grid>
+
+        {/* Side section */}
+        <Grid
+          item
+          sm={4}
+          xs={12}
+          className={(classes.contact, classes.section)}
+        >
+          <Typography className={clsx(classes.text, classes.contactTitle)}>
+            Contact Information
+          </Typography>
+          <div className={classes.address}>
+            <Typography className={classes.microText}>PG Vejdes 24B</Typography>
+            <Typography className={classes.microText}>Växjö, Sweden</Typography>
+          </div>
+          <Typography className={clsx(classes.text, classes.subTitle)}>
+            Follow Us
+          </Typography>
+          <Grid container>
+            <Grid item className={classes.socialMedia}>
+              <Icon className={"fab fa-facebook-f"} color='secondary' />
+            </Grid>
+            <Grid item className={classes.socialMedia}>
+              <Icon className={"fab fa-instagram"} color='secondary' />
+            </Grid>
+            <Grid item className={classes.socialMedia}>
+              <Icon className={"fab fa-twitter"} color='secondary' />
+            </Grid>
+            <Grid item className={classes.socialMedia}>
+              <Icon className={"fab fa-linkedin-in"} color='secondary' />
+            </Grid>
+          </Grid>
         </Grid>
       </Grid>
     </Paper>

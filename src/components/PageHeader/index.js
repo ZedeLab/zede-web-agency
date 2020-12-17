@@ -8,7 +8,7 @@ const useStyle = makeStyles((theme) => ({
     position: "relative",
     width: "100vw",
     maxWidth: "100%",
-    height: "45vh",
+    height: "35vh",
 
     "& > *": {
       boxShadow: theme.shadows[0],
@@ -29,7 +29,7 @@ const useStyle = makeStyles((theme) => ({
     position: "relative",
     width: "100vw",
     maxWidth: "100%",
-    height: "45vh",
+    height: "35vh",
     zIndex: 1,
     opacity: 1,
     textAlign: "center",
@@ -41,10 +41,11 @@ const useStyle = makeStyles((theme) => ({
   },
   title: {
     paddingTop: theme.spacing(8),
-    color: "black",
-    [theme.breakpoints.down("sm")]: {
-      fontSize: "42px",
-    },
+    fontFamily: "Montserrat, sans-serif",
+    fontSize: "36px",
+    lineHeight: 1.15,
+    fontWeight: 600,
+    color: theme.palette.secondary.dark,
   },
 
   svgContainer: {

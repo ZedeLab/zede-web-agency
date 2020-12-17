@@ -23,8 +23,9 @@ const theme = () => {
     },
     sectionHeading: {
       fontFamily: "Montserrat, sans-serif",
-      fontSize: "36px",
+      fontSize: "32px",
       lineHeight: 1.15,
+      fontWeight: 600,
     },
     microHeading: {
       fontFamily: "Montserrat, sans-serif",

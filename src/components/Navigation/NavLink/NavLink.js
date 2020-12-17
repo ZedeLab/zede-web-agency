@@ -12,7 +12,7 @@ const Cutomlink = ({ lable, path, children, underLine }) => {
       marginLeft: theme.spacing(4),
       // textDecoration: "none",
       color: "inherit",
-      fontSize: "1.1rem",
+      fontSize: "1.2rem",
       [theme.breakpoints.down("sm")]: {
         marginBottom: theme.spacing(2),
         marginLeft: 0,

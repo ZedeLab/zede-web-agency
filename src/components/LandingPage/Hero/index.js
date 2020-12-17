@@ -65,8 +65,9 @@ const useStyle = makeStyles((theme) => ({
     top: 0,
     left: 0,
     stroke: theme.palette.secondary.dark,
-    strokeWidth: 0.4,
-    strokeOpacity: 0.2,
+    strokeWidth: 0,
+    strokeOpacity: 0.5,
+    fill: theme.palette.secondary.dark,
   },
 }));
 
