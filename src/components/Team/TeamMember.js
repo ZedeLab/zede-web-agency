@@ -174,20 +174,6 @@ const TeamMembers = ({
         </div>
       </Slide>
 
-      <img
-        src={imgUrl}
-        width='100%'
-        alt=''
-        className={clsx("team-photo", classes.photo)}
-        onClick={() => {
-          setshowDitail(true);
-          setCloseable(true);
-        }}
-        onMouseOver={() => {
-          !showDetail ? setshowDitail(true) : null;
-        }}
-        onLoad={() => setImageLoaded(true)}
-      />
       {!imageLoaded ? (
         <Skeleton
           className={classes.skeleton}
@@ -197,6 +183,22 @@ const TeamMembers = ({
           height='400px'
         />
       ) : null}
+      <Fade in={imageLoaded} timeout={500}>
+        <img
+          src={imgUrl}
+          width='100%'
+          alt=''
+          className={clsx("team-photo", classes.photo)}
+          onClick={() => {
+            setshowDitail(true);
+            setCloseable(true);
+          }}
+          onMouseOver={() => {
+            !showDetail ? setshowDitail(true) : null;
+          }}
+          onLoad={() => setImageLoaded(true)}
+        />
+      </Fade>
     </Paper>
   );
 };
