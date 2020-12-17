@@ -5,6 +5,7 @@ import { uniqueId } from "lodash";
 import sharedStyle from "../../utils/style/js/sharedStyle";
 import Pagination from "@material-ui/lab/Pagination";
 import { useRef, useState } from "react";
+import { PaginationItem } from "@material-ui/lab";
 
 const PortFolio = (params) => {
   const useStyle = makeStyles((theme) => {
@@ -13,7 +14,7 @@ const PortFolio = (params) => {
     return {
       wrapper: {
         ...mainStyle.wrapper,
-        backgroundColor: theme.palette.primary.main,
+        // backgroundColor: theme.palette.primary.main,
       },
 
       container: {
@@ -24,7 +25,14 @@ const PortFolio = (params) => {
       },
       paginationContainer: {
         display: "flex",
+
         justifyContent: "center",
+        color: theme.palette.primary.light,
+      },
+      paginationItem: {
+        color: theme.palette.primary.light,
+        boxShadow: theme.shadows[5],
+        fontSize: theme.spacing(2),
       },
     };
   });
@@ -46,6 +54,13 @@ const PortFolio = (params) => {
             color='secondary'
             className={classes.paginationContainer}
             onChange={handlePageChange}
+            renderItem={(item) => (
+              <PaginationItem
+                size='small'
+                className={classes.paginationItem}
+                {...item}
+              />
+            )}
           />
         </Grid>
 
