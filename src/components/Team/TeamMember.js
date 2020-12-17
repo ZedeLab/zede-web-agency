@@ -149,6 +149,8 @@ const TeamMembers = ({
         width='100%'
         alt=''
         className={clsx("team-photo", classes.photo)}
+        // onMouseOver={() => setshowDitail(true)}
+        // onMouseLeave={() => setshowDitail(false)}
         onClick={() => setshowDitail(true)}
       />
     </Paper>

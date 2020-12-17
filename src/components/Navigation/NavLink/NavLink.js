@@ -37,7 +37,10 @@ const Cutomlink = ({ lable, path, children, underLine }) => {
     <Link href={path}>
       <a
         className={cNames(classes.link, {
-          [`${classes.selected}`]: router.pathname == path,
+          [`${classes.selected}`]:
+            router.pathname == path ||
+            (router.pathname.startsWith("/portfolios") &&
+              path === "/portfolios"),
         })}
       >
         {children}
