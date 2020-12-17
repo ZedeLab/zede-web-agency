@@ -69,9 +69,9 @@ const useStyle = makeStyles((theme) => ({
     display: "flex",
     width: "100%",
     flexDirection: "column",
-    // alignItems: "center",
+    clor: "inherit",
     backgroundColor: theme.palette.primary.light,
-    paddingTop: theme.spacing(15),
+    paddingTop: theme.spacing(16),
     paddingLeft: theme.spacing(5),
     paddingBottom: theme.spacing(2),
     boxShadow: theme.shadows[0],
@@ -82,6 +82,7 @@ const useStyle = makeStyles((theme) => ({
     "& svg": {
       width: "64px",
       height: "64px",
+      justifySelf: "flex-end",
       fill: theme.palette.secondary.dark,
       "& #ze": {
         stroke: theme.palette.primary.dark,
@@ -107,19 +108,19 @@ const navigation = (props) => {
       onClickCapture={() => setShowMobNav(false)}
     >
       <NavLink path='/' underLine>
-        Home
+        <Typography>Home</Typography>
       </NavLink>
       <NavLink path='/about' underLine>
-        About Us
+        <Typography>About Us</Typography>
       </NavLink>
       <NavLink path='/team' underLine>
-        Our Team
+        <Typography>Our Team</Typography>
       </NavLink>
       <NavLink path='/portfolios' underLine>
-        Portfolio
+        <Typography>Portfolio</Typography>
       </NavLink>
       <NavLink path='/contact' underLine>
-        Contact Us
+        <Typography>Contact Us</Typography>
       </NavLink>
     </div>
   );

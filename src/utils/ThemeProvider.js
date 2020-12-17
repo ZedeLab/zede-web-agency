@@ -65,7 +65,8 @@ const theme = (mode = "light") => {
       link: {
         textDecoration: "none",
         fontFamily: "Montserrat",
-        fontWeight: 400,
+        fontWeight: 800,
+        fontSize: "18px",
       },
       button: {
         padding: "16px 25px",

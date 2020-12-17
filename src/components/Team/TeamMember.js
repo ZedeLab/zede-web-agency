@@ -81,20 +81,40 @@ const TeamMembers = ({
   const classes = useStyle();
 
   const [showDetail, setshowDitail] = useState(false);
+  const [closeable, setCloseable] = useState(false);
+
   return (
     // <div className='col-2 lg-4'>
     //   <div className={clsx("portrait-container", classes.container)}>
 
     //   </div>
     // </div>
-    <Paper className={classes.container}>
+    <Paper
+      className={classes.container}
+      onMouseLeave={() => {
+        showDetail && !closeable ? setshowDitail(false) : null;
+      }}
+    >
       <Slide in={showDetail} direction='down' timeout={1000} unmountOnExit>
         <div
           data-w-id='3e6dc9f0-f4eb-a269-2dbe-629385073029'
           className={clsx(classes.descriptionContainer)}
         >
-          <ClickAwayListener onClickAway={() => setshowDitail(false)}>
-            <Grid container direction='column' spacing={1}>
+          <ClickAwayListener
+            onClickAway={() => {
+              setshowDitail(false);
+              setCloseable(false);
+            }}
+          >
+            <Grid
+              container
+              direction='column'
+              spacing={1}
+              onClick={() => {
+                !closeable ? setCloseable(true) : null;
+              }}
+              style={{ minHeight: "100%" }}
+            >
               <Grid item>
                 <Typography
                   variant='h4'
@@ -136,22 +156,34 @@ const TeamMembers = ({
                 </Grid>
               </Grid>
               <Grid item className={classes.closerContainer}>
-                <IconButton onClick={() => setshowDitail(false)}>
-                  <CancelIcon fontSize='large' />
-                </IconButton>
+                {closeable ? (
+                  <IconButton
+                    onClick={() => {
+                      setshowDitail(false);
+                      setCloseable(false);
+                    }}
+                  >
+                    <CancelIcon fontSize='large' />
+                  </IconButton>
+                ) : null}
               </Grid>
             </Grid>
           </ClickAwayListener>
         </div>
       </Slide>
+
       <img
         src={imgUrl}
         width='100%'
         alt=''
         className={clsx("team-photo", classes.photo)}
-        // onMouseOver={() => setshowDitail(true)}
-        // onMouseLeave={() => setshowDitail(false)}
-        onClick={() => setshowDitail(true)}
+        onClick={() => {
+          setshowDitail(true);
+          setCloseable(true);
+        }}
+        onMouseOver={() => {
+          !showDetail ? setshowDitail(true) : null;
+        }}
       />
     </Paper>
   );

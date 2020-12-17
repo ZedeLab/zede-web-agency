@@ -10,8 +10,8 @@ const Cutomlink = ({ lable, path, children, underLine }) => {
     link: {
       ...theme.typography.link,
       marginLeft: theme.spacing(4),
-      color: theme.palette.text.primary,
-      // textAlign: "center",
+      // textDecoration: "none",
+      color: "inherit",
       fontSize: "1.1rem",
       [theme.breakpoints.down("sm")]: {
         marginBottom: theme.spacing(2),
