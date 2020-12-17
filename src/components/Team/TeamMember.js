@@ -90,6 +90,7 @@ const TeamMembers = ({
   const [showDetail, setshowDitail] = useState(false);
   const [closeable, setCloseable] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
+  const [showImage, setShowImage] = useState(false);
   return (
     <Paper
       className={classes.container}
@@ -183,11 +184,12 @@ const TeamMembers = ({
           height='400px'
         />
       ) : null}
-      <Fade in={imageLoaded} timeout={500}>
+      <Fade in={imageLoaded} timeout={500} onEnter={() => setShowImage(true)}>
         <img
           src={imgUrl}
           width='100%'
           alt=''
+          style={showImage ? {} : { display: "none" }}
           className={clsx("team-photo", classes.photo)}
           onClick={() => {
             setshowDitail(true);
