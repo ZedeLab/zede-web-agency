@@ -7,13 +7,15 @@ import {
   Input,
   makeStyles,
   Paper,
+  Snackbar,
   TextField,
   Typography,
 } from "@material-ui/core";
+import Alert from "@material-ui/lab/Alert";
 import sharedStyle from "../../utils/style/js/sharedStyle";
 import clsx from "classnames";
 import { useRef, useState } from "react";
-
+import axios from "axios";
 const emailRegExe = /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i;
 
 const ContactUs = (params) => {
@@ -121,6 +123,31 @@ const ContactUs = (params) => {
   const [showEmailErrorMessage, setShowEmailErrorMessage] = useState(false);
   const [showMessageErrorMessage, setShowMessageErrorMessage] = useState(false);
 
+  const [showSnakbar, setshowSnakbar] = useState(false);
+  const [snakeMsg, setsnakeMsg] = useState("");
+  const [snakbarSeverity, setSnakbarSeverity] = useState();
+
+  const handleSubmit = async (event) => {
+    try {
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_SERVER_IP}/subscriber`,
+        {
+          name: name,
+          email: email,
+          message: message,
+        }
+      );
+      console.log(response.status);
+      setsnakeMsg("Message was seccesfully sent, please check your spam.");
+      setSnakbarSeverity("success");
+      setshowSnakbar(true);
+    } catch (error) {
+      setsnakeMsg("We were unable to send your message.");
+      setSnakbarSeverity("error");
+      setshowSnakbar(true);
+    }
+  };
+
   const validateInput = (type) => {
     if (type === "name") {
       if (name.length === 0) {
@@ -155,10 +182,6 @@ const ContactUs = (params) => {
     }
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(value);
-  };
   return (
     <Paper className={classes.wrapper}>
       <Grid container justify='space-between' className={classes.container}>
@@ -245,7 +268,7 @@ const ContactUs = (params) => {
               variant='contained'
               className={clsx(classes.formItem, classes.button)}
               color='secondary'
-              onSubmit={(event) => handleSubmit(event)}
+              onClick={(event) => handleSubmit(event)}
               disabled={nameIsNotValid || emailIsNotValid || messageIsNotValid}
             >
               Submit
@@ -286,6 +309,16 @@ const ContactUs = (params) => {
           </Grid>
         </Grid>
       </Grid>
+      <Snackbar
+        open={showSnakbar}
+        autoHideDuration={6000}
+        onClose={() => {
+          setsnakeMsg("");
+          setshowSnakbar(false);
+        }}
+      >
+        <Alert severity={snakbarSeverity}>{snakeMsg}</Alert>
+      </Snackbar>
     </Paper>
   );
 };

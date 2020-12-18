@@ -8,21 +8,21 @@ const handler = nc()
 
   .post(async (req, res) => {
     mailServer.setApiKey(process.env.EMAIL_KEY);
-    const msg = {
-      to: "abelofficial94@gmail.com",
-      from: "em2432@zede.tech",
-      subject: "Server message.",
-      text: "and easy to do anywhere",
-      html: "<strong> whats up </strong>",
+    console.log(req.body.name, "\t", req.body.email);
+    const template = "d-a03acb185cac43a2b0a10f9ac097e98b";
+    const msgToClient = {
+      to: req.body.email,
+      from: "hello@zede.tech",
+      templateId: template,
     };
 
     try {
-      const reply = await mailServer.send(msg);
+      const reply = await mailServer.send(msgToClient);
       console.log(reply);
-      res.json({ message: "message sent" });
+      res.status(200).json({ message: "message sent" });
     } catch (error) {
-      console.log(error);
-      res.json({ message: "something went wrong" });
+      console.log(error.response.body);
+      res.status(400).json({ message: "something went wrong", error: error });
     }
   });
 
