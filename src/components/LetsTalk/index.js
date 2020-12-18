@@ -10,6 +10,8 @@ import {
   Snackbar,
   TextField,
   Typography,
+  useMediaQuery,
+  useTheme,
 } from "@material-ui/core";
 import Alert from "@material-ui/lab/Alert";
 import sharedStyle from "../../utils/style/js/sharedStyle";
@@ -90,6 +92,10 @@ const ContactUs = (params) => {
         fontSize: "24px",
         paddingTop: theme.spacing(8),
       },
+      contactIcon: {
+        color: theme.palette.secondary.dark,
+        transform: "scaleX(-1)",
+      },
       address: {
         paddingBottom: theme.spacing(2),
       },
@@ -106,6 +112,8 @@ const ContactUs = (params) => {
   });
 
   const classes = useStyle();
+  const theme = useTheme();
+  const match = useMediaQuery(theme.breakpoints.down("sm"));
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -184,8 +192,13 @@ const ContactUs = (params) => {
 
   return (
     <Paper className={classes.wrapper}>
-      <Grid container justify='space-between' className={classes.container}>
-        <Grid item sm={6} xs={12} className={classes.section}>
+      <Grid
+        container
+        direction={match ? "column-reverse" : "row"}
+        justify='space-between'
+        className={classes.container}
+      >
+        <Grid item md={6} sm={12} className={classes.section}>
           <Grid item xs={12}>
             <Typography
               variant='h3'
@@ -279,32 +292,63 @@ const ContactUs = (params) => {
         {/* Side section */}
         <Grid
           item
-          sm={4}
-          xs={12}
+          md={5}
+          sm={12}
           className={(classes.contact, classes.section)}
         >
-          <Typography className={clsx(classes.text, classes.contactTitle)}>
-            Contact Information
-          </Typography>
-          <div className={classes.address}>
-            <Typography className={classes.microText}>PG Vejdes 24B</Typography>
-            <Typography className={classes.microText}>Växjö, Sweden</Typography>
-          </div>
-          <Typography className={clsx(classes.text, classes.subTitle)}>
-            Follow Us
-          </Typography>
-          <Grid container>
-            <Grid item className={classes.socialMedia}>
-              <Icon className={"fab fa-facebook-f"} color='secondary' />
+          <Grid container direction='row' spacing={2}>
+            <Grid item xs={2}>
+              <Icon
+                fontSize='large'
+                className={clsx(classes.contactIcon, "far fa-paper-plane")}
+                color='secondary'
+              />
             </Grid>
-            <Grid item className={classes.socialMedia}>
-              <Icon className={"fab fa-instagram"} color='secondary' />
-            </Grid>
-            <Grid item className={classes.socialMedia}>
-              <Icon className={"fab fa-twitter"} color='secondary' />
-            </Grid>
-            <Grid item className={classes.socialMedia}>
-              <Icon className={"fab fa-linkedin-in"} color='secondary' />
+            <Grid item xs={10}>
+              <Typography className={clsx(classes.text, classes.contactTitle)}>
+                Contact Information
+              </Typography>
+              <div className={classes.address}>
+                <Typography className={classes.microText}>
+                  PG Vejdes 24B
+                </Typography>
+                <Typography className={classes.microText}>
+                  Växjö, Sweden
+                </Typography>
+              </div>
+              <Typography className={clsx(classes.text, classes.subTitle)}>
+                Follow Us
+              </Typography>
+              <Grid container>
+                <Grid item className={classes.socialMedia}>
+                  <Icon
+                    fontSize='small'
+                    className={"fab fa-facebook-f"}
+                    color='secondary'
+                  />
+                </Grid>
+                <Grid item className={classes.socialMedia}>
+                  <Icon
+                    fontSize='small'
+                    className={"fab fa-instagram"}
+                    color='secondary'
+                  />
+                </Grid>
+                <Grid item className={classes.socialMedia}>
+                  <Icon
+                    fontSize='small'
+                    className={"fab fa-twitter"}
+                    color='secondary'
+                  />
+                </Grid>
+                <Grid item className={classes.socialMedia}>
+                  <Icon
+                    fontSize='small'
+                    className={"fab fa-linkedin-in"}
+                    color='secondary'
+                  />
+                </Grid>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
