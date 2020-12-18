@@ -8,15 +8,18 @@ import { Typography } from "@material-ui/core";
 const Cutomlink = ({ lable, path, children, underLine }) => {
   const useStyle = makeStyles((theme) => ({
     link: {
-      ...theme.typography.link,
-      marginLeft: theme.spacing(4),
-      // textDecoration: "none",
+      textDecoration: "none",
       color: "inherit",
-      fontSize: "1.2rem",
-      [theme.breakpoints.down("sm")]: {
-        marginBottom: theme.spacing(2),
-        marginLeft: 0,
-        fontWeight: 600,
+      "& >*": {
+        ...theme.typography.link,
+        marginLeft: theme.spacing(4),
+
+        // fontSize: "1.2rem",
+        [theme.breakpoints.down("sm")]: {
+          marginBottom: theme.spacing(1),
+          marginLeft: 0,
+          // fontWeight: 600,
+        },
       },
     },
     selected: {
