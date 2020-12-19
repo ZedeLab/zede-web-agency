@@ -9,6 +9,7 @@ const useStyle = makeStyles((theme) => ({
     overflow: "hidden",
     boxShadow: theme.shadows[5],
     border: "none",
+    cursor: "pointer",
   },
   container: {
     height: "100%",

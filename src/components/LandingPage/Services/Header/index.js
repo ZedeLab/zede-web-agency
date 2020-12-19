@@ -7,7 +7,8 @@ import {
   Typography,
 } from "@material-ui/core";
 import { useOnScreen } from "../../../../utils/hooks/useOnScreen";
-import clx from "classnames";
+import { useRouter } from "next/router";
+
 const useStyle = makeStyles((theme) => {
   return {
     title: {
@@ -32,7 +33,7 @@ const WorkFlowHeader = ({ microTitle, title, text }) => {
   const classes = useStyle();
 
   const [setRef, visible] = useOnScreen({ threshold: "0.25" });
-
+  const router = useRouter();
   return (
     <Fade in={visible} timeout={1500}>
       <div ref={setRef}>
@@ -49,6 +50,7 @@ const WorkFlowHeader = ({ microTitle, title, text }) => {
           variant='contained'
           color='secondary'
           className={classes.button}
+          onClick={() => router.push("/contact#contact-form")}
         >
           Get free consultation
         </Button>

@@ -21,6 +21,9 @@ const Cutomlink = ({ lable, path, children, underLine }) => {
           // fontWeight: 600,
         },
       },
+      "& active": {
+        outline: "none",
+      },
     },
     selected: {
       color: theme.palette.secondary.dark,
@@ -30,6 +33,9 @@ const Cutomlink = ({ lable, path, children, underLine }) => {
           ? `2px solid ${theme.palette.secondary.light}`
           : "none",
         // paddingBottom: theme.spacing(1),
+      },
+      "& active": {
+        outline: "none",
       },
     },
   }));

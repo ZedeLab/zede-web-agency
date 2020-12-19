@@ -33,6 +33,7 @@ const useStyle = makeStyles((theme) => ({
       width: "80%",
       flexDirection: "column",
     },
+    cursor: "pointer",
   },
   descriptionContainer: {
     position: "absolute",

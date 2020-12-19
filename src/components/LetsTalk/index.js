@@ -198,7 +198,7 @@ const ContactUs = (params) => {
         justify='space-between'
         className={classes.container}
       >
-        <Grid item md={6} sm={12} className={classes.section}>
+        <Grid item md={6} sm={12} className={classes.section} id='contact-form'>
           <Grid item xs={12}>
             <Typography
               variant='h3'

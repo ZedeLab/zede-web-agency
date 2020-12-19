@@ -32,7 +32,8 @@ const useStyle = makeStyles((theme) => ({
   svgContainer: {
     "& svg": {
       width: "100%",
-      maxHeight: "450px",
+      height: "100%",
+      maxHeight: "350px",
       fill: theme.palette.secondary.main,
       stroke: theme.palette.primary.main,
       strokeWidth: "20px",
