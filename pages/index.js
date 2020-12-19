@@ -15,7 +15,7 @@ const Home = (params) => {
         <motion.div variants={routeAnim.fadeInUp}>
           <WorkFlow />
         </motion.div>
-        <motion.div variants={routeAnim.fadeInUp}>
+        <motion.div id='landing-services' variants={routeAnim.fadeInUp}>
           <Services />
         </motion.div>
         <motion.div variants={routeAnim.fadeInUp}>

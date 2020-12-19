@@ -2,6 +2,7 @@ import { Button, Grid, makeStyles, Paper, Typography } from "@material-ui/core";
 import Lottie from "react-lottie";
 import * as animationData from "../../../../public/animations/heroAnim.json";
 import clsx from "classnames";
+import { useRouter } from "next/router";
 const useStyle = makeStyles((theme) => ({
   wrapper: {
     backgroundColor: theme.palette.primary.dark,
@@ -9,6 +10,7 @@ const useStyle = makeStyles((theme) => ({
     width: "100vw",
     maxWidth: "100%",
     height: "100vh",
+    minHeight: "900px",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -39,6 +41,9 @@ const useStyle = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       fontSize: "2.5rem",
     },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "2rem",
+    },
   },
   herodescription: {
     maxWidth: "700px",
@@ -48,6 +53,12 @@ const useStyle = makeStyles((theme) => ({
     fontSize: "22px",
     lineHeight: 1.4,
     fontWeight: 400,
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "20px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "18px",
+    },
   },
 
   button: {
@@ -59,6 +70,7 @@ const useStyle = makeStyles((theme) => ({
     margin: "auto",
     width: "100%",
     height: "100vh",
+    minHeight: "900px",
     position: "absolute",
     opacity: 0.5,
     zIndex: 0,
@@ -73,6 +85,7 @@ const useStyle = makeStyles((theme) => ({
 
 const Hero = (params) => {
   const classes = useStyle();
+  const router = useRouter();
   const animOptions = {
     loop: true,
     autoplay: true,
@@ -98,8 +111,9 @@ const Hero = (params) => {
             <br />
           </Typography>
           <Typography className={clsx(classes.text, classes.herodescription)}>
-            We build digital product, from idea to design, development to
-            marketing &amp; PR to post launch support
+            From idea to design &amp; development to post launch support. Zede
+            develops cost efficient, future proof solutions for companies that
+            aim for impact.
           </Typography>
         </Grid>
         <Grid item className={classes.section}>
@@ -108,6 +122,7 @@ const Hero = (params) => {
               className={classes.button}
               variant='contained'
               color='secondary'
+              onClick={() => router.push("/contact")}
             >
               Get free consultation
             </Button>
@@ -116,6 +131,7 @@ const Hero = (params) => {
               className={clsx(classes.button, "button")}
               variant='outlined'
               color='secondary'
+              onClick={() => router.push("/#landing-services")}
             >
               Learn more
             </Button>
