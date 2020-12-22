@@ -11,6 +11,7 @@ import useCommonStyle from "../../../utils/style/js/sharedStyle";
 import Lottie from "react-lottie";
 import * as animationData from "../../../../public/animations/contactUs.json";
 import { ReactSVG } from "react-svg";
+import { useRouter } from "next/router";
 
 const useStyle = makeStyles((theme) => {
   const mainStyle = useCommonStyle();
@@ -63,7 +64,7 @@ const useStyle = makeStyles((theme) => {
 
 const LetsTalk = (params) => {
   const classes = useStyle();
-
+  const router = useRouter();
   const animOptions = {
     loop: true,
     autoplay: true,
@@ -99,6 +100,7 @@ const LetsTalk = (params) => {
               variant='contained'
               color='secondary'
               className={clx(classes.button, "button")}
+              onClick={() => router.push("/contact")}
             >
               Let&#x27;s Talk
             </Button>
