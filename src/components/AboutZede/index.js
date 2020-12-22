@@ -27,6 +27,10 @@ const AboutZede = (params) => {
       text: {
         lineBreak: "strict",
       },
+      image: {
+        width: "100%",
+        maxWidth: "150px",
+      },
     };
   });
   const classes = useStyle();
@@ -82,7 +86,7 @@ const AboutZede = (params) => {
                       in={visible}
                       timeout={(timeout += 300)}
                     >
-                      <img src={url} width='100%' alt='' />
+                      <img src={url} className={classes.image} alt='' />
                     </Slide>
                   </Grid>
                 ))}

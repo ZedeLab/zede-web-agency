@@ -172,26 +172,34 @@ const PortfolioDetail = ({ prevId, nextId, portfolioData }) => {
             >
               Project summary
             </Typography>
-            <a
-              target='_blank'
-              href={portfolioData.detail.url}
-              className={clx(classes.info, classes.link)}
-            >
-              <Typography>
-                <LanguageIcon className={classes.infoIcon} />{" "}
-                {portfolioData.detail.url}
+            {!portfolioData.private ? (
+              <>
+                <a
+                  target='_blank'
+                  href={portfolioData.detail.url}
+                  className={clx(classes.info, classes.link)}
+                >
+                  <Typography>
+                    <LanguageIcon className={classes.infoIcon} />
+                    {portfolioData.detail.url}
+                  </Typography>
+                </a>
+                <a
+                  target='_blank'
+                  href={portfolioData.detail.github}
+                  className={clx(classes.info, classes.link)}
+                >
+                  <Typography>
+                    <GitHubIcon className={classes.infoIcon} />
+                    {portfolioData.detail.github}
+                  </Typography>
+                </a>
+              </>
+            ) : (
+              <Typography color='error'>
+                <LanguageIcon className={classes.infoIcon} /> private
               </Typography>
-            </a>
-            <a
-              target='_blank'
-              href={portfolioData.detail.github}
-              className={clx(classes.info, classes.link)}
-            >
-              <Typography>
-                <GitHubIcon className={classes.infoIcon} />{" "}
-                {portfolioData.detail.github}
-              </Typography>
-            </a>
+            )}
             <Typography className={clx(classes.date)}>
               {portfolioData.detail.date}
             </Typography>

@@ -28,76 +28,77 @@
             "technologies": ["Bootstrap", "CSS", "Django", "Docker", "HTML", "JavaScript", "MYSQL", "Python", "jQuery"]
         }
     },
-    "Resume Website API":{
+    "Talk In Arabic":{
         "id": "3",
-        "imgUrl": ["https://www.rspcansw.org.au/wp-content/uploads/noPhotoFound.png"],
+        "imgUrl": ["/images/talk-in-arabic.webp"],
         
-        "description": "For over a century Specialized has distinguished themselves as inventors and pioneers in the technological age. We are incredibly excited for the opportunity to partner with Specialized to further assist innovation and revolutionary transformation into the digital era of digital identification-solutions.",
-        "coverImgUrl": "https://www.visionmate.se/en/wp-content/uploads/sites/2/2019/01/online-shopping.jpg",
+        "description": "Talk in Arabic (TIA) is a language education platform that teaches spoken Arabic. It offers 8 of the most popular and important dialects of spoken Arabic.",
+        "coverImgUrl": "/images/talk-in-arabic.webp",
         "featured": true,
+        "private": true,
         "detail": {
-            "url": "https://eyobtech.pythonanywhere.com/",
-            "github": " https://github.com/eyobofficial/my-resume",
+            "url": "",
+            "github": "",
             "date": "July 30, 2020",
-            "technologies": ["AWS", "DRF", "Django", "Python", "SQLite", "Sendgrid API"]
+            "technologies": ["React", "Styled Components", "GraphQL", "Apollo Client"]
         }
     },
 
-    "Example portfolio":{
+    "Blue Dot Sessions":{
         "id": "4",
-        "imgUrl": ["https://www.rspcansw.org.au/wp-content/uploads/noPhotoFound.png"],
+        "imgUrl": ["/images/bluedot.webp"],
         
-        "description": "For over a century Specialized has distinguished themselves as inventors and pioneers in the technological age. We are incredibly excited for the opportunity to partner with Specialized to further assist innovation and revolutionary transformation into the digital era of digital identification-solutions.",
-        "coverImgUrl": "https://www.bbvaapimarket.com/wp-content/uploads/2016/06/bbva-open4u-que-hace-una-api-por-mi-negocio.png",
+        "description": "Blue Dot is a boutique music studio that makes available a library of originally recorded music for film-makers, audiobook companies and other narrative audio producers",
+        "coverImgUrl": "/images/bluedot.webp",
         "featured": true,
         "detail": {
-            "url": "https://eyobtech.pythonanywhere.com/",
-            "github": " https://github.com/eyobofficial/my-resume",
-            "date": "July 30, 2020",
-            "technologies": ["AWS", "DRF", "Django", "Python", "SQLite", "Sendgrid API"]
+            "url": "https://app.sessions.blue",
+            "github": "",
+            "date": "Jan 25, 2019",
+            "technologies": ["React","Styled Components","GraphQL","Apollo Client","Stripe"]
         }
     },
     
-    "Resume Website API_3":{
+    "Socionado":{
         "id": "5",
-        "imgUrl": ["https://www.rspcansw.org.au/wp-content/uploads/noPhotoFound.png"],
+        "imgUrl": ["/images/socionado.webp"],
         
-        "description": "For over a century Specialized has distinguished themselves as inventors and pioneers in the technological age. We are incredibly excited for the opportunity to partner with Specialized to further assist innovation and revolutionary transformation into the digital era of digital identification-solutions.",
-        "coverImgUrl": "https://www.bbvaapimarket.com/wp-content/uploads/2016/06/bbva-open4u-que-hace-una-api-por-mi-negocio.png",
+        "description": "Socionado is a market place that connects businesses with hand picked freelance social media marketers",
+        "coverImgUrl": "/images/socionado.webp",
         "featured": false,
         "detail": {
-            "url": "https://eyobtech.pythonanywhere.com/",
-            "github": " https://github.com/eyobofficial/my-resume",
-            "date": "July 30, 2020",
+            "url": "https://app.socionado.com",
+            "github": "",
+            "date": "Sep 3, 2020",
             "technologies": ["AWS", "DRF", "Django", "Python", "SQLite", "Sendgrid API"]
         }
     },
-    "Resume Website API_4":{
+    "Financr":{
         "id": "6",
-        "imgUrl": ["https://www.rspcansw.org.au/wp-content/uploads/noPhotoFound.png"],
+        "imgUrl": ["/images/financer.webp"],
         
-        "description": "For over a century Specialized has distinguished themselves as inventors and pioneers in the technological age. We are incredibly excited for the opportunity to partner with Specialized to further assist innovation and revolutionary transformation into the digital era of digital identification-solutions.",
-        "coverImgUrl": "https://www.bbvaapimarket.com/wp-content/uploads/2016/06/bbva-open4u-que-hace-una-api-por-mi-negocio.png",
+        "description": "Financr is a marketplace for competitive personal loan offers. With Financr, borrowers apply for the best financial products on the market with one simple application.",
+        "coverImgUrl": "/images/financer.webp",
         "featured": false,
         "detail": {
-            "url": "https://eyobtech.pythonanywhere.com/",
-            "github": " https://github.com/eyobofficial/my-resume",
-            "date": "July 30, 2020",
-            "technologies": ["AWS", "DRF", "Django", "Python", "SQLite", "Sendgrid API"]
+            "url": "https://financr.com.au",
+            "github": "",
+            "date": "July 3, 2019",
+            "technologies": ["React","Styled-Components","Typescript","Twilio"]
         }
     },
-    "Resume Website API_5":{
+    "Moko's":{
         "id": "7",
-        "imgUrl": ["https://www.rspcansw.org.au/wp-content/uploads/noPhotoFound.png"],
+        "imgUrl": ["/images/mokos.webp"],
         
-        "description": "For over a century Specialized has distinguished themselves as inventors and pioneers in the technological age. We are incredibly excited for the opportunity to partner with Specialized to further assist innovation and revolutionary transformation into the digital era of digital identification-solutions.",
-        "coverImgUrl": "https://www.bbvaapimarket.com/wp-content/uploads/2016/06/bbva-open4u-que-hace-una-api-por-mi-negocio.png",
+        "description": "Moko's is the first of it's kind, loyalty and restaurant discovery App. It helps small businesses build a great relationship with customers by providing an ideal reward system.",
+        "coverImgUrl": "/images/mokos.webp",
         "featured": false,
         "detail": {
-            "url": "https://eyobtech.pythonanywhere.com/",
-            "github": " https://github.com/eyobofficial/my-resume",
+            "url": "https://play.google.com/store/search?q=Moko%27s",
+            "github": "",
             "date": "July 30, 2020",
-            "technologies": ["AWS", "DRF", "Django", "Python", "SQLite", "Sendgrid API"]
+            "technologies": ["React Native","GraphQL","Apollo Client","Styled Components"]
         }
     }
 }
