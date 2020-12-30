@@ -161,13 +161,13 @@ const Footer = (params) => {
                 </Grid>
                 <Grid item>
                   <a
-                    href='mailto: hello@zede.tch'
+                    href='mailto: hello@zede.tech'
                     style={{ textDecoration: "none" }}
                   >
                     <Typography
                       className={clsx(classes.email, "footer-paragraph")}
                     >
-                      hello@zede.tch
+                      hello@zede.tech
                     </Typography>
                   </a>
                 </Grid>
