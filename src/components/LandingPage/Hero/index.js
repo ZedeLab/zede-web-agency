@@ -112,8 +112,8 @@ const Hero = (params) => {
           </Typography>
           <Typography className={clsx(classes.text, classes.herodescription)}>
             From idea to design &amp; development to post launch support. Zede
-            develops cost efficient, future proof solutions for companies that
-            aim for impact.
+            tech develops cost efficient, future proof solutions for companies
+            that aim for impact.
           </Typography>
         </Grid>
         <Grid item className={classes.section}>
