@@ -1,8 +1,11 @@
 {
-    "Rekik Engineering":{
-        "id": "1",
-        "imgUrl": ["https://eyobofficial-portfolio.s3.amazonaws.com/media/services-slide.jpg", "https://eyobofficial-portfolio.s3.amazonaws.com/media/process-slide.jpg", "https://eyobofficial-portfolio.s3.amazonaws.com/media/contact-slide.jpg" ],
-        
+    "Rekik Engineering": {
+        "id": "Rekik-Engineering",
+        "imgUrl": [
+            "https://eyobofficial-portfolio.s3.amazonaws.com/media/services-slide.jpg",
+            "https://eyobofficial-portfolio.s3.amazonaws.com/media/process-slide.jpg",
+            "https://eyobofficial-portfolio.s3.amazonaws.com/media/contact-slide.jpg"
+        ],
         "description": "For over a century Specialized has distinguished themselves as inventors and pioneers in the technological age. We are incredibly excited for the opportunity to partner with Specialized to further assist innovation and revolutionary transformation into the digital era of digital identification-solutions.",
         "coverImgUrl": "https://eyobofficial-portfolio.s3.amazonaws.com/media/hero-slide.jpg",
         "featured": true,
@@ -10,14 +13,23 @@
             "url": "http://www.rekikeng.com",
             "github": "https://github.com/eyobofficial/rekikeng",
             "date": "April 4, 2019",
-            "technologies": ["CSS", "Django", "JavaScript", "Python", "SQLite", "jQuery"]
+            "technologies": [
+                "CSS",
+                "Django",
+                "JavaScript",
+                "Python",
+                "SQLite",
+                "jQuery"
+            ]
         }
     },
-    
-    "Woreket Payment Tracker":{
-        "id": "2",
-        "imgUrl": ["https://eyobofficial-portfolio.s3.amazonaws.com/media/4.jpg", "https://eyobofficial-portfolio.s3.amazonaws.com/media/2.jpg", "https://eyobofficial-portfolio.s3.amazonaws.com/media/1.jpg"],
-        
+    "Woreket Payment Tracker": {
+        "id": "Woreket-Payment-Tracker",
+        "imgUrl": [
+            "https://eyobofficial-portfolio.s3.amazonaws.com/media/4.jpg",
+            "https://eyobofficial-portfolio.s3.amazonaws.com/media/2.jpg",
+            "https://eyobofficial-portfolio.s3.amazonaws.com/media/1.jpg"
+        ],
         "description": "For over a century Specialized has distinguished themselves as inventors and pioneers in the technological age. We are incredibly excited for the opportunity to partner with Specialized to further assist innovation and revolutionary transformation into the digital era of digital identification-solutions.",
         "coverImgUrl": "https://blog.dpogroup.com/wp-content/uploads/2018/12/1-11.png",
         "featured": true,
@@ -25,13 +37,24 @@
             "url": "http://www.woreket.com",
             "github": " https://bit.ly/2YnSe8n",
             "date": " March 1, 2020",
-            "technologies": ["Bootstrap", "CSS", "Django", "Docker", "HTML", "JavaScript", "MYSQL", "Python", "jQuery"]
+            "technologies": [
+                "Bootstrap",
+                "CSS",
+                "Django",
+                "Docker",
+                "HTML",
+                "JavaScript",
+                "MYSQL",
+                "Python",
+                "jQuery"
+            ]
         }
     },
-    "Talk In Arabic":{
-        "id": "3",
-        "imgUrl": ["/images/talk-in-arabic.webp"],
-        
+    "Talk In Arabic": {
+        "id": "Talk-In-Arabic",
+        "imgUrl": [
+            "/images/talk-in-arabic.webp"
+        ],
         "description": "Talk in Arabic (TIA) is a language education platform that teaches spoken Arabic. It offers 8 of the most popular and important dialects of spoken Arabic.",
         "coverImgUrl": "/images/talk-in-arabic.webp",
         "featured": true,
@@ -40,14 +63,19 @@
             "url": "",
             "github": "",
             "date": "July 30, 2020",
-            "technologies": ["React", "Styled Components", "GraphQL", "Apollo Client"]
+            "technologies": [
+                "React",
+                "Styled Components",
+                "GraphQL",
+                "Apollo Client"
+            ]
         }
     },
-
-    "Blue Dot Sessions":{
-        "id": "4",
-        "imgUrl": ["/images/bluedot.webp"],
-        
+    "Blue Dot Sessions": {
+        "id": "Blue-Dot-Sessions",
+        "imgUrl": [
+            "/images/bluedot.webp"
+        ],
         "description": "Blue Dot is a boutique music studio that makes available a library of originally recorded music for film-makers, audiobook companies and other narrative audio producers",
         "coverImgUrl": "/images/bluedot.webp",
         "featured": true,
@@ -55,14 +83,20 @@
             "url": "https://app.sessions.blue",
             "github": "",
             "date": "Jan 25, 2019",
-            "technologies": ["React","Styled Components","GraphQL","Apollo Client","Stripe"]
+            "technologies": [
+                "React",
+                "Styled Components",
+                "GraphQL",
+                "Apollo Client",
+                "Stripe"
+            ]
         }
     },
-    
-    "Socionado":{
-        "id": "5",
-        "imgUrl": ["/images/socionado.webp"],
-        
+    "Socionado": {
+        "id": "Socionado",
+        "imgUrl": [
+            "/images/socionado.webp"
+        ],
         "description": "Socionado is a market place that connects businesses with hand picked freelance social media marketers",
         "coverImgUrl": "/images/socionado.webp",
         "featured": false,
@@ -70,13 +104,21 @@
             "url": "https://app.socionado.com",
             "github": "",
             "date": "Sep 3, 2020",
-            "technologies": ["AWS", "DRF", "Django", "Python", "SQLite", "Sendgrid API"]
+            "technologies": [
+                "AWS",
+                "DRF",
+                "Django",
+                "Python",
+                "SQLite",
+                "Sendgrid API"
+            ]
         }
     },
-    "Financr":{
-        "id": "6",
-        "imgUrl": ["/images/financer.webp"],
-        
+    "Financr": {
+        "id": "Financr",
+        "imgUrl": [
+            "/images/financer.webp"
+        ],
         "description": "Financr is a marketplace for competitive personal loan offers. With Financr, borrowers apply for the best financial products on the market with one simple application.",
         "coverImgUrl": "/images/financer.webp",
         "featured": false,
@@ -84,13 +126,19 @@
             "url": "https://financr.com.au",
             "github": "",
             "date": "July 3, 2019",
-            "technologies": ["React","Styled-Components","Typescript","Twilio"]
+            "technologies": [
+                "React",
+                "Styled-Components",
+                "Typescript",
+                "Twilio"
+            ]
         }
     },
-    "Moko's":{
-        "id": "7",
-        "imgUrl": ["/images/mokos.webp"],
-        
+    "Moko's": {
+        "id": "Moko's",
+        "imgUrl": [
+            "/images/mokos.webp"
+        ],
         "description": "Moko's is the first of it's kind, loyalty and restaurant discovery App. It helps small businesses build a great relationship with customers by providing an ideal reward system.",
         "coverImgUrl": "/images/mokos.webp",
         "featured": false,
@@ -98,7 +146,12 @@
             "url": "https://play.google.com/store/search?q=Moko%27s",
             "github": "",
             "date": "July 30, 2020",
-            "technologies": ["React Native","GraphQL","Apollo Client","Styled Components"]
+            "technologies": [
+                "React Native",
+                "GraphQL",
+                "Apollo Client",
+                "Styled Components"
+            ]
         }
     }
 }

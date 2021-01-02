@@ -1,6 +1,5 @@
 import { Grid, makeStyles, Typography } from "@material-ui/core";
 import TeamMember from "./TeamMember";
-import data from "./data.json";
 import { uniqueId } from "lodash";
 
 const useStyle = makeStyles((theme) => ({
@@ -22,8 +21,9 @@ const useStyle = makeStyles((theme) => ({
     },
   },
 }));
-const OurTeam = (params) => {
+const OurTeam = ({ data }) => {
   const classes = useStyle();
+
   return (
     <Grid container direction='column' alignItems='center'>
       <Grid
