@@ -34,17 +34,17 @@ const PortfolioDetail = ({ title, portfolio, prev, next }) => {
 };
 
 export async function getStaticPaths() {
-  const paths = Object.keys(data).map((post) => ({
-    params: { id: `${data[post].id}` },
+  const paths = Object.keys(data.data).map((post) => ({
+    params: { id: `${data.data[post].id}` },
   }));
 
   return { paths, fallback: false };
 }
 
 export async function getStaticProps({ params }) {
-  const titleKeys = Object.keys(data);
+  const titleKeys = Object.keys(data.data);
   const portfolioTitle = titleKeys.filter(
-    (title) => data[title].id === params.id
+    (title) => data.data[title].id === params.id
   );
 
   const currentIndex = titleKeys.indexOf(portfolioTitle[0]);
@@ -52,15 +52,15 @@ export async function getStaticProps({ params }) {
   let nextPortFolioId = null,
     prevPortFolioId = null;
   if (currentIndex === 0) {
-    nextPortFolioId = data[titleKeys[currentIndex + 1]].id;
+    nextPortFolioId = data.data[titleKeys[currentIndex + 1]].id;
   } else if (currentIndex === titleKeys.length - 1) {
-    prevPortFolioId = data[titleKeys[currentIndex - 1]].id;
+    prevPortFolioId = data.data[titleKeys[currentIndex - 1]].id;
   } else {
-    nextPortFolioId = data[titleKeys[currentIndex + 1]].id;
-    prevPortFolioId = data[titleKeys[currentIndex - 1]].id;
+    nextPortFolioId = data.data[titleKeys[currentIndex + 1]].id;
+    prevPortFolioId = data.data[titleKeys[currentIndex - 1]].id;
   }
 
-  const portfolio = data[portfolioTitle];
+  const portfolio = data.data[portfolioTitle];
 
   return {
     props: {
