@@ -28,7 +28,6 @@ const Home = (params) => {
           content='Zede agency is a web development federation that uses state of the art technologies. From idea to design &amp; development to post launch support. Zede
           tech develops cost efficient, future proof solutions for companies
           that aim for impact.'
-          name='description'
         />
       </Head>
       <motion.div exit={{ opacity: 0 }} initial='initial' animate='animate'>
