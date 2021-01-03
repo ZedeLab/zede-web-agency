@@ -49,15 +49,6 @@ export default function MyApp(props) {
           name='description'
         />
 
-        {/* Open Graph tags */}
-        <meta property='og:site_name' content='Zede Tech Agency' />
-        <meta property='og:title' content='Home Page' />
-        <meta property='og:image' content='/images/zede-logo-colored.svg' />
-        <meta
-          property='og:description'
-          content='Zede agency is a web development federation that uses state of the art technologies.'
-        />
-
         {/* favicons */}
 
         <link

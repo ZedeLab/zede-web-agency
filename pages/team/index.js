@@ -13,7 +13,10 @@ const OurTeam = ({ pageData }) => {
         <meta content={pageData.description} name='description' />
         {/* Open Graph tags */}
         <meta property='og:title' content={`${pageData.title} - Zede agency`} />
-        <meta property='og:image' content={pageData.shareImgUrl} />
+        <meta
+          property='og:image'
+          content={`${process.env.NEXT_PUBLIC_SERVER}${pageData.shareImgUrl}`}
+        />
         <meta property='og:description' content={pageData.description} />
       </Head>
       <motion.div exit={{ opacity: 0 }} initial='initial' animate='animate'>
