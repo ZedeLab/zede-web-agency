@@ -42,13 +42,6 @@ export default function MyApp(props) {
         <meta http='Content-Type' content='text/html; charSet=utf-8' />
         <meta content='width=device-width, initial-scale=1' name='viewport' />
 
-        <meta
-          content='Zede agency is a web development federation that uses state of the art technologies. From idea to design &amp; development to post launch support. Zede
-          tech develops cost efficient, future proof solutions for companies
-          that aim for impact.'
-          name='description'
-        />
-
         {/* favicons */}
 
         <link
@@ -83,7 +76,7 @@ export default function MyApp(props) {
           rel='stylesheet'
         />
       </Head>
-      <bod>
+      <>
         <CssBaseline />
         <Paper>
           <ThemeProvider theme={theme}>
@@ -94,7 +87,7 @@ export default function MyApp(props) {
             <Footer />
           </ThemeProvider>
         </Paper>
-      </bod>
+      </>
     </>
   );
 }

@@ -10,6 +10,12 @@ const Home = (params) => {
   return (
     <>
       <Head>
+        <meta
+          content='Zede agency is a web development federation that uses state of the art technologies. From idea to design &amp; development to post launch support. Zede
+          tech develops cost efficient, future proof solutions for companies
+          that aim for impact.'
+          name='description'
+        />
         {/* Open Graph tags */}
         <meta property='og:site_name' content='Zede Tech Agency' />
         <meta property='og:title' content='Home Page' />

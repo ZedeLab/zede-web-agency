@@ -12,8 +12,11 @@ const PortfolioDetail = ({ title, portfolio, prev, next }) => {
         <title>{title} - Zede agency</title>
         <meta content={portfolio.description} name='description' />
         {/* Open Graph tags */}
-        <meta property='og:title' content={`Portfolio - ${title}`} />
-        <meta property='og:image' content={portfolio.imgUrl} />
+        <meta property='og:title' content={`${title} - Zede Tech Agency`} />
+        <meta
+          property='og:image'
+          content={`${process.env.NEXT_PUBLIC_SERVER}${portfolio.imgUrl}`}
+        />
         <meta property='og:description' content={portfolio.description} />
       </Head>
       <motion.div exit={{ opacity: 0 }} initial='initial' animate='animate'>

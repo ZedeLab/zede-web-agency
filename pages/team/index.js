@@ -9,10 +9,13 @@ const OurTeam = ({ pageData }) => {
   return (
     <>
       <Head>
-        <title>Learn More - Zede agency</title>
+        <title>{pageData.title} - Zede agency</title>
         <meta content={pageData.description} name='description' />
         {/* Open Graph tags */}
-        <meta property='og:title' content={`${pageData.title} - Zede agency`} />
+        <meta
+          property='og:title'
+          content={`${pageData.title} - Zede Tech Agency`}
+        />
         <meta
           property='og:image'
           content={`${process.env.NEXT_PUBLIC_SERVER}${pageData.shareImgUrl}`}
