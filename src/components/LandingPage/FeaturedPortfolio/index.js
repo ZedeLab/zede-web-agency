@@ -46,8 +46,8 @@ const FeaturePortfolios = () => {
         </Grid>
         <Grid item xs={12}>
           <Grid container direction='row' alignItems='center'>
-            {Object.keys(data).map((blogTitle) => {
-              if (data[blogTitle].featured) {
+            {Object.keys(data.data).map((blogTitle) => {
+              if (data.data[blogTitle].featured) {
                 return (
                   <Grid
                     key={uniqueId()}
@@ -58,11 +58,11 @@ const FeaturePortfolios = () => {
                   >
                     <PortfolioSummery
                       key={uniqueId()}
-                      id={data[blogTitle].id}
-                      imgUrl={data[blogTitle].coverImgUrl}
-                      imgSrcSet={data[blogTitle].imgSrcSet}
+                      id={data.data[blogTitle].id}
+                      imgUrl={data.data[blogTitle].coverImgUrl}
+                      imgSrcSet={data.data[blogTitle].imgSrcSet}
                       title={blogTitle}
-                      description={data[blogTitle].description}
+                      description={data.data[blogTitle].description}
                     />
                   </Grid>
                 );
