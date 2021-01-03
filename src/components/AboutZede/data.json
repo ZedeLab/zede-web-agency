@@ -1,14 +1,28 @@
 {
-    "sectionOne": {
-        "title": "THE VISION",
-        "subTitle": "All companies, large and small, deserve a serious supplier who has their backs in all situations.",
-        "paragraph": "Zede agency is not only on delivering an end product. The opportunity for a creative and inclusive process and to form an open and long-term relationship with you as a customer is our main priority. Our motto is to always work to make your business more profitable. We make sure to always come up with innovative and entrepreneurial solutions adapted to your specific goals and wishes. Ours values are founded in concepts transparency, customer satisfaction, and Courage. We work actively to always perform beyond your expectations. In order to simplify and deliver your needs we give the at most priority to communication and customer service.",
-        "medial": "/images/Zede-logo.svg"
-    },
-    "sectionTwo": {
-        "title": "TIMELESS DESIGNER",
-        "paragraph": "With a burning interest and long experience in web development and web design, Zede has also given 100% to the customers. With the attitude that quality takes precedence over quantity, you can be guaranteed a flawless design and that your business is presented digitally in the best way when you leave the work in Zede's hand. Every problem has at least one solution. With a penchant for customer contact and an effort to build long-term working relationships, a collaboration with Arvin guarantees that you as a customer will not be dissatisfied.",
-        "medial": ["https://cdn.svgporn.com/logos/nextjs.svg", "https://cdn.svgporn.com/logos/react.svg", "https://cdn.svgporn.com/logos/python.svg", "https://cdn.svgporn.com/logos/nodejs-icon.svg", "https://cdn.svgporn.com/logos/angular-icon.svg", "https://cdn.svgporn.com/logos/django.svg", "https://cdn.svgporn.com/logos/material-ui.svg", "https://cdn.svgporn.com/logos/materializecss.svg", "https://cdn.svgporn.com/logos/gatsby.svg"]
+    "title": "Learn More",
+    "description": "The opportunity for a creative and inclusive process and to form an open and long-term relationship with you as a customer is our main priority. All companies, large and small, deserve a serious supplier who has their backs in all situations.",
+    "shareImgUrl": "/images/about.svg",
+    "data": {
+        "sectionOne": {
+            "title": "THE VISION",
+            "subTitle": "All companies, large and small, deserve a serious supplier who has their backs in all situations.",
+            "paragraph": "Zede agency is not only on delivering an end product. The opportunity for a creative and inclusive process and to form an open and long-term relationship with you as a customer is our main priority. Our motto is to always work to make your business more profitable. We make sure to always come up with innovative and entrepreneurial solutions adapted to your specific goals and wishes. Ours values are founded in concepts transparency, customer satisfaction, and Courage. We work actively to always perform beyond your expectations. In order to simplify and deliver your needs we give the at most priority to communication and customer service.",
+            "medial": "/images/Zede-logo.svg"
+        },
+        "sectionTwo": {
+            "title": "TIMELESS DESIGNER",
+            "paragraph": "With a burning interest and long experience in web development and web design, Zede has also given 100% to the customers. With the attitude that quality takes precedence over quantity, you can be guaranteed a flawless design and that your business is presented digitally in the best way when you leave the work in Zede's hand. Every problem has at least one solution. With a penchant for customer contact and an effort to build long-term working relationships, a collaboration with Arvin guarantees that you as a customer will not be dissatisfied.",
+            "medial": [
+                "https://cdn.svgporn.com/logos/nextjs.svg",
+                "https://cdn.svgporn.com/logos/react.svg",
+                "https://cdn.svgporn.com/logos/python.svg",
+                "https://cdn.svgporn.com/logos/nodejs-icon.svg",
+                "https://cdn.svgporn.com/logos/angular-icon.svg",
+                "https://cdn.svgporn.com/logos/django.svg",
+                "https://cdn.svgporn.com/logos/material-ui.svg",
+                "https://cdn.svgporn.com/logos/materializecss.svg",
+                "https://cdn.svgporn.com/logos/gatsby.svg"
+            ]
+        }
     }
-
 }

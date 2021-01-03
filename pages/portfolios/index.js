@@ -1,21 +1,52 @@
+import Head from "next/head";
 import Header from "../../src/components/PageHeader";
 import Portfolios from "../../src/components/Portfolios";
 import { motion } from "framer-motion";
 import routeAnim from "../../public/animations/routingAnim.json";
-
-const Portfolio = (params) => {
+import data from "../../src/components/Portfolios/data.json";
+const Portfolio = ({ pageData }) => {
   return (
-    <motion.div exit={{ opacity: 0 }} initial='initial' animate='animate'>
-      <motion.div variants={routeAnim.stagger}>
-        <motion.div variants={routeAnim.fadeInUp}>
-          <Header pageTitle='Our Work' backgroundImgUrl='images/our-work.jpg' />
-        </motion.div>
-        <motion.div variants={routeAnim.fadeInUp}>
-          <Portfolios />
+    <>
+      <Head>
+        <title>Our Work - Zede agency</title>
+        <meta content={pageData.description} name='description' />
+        {/* Open Graph tags */}
+        <meta
+          property='og:title'
+          content={`${pageData.title} - - Zede Tech Agency`}
+        />
+        <meta
+          property='og:image'
+          content={`${process.env.NEXT_PUBLIC_SERVER}${pageData.shareImgUrl}`}
+        />
+        <meta property='og:description' content={pageData.description} />
+      </Head>
+
+      <motion.div exit={{ opacity: 0 }} initial='initial' animate='animate'>
+        <motion.div variants={routeAnim.stagger}>
+          <motion.div variants={routeAnim.fadeInUp}>
+            <Header
+              pageTitle='Our Work'
+              backgroundImgUrl='images/our-work.jpg'
+            />
+          </motion.div>
+          <motion.div variants={routeAnim.fadeInUp}>
+            <Portfolios data={pageData.data} />
+          </motion.div>
         </motion.div>
       </motion.div>
-    </motion.div>
+    </>
   );
 };
+
+export async function getStaticProps({ params }) {
+  const pageData = data;
+
+  return {
+    props: {
+      pageData: pageData,
+    }, // will be passed to the page component as props
+  };
+}
 
 export default Portfolio;

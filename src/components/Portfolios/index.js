@@ -1,13 +1,13 @@
 import { Grid, makeStyles, Paper } from "@material-ui/core";
 import PortfolioSummery from "./Summary";
-import data from "./data.json";
+
 import { uniqueId } from "lodash";
 import sharedStyle from "../../utils/style/js/sharedStyle";
 import Pagination from "@material-ui/lab/Pagination";
 import { useRef, useState } from "react";
 import { PaginationItem } from "@material-ui/lab";
 
-const PortFolio = (params) => {
+const PortFolio = ({ data }) => {
   const useStyle = makeStyles((theme) => {
     const mainStyle = sharedStyle();
 
