@@ -9,7 +9,7 @@ const AboutUs = ({ pageData }) => {
   return (
     <>
       <Head>
-        <title>Learn More - Zede agency</title>
+        <title>{pageData.title} - Zede Tech Agency</title>
         <meta content={pageData.description} name='description' />
         {/* Open Graph tags */}
         <meta

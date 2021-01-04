@@ -8,12 +8,12 @@ const Portfolio = ({ pageData }) => {
   return (
     <>
       <Head>
-        <title>Our Work - Zede agency</title>
+        <title>{pageData.title} - Zede Tech agency</title>
         <meta content={pageData.description} name='description' />
         {/* Open Graph tags */}
         <meta
           property='og:title'
-          content={`${pageData.title} - - Zede Tech Agency`}
+          content={`${pageData.title} - Zede Tech Agency`}
         />
         <meta
           property='og:image'

@@ -9,7 +9,7 @@ const OurTeam = ({ pageData }) => {
   return (
     <>
       <Head>
-        <title>{pageData.title} - Zede agency</title>
+        <title>{pageData.title} - Zede Tech agency</title>
         <meta content={pageData.description} name='description' />
         {/* Open Graph tags */}
         <meta
