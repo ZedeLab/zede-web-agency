@@ -54,7 +54,7 @@ const WorkFlow = (params) => {
         justify='center'
         className={classes.container}
         style={{
-          backgroundImage: `url(/images/dashed-path.png)`,
+          backgroundImage: `url(/images/dashed-path.webp)`,
           backgroundSize: "contain",
           // backgroundRepeat: matches ? "repeat" : "no-repeat",
         }}
