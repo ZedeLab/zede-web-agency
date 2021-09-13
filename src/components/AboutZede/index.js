@@ -25,10 +25,12 @@ const AboutZede = ({ data }) => {
       },
       text: {
         lineBreak: "strict",
+        textAlign: "justify",
       },
       image: {
         width: "100%",
-        maxWidth: "150px",
+        maxWidth: "100px",
+        maxHeight: "100px",
       },
     };
   });

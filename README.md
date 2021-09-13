@@ -5,7 +5,7 @@
 Zede agency is a web development federation that uses state of the art technologies.
 
 ```
-material-dashboard-react
+Project structure
 .
 ├── pages
 │  ├── about

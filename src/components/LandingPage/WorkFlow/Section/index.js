@@ -27,6 +27,7 @@ const useStyle = makeStyles((theme) => ({
   },
   subSectionParagraph: {
     color: theme.palette.text.secondary,
+    textAlign: "justify",
     paddingBottom: theme.spacing(2),
   },
   svgContainer: {

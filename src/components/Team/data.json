@@ -1,31 +1,31 @@
 {
-    "title": "Team",
-    "description": "Meet and connect with the Zede tech team. A Perfect blend of creativity and wizardy. The best people formula for great agency.",
-    "shareImgUrl": "/images/team.svg",
-    "data": {
-        "Eyob Tariku": {
-            "jobTitle": "Full-stack developer",
-            "imgUrl": "/images/eyob.jpg",
-            "description": "Decrepit enlightenment society chaos ultimate merciful. Merciful truth snare inexpedient sea insofar.Decrepit enlightenment society chaos ultimate merciful. Merciful truth snare inexpedient sea insofar.",
-            "facebook": "https://www.facebook.com/",
-            "linkedIn": "https://www.linkedin.com/",
-            "github": "https://github.com/"
-        },
-        "Abel Sintaro": {
-            "jobTitle": "Web developer",
-            "imgUrl": "/images/abel.jpg",
-            "description": "Decrepit enlightenment society chaos ultimate merciful. Merciful truth snare inexpedient sea insofar.Decrepit enlightenment society chaos ultimate merciful. Merciful truth snare inexpedient sea insofar.",
-            "facebook": "https://www.facebook.com/",
-            "linkedIn": "https://www.linkedin.com/",
-            "github": "https://github.com/"
-        },
-        "Simon Sisay": {
-            "jobTitle": "App Developer",
-            "imgUrl": "/images/simon.jpg",
-            "description": "Decrepit enlightenment society chaos ultimate merciful. Merciful truth snare inexpedient sea insofar.Decrepit enlightenment society chaos ultimate merciful. Merciful truth snare inexpedient sea insofar.",
-            "facebook": "https://www.facebook.com/",
-            "linkedIn": "https://www.linkedin.com/",
-            "github": "https://github.com/"
-        }
+  "title": "Team",
+  "description": "Meet and connect with the Zede tech team. A Perfect blend of creativity and wizardy. The best people formula for great agency.",
+  "shareImgUrl": "/images/team.svg",
+  "data": {
+    "Eyob Tariku": {
+      "jobTitle": "Full-stack developer",
+      "imgUrl": "/images/eyob.jpg",
+      "description": "Decrepit enlightenment society chaos ultimate merciful. Merciful truth snare inexpedient sea insofar.Decrepit enlightenment society chaos ultimate merciful. Merciful truth snare inexpedient sea insofar.",
+      "facebook": "https://www.facebook.com/",
+      "linkedIn": "https://www.linkedin.com/",
+      "github": "https://github.com/"
+    },
+    "Abel Sintaro": {
+      "jobTitle": "Web developer",
+      "imgUrl": "/images/abel.png",
+      "description": "Decrepit enlightenment society chaos ultimate merciful. Merciful truth snare inexpedient sea insofar.Decrepit enlightenment society chaos ultimate merciful. Merciful truth snare inexpedient sea insofar.",
+      "facebook": "https://www.facebook.com/",
+      "linkedIn": "https://www.linkedin.com/",
+      "github": "https://github.com/"
+    },
+    "Simon Sisay": {
+      "jobTitle": "App Developer",
+      "imgUrl": "/images/simon.jpg",
+      "description": "Decrepit enlightenment society chaos ultimate merciful. Merciful truth snare inexpedient sea insofar.Decrepit enlightenment society chaos ultimate merciful. Merciful truth snare inexpedient sea insofar.",
+      "facebook": "https://www.facebook.com/",
+      "linkedIn": "https://www.linkedin.com/",
+      "github": "https://github.com/"
     }
+  }
 }
