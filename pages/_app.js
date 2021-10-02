@@ -5,7 +5,7 @@ import Head from "next/head";
 // Materuial-ui elements
 import {
   ThemeProvider,
-  createMuiTheme,
+  createTheme,
   useMediaQuery,
   Paper,
 } from "@material-ui/core";
@@ -23,7 +23,7 @@ export default function MyApp(props) {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
 
   const theme = React.useMemo(
-    () => createMuiTheme(mainTheme(prefersDarkMode ? "dark" : "light")),
+    () => createTheme(mainTheme(prefersDarkMode ? "dark" : "light")),
     [prefersDarkMode]
   );
 
