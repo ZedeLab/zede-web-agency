@@ -154,26 +154,15 @@ const navigation = (props) => {
                 style={{ backgroundColor: "transparent" }}
                 onClick={() => setShowMobNav(!showMobNav)}
               >
-                <Fade
-                  in={!showMobNav}
-                  unmountOnExit
-                  timeout={{
-                    enter: 600,
-                    exit: 100,
-                  }}
-                >
-                  <MenuIcon color='secondary' />
-                </Fade>
-                <Fade
-                  in={showMobNav}
-                  unmountOnExit
-                  timeout={{
-                    enter: 500,
-                    exit: 200,
-                  }}
-                >
-                  <CloseIcon color='secondary' />
-                </Fade>
+                {showMobNav ? (
+                  <Fade in>
+                    <CloseIcon color='secondary' />
+                  </Fade>
+                ) : (
+                  <Fade in>
+                    <MenuIcon color='secondary' />
+                  </Fade>
+                )}
               </IconButton>
             </Hidden>
           </Toolbar>
