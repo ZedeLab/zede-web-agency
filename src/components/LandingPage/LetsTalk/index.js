@@ -8,7 +8,7 @@ import {
 } from "@material-ui/core";
 import clx from "classnames";
 import useCommonStyle from "../../../utils/style/js/sharedStyle";
-import Lottie from "react-lottie";
+import Lottie from "react-lottie-player";
 import * as animationData from "../../../../public/animations/contactUs.json";
 import { ReactSVG } from "react-svg";
 import { useRouter } from "next/router";
@@ -65,14 +65,14 @@ const useStyle = makeStyles((theme) => {
 const LetsTalk = (params) => {
   const classes = useStyle();
   const router = useRouter();
-  const animOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData.default,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
+  // const animOptions = {
+  //   loop: true,
+  //   autoplay: true,
+  //   animationData: animationData.default,
+  //   rendererSettings: {
+  //     preserveAspectRatio: "xMidYMid slice",
+  //   },
+  // };
   return (
     <Paper className={classes.root}>
       <div className={classes.svgContainer}>
@@ -108,10 +108,10 @@ const LetsTalk = (params) => {
           <Grid item xs={12} md={6}>
             <Hidden smDown>
               <Lottie
-                options={animOptions}
-                height='100%'
-                width='100%'
-                maxHeight='500'
+                animationData={animationData}
+                loop
+                play
+                style={{ width: "100%", height: "100%", maxHeight: "500px" }}
               />
             </Hidden>
           </Grid>

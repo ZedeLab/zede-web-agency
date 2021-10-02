@@ -1,11 +1,12 @@
 import { Button, Grid, makeStyles, Paper, Typography } from "@material-ui/core";
-import Lottie from "react-lottie";
+import Lottie from "react-lottie-player";
 import * as animationData from "../../../../public/animations/heroAnim.json";
 import clsx from "classnames";
 import { useRouter } from "next/router";
 const useStyle = makeStyles((theme) => ({
   wrapper: {
-    backgroundColor: theme.palette.primary.dark,
+    backgroundColor: theme.palette.primary.main,
+    "-webkit-mask-image": `linear-gradient(to top, rgba(255,0,0,0), 0.5%, ${theme.palette.secondary.light})`,
     position: "relative",
     width: "100vw",
     maxWidth: "100%",
@@ -46,6 +47,7 @@ const useStyle = makeStyles((theme) => ({
     },
   },
   herodescription: {
+    textAlign: "justify",
     maxWidth: "700px",
     marginRight: "auto",
     marginBottom: "0px",
@@ -86,14 +88,14 @@ const useStyle = makeStyles((theme) => ({
 const Hero = (params) => {
   const classes = useStyle();
   const router = useRouter();
-  const animOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData.default,
-    rendererSettings: {
-      preserveAspectRatio: "xMidYMid slice",
-    },
-  };
+  // const animOptions = {
+  //   loop: true,
+  //   autoplay: true,
+  //   animationData: animationData.default,
+  //   rendererSettings: {
+  //     preserveAspectRatio: "xMidYMid slice",
+  //   },
+  // };
 
   return (
     <Paper className={classes.wrapper}>
@@ -141,10 +143,13 @@ const Hero = (params) => {
 
       <div className={classes.animBackground}>
         <Lottie
-          options={animOptions}
-          height='100%'
-          width='100%'
-          maxHeight='500'
+          loop
+          play
+          animationData={animationData}
+          style={{
+            width: "100%",
+            height: "900px",
+          }}
         />
       </div>
     </Paper>
