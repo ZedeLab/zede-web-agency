@@ -44,7 +44,7 @@ const AboutZede = ({ data }) => {
           <Grid
             container
             alignItems='center'
-            justify='center'
+            justifyContent='center'
             style={{ overflow: "hidden" }}
           >
             <Grid item md={8} xs={12}>

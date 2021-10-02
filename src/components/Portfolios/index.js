@@ -4,7 +4,7 @@ import PortfolioSummery from "./Summary";
 import { uniqueId } from "lodash";
 import sharedStyle from "../../utils/style/js/sharedStyle";
 import Pagination from "@material-ui/lab/Pagination";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { PaginationItem } from "@material-ui/lab";
 
 const PortFolio = ({ data }) => {

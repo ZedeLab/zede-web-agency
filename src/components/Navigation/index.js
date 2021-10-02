@@ -1,9 +1,7 @@
 import cNames from "classnames";
-import PropTypes from "prop-types";
 
 // Material-ui components
 import {
-  Button,
   ClickAwayListener,
   Fade,
   Hidden,
@@ -20,7 +18,7 @@ import CloseIcon from "@material-ui/icons/Close";
 // Core components
 import NavLink from "./NavLink/NavLink";
 import { useState } from "react";
-import { Router, useRouter } from "next/router";
+import { useRouter } from "next/router";
 import { ReactSVG } from "react-svg";
 import { useOnScreen } from "@zede-hooks/useOnScreen";
 
@@ -107,7 +105,7 @@ const useStyle = makeStyles((theme) => ({
   },
 }));
 
-const navigation = (props) => {
+const Navigation = (props) => {
   const classes = useStyle();
   const [showMobNav, setShowMobNav] = useState(false);
   const route = useRouter();
@@ -188,4 +186,4 @@ const navigation = (props) => {
   );
 };
 
-export default navigation;
+export default Navigation;

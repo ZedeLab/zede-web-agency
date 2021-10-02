@@ -1,12 +1,9 @@
 import {
-  Button,
   Divider,
   Grid,
   Icon,
-  InputBase,
   makeStyles,
   Paper,
-  TextField,
   Typography,
   useMediaQuery,
   useTheme,
@@ -16,7 +13,6 @@ import { useEffect } from "react";
 import clsx from "classnames";
 import sharedStyle from "../utils/style/js/sharedStyle";
 import { ReactSVG } from "react-svg";
-import Link from "next/link";
 import { useRouter } from "next/router";
 const Footer = (params) => {
   const useStyle = makeStyles((theme) => {
@@ -91,7 +87,7 @@ const Footer = (params) => {
           <Grid
             container
             direction={match ? "column" : "row"}
-            justify='space-between'
+            justifyContent='space-between'
             spacing={3}
           >
             <Grid item xs={match ? 10 : 6}>

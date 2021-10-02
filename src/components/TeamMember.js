@@ -8,7 +8,6 @@ import {
   Slide,
   Typography,
 } from "@material-ui/core";
-import Skeleton from "@material-ui/lab/Skeleton";
 
 import { useState } from "react";
 import clsx from "classnames";
@@ -16,6 +15,7 @@ import FacebookIcon from "@material-ui/icons/Facebook";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import CancelIcon from "@material-ui/icons/Cancel";
+
 const useStyle = makeStyles((theme) => ({
   container: {
     margin: `${theme.spacing(4)}px ${theme.spacing(2)}px`,
@@ -155,6 +155,7 @@ const TeamMembers = ({
                         target='_blank'
                         href={facebook}
                         className={classes.link}
+                        rel='noreferrer'
                       >
                         <FacebookIcon />
                       </a>
@@ -164,12 +165,18 @@ const TeamMembers = ({
                         target='_blank'
                         href={linkedIn}
                         className={classes.link}
+                        rel='noreferrer'
                       >
                         <LinkedInIcon />
                       </a>
                     </Grid>
                     <Grid item>
-                      <a target='_blank' href={github} className={classes.link}>
+                      <a
+                        target='_blank'
+                        href={github}
+                        className={classes.link}
+                        rel='noreferrer'
+                      >
                         <GitHubIcon />
                       </a>
                     </Grid>

@@ -1,5 +1,4 @@
 import {
-  Fade,
   Grid,
   makeStyles,
   Slide,
