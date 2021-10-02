@@ -1,7 +1,7 @@
 import { Grid, makeStyles, Paper, Slide, Typography } from "@material-ui/core";
 import { uniqueId } from "lodash";
 import { useOnScreen } from "@zede-hooks/useOnScreen";
-import sharedStyle from "../../utils/style/js/sharedStyle";
+import sharedStyle from "../utils/style/js/sharedStyle";
 
 const AboutZede = ({ data }) => {
   const useStyle = makeStyles((theme) => {

@@ -7,9 +7,9 @@ import {
   Typography,
 } from "@material-ui/core";
 import clx from "classnames";
-import useCommonStyle from "../../../utils/style/js/sharedStyle";
+import useCommonStyle from "../../utils/style/js/sharedStyle";
 import Lottie from "react-lottie-player";
-import * as animationData from "../../../../public/animations/contactUs.json";
+import * as animationData from "../../../public/animations/contactUs.json";
 import { ReactSVG } from "react-svg";
 import { useRouter } from "next/router";
 

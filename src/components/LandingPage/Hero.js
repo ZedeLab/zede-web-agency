@@ -1,6 +1,6 @@
 import { Button, Grid, makeStyles, Paper, Typography } from "@material-ui/core";
 import Lottie from "react-lottie-player";
-import * as animationData from "../../../../public/animations/heroAnim.json";
+import * as animationData from "../../../public/animations/heroAnim.json";
 import clsx from "classnames";
 import { useRouter } from "next/router";
 const useStyle = makeStyles((theme) => ({

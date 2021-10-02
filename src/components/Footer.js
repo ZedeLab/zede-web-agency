@@ -14,7 +14,7 @@ import {
 import { loadCSS } from "fg-loadcss";
 import { useEffect } from "react";
 import clsx from "classnames";
-import sharedStyle from "../../utils/style/js/sharedStyle";
+import sharedStyle from "../utils/style/js/sharedStyle";
 import { ReactSVG } from "react-svg";
 import Link from "next/link";
 import { useRouter } from "next/router";
