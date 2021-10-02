@@ -1,6 +1,6 @@
 import {
   ClickAwayListener,
-  Fade,
+  Box,
   Grid,
   IconButton,
   makeStyles,
@@ -23,8 +23,14 @@ const useStyle = makeStyles((theme) => ({
     position: "relative",
     width: "30%",
     maxWidth: "400px",
+    minWidth: "300px",
     overflow: "hidden",
     boxShadow: theme.shadows[8],
+    filter: "grayscale(80%)",
+
+    "&:hover": {
+      filter: "grayscale(40%)",
+    },
     [theme.breakpoints.down("sm")]: {
       width: "60%",
       flexDirection: "column",
@@ -103,75 +109,87 @@ const TeamMembers = ({
           data-w-id='3e6dc9f0-f4eb-a269-2dbe-629385073029'
           className={clsx(classes.descriptionContainer)}
         >
-          <ClickAwayListener
-            onClickAway={() => {
-              setshowDitail(false);
-              setCloseable(false);
-            }}
-          >
-            <Grid
-              container
-              direction='column'
-              spacing={1}
-              onClick={() => {
-                !closeable ? setCloseable(true) : null;
+          <Box p={1}>
+            <ClickAwayListener
+              onClickAway={() => {
+                setshowDitail(false);
+                setCloseable(false);
               }}
-              style={{ minHeight: "100%" }}
             >
-              <Grid item>
-                <Typography
-                  variant='h4'
-                  className={clsx(classes.text, classes.name)}
-                >
-                  {name}
-                </Typography>
-              </Grid>
-              <Grid item>
-                <Typography
-                  variant='h5'
-                  className={clsx(classes.text, classes.jobTitle)}
-                >
-                  {jobTitle}
-                </Typography>
-              </Grid>
-              <Grid item>
-                <Typography className={clsx(classes.text, classes.description)}>
-                  {discription}
-                </Typography>
-              </Grid>
-              <Grid item>
-                <Grid container justify='space-around'>
-                  <Grid item>
-                    <a target='_blank' href={facebook} className={classes.link}>
-                      <FacebookIcon />
-                    </a>
-                  </Grid>
-                  <Grid item>
-                    <a target='_blank' href={linkedIn} className={classes.link}>
-                      <LinkedInIcon />
-                    </a>
-                  </Grid>
-                  <Grid item>
-                    <a target='_blank' href={github} className={classes.link}>
-                      <GitHubIcon />
-                    </a>
+              <Grid
+                container
+                direction='column'
+                spacing={1}
+                onClick={() => {
+                  !closeable ? setCloseable(true) : null;
+                }}
+                style={{ minHeight: "100%" }}
+              >
+                <Grid item>
+                  <Typography
+                    variant='h4'
+                    className={clsx(classes.text, classes.name)}
+                  >
+                    {name}
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Typography
+                    variant='h5'
+                    className={clsx(classes.text, classes.jobTitle)}
+                  >
+                    {jobTitle}
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Typography
+                    className={clsx(classes.text, classes.description)}
+                  >
+                    {discription}
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Grid container justifyContent='space-around'>
+                    <Grid item>
+                      <a
+                        target='_blank'
+                        href={facebook}
+                        className={classes.link}
+                      >
+                        <FacebookIcon />
+                      </a>
+                    </Grid>
+                    <Grid item>
+                      <a
+                        target='_blank'
+                        href={linkedIn}
+                        className={classes.link}
+                      >
+                        <LinkedInIcon />
+                      </a>
+                    </Grid>
+                    <Grid item>
+                      <a target='_blank' href={github} className={classes.link}>
+                        <GitHubIcon />
+                      </a>
+                    </Grid>
                   </Grid>
                 </Grid>
+                <Grid item className={classes.closerContainer}>
+                  {closeable ? (
+                    <IconButton
+                      onClick={() => {
+                        setshowDitail(false);
+                        setCloseable(false);
+                      }}
+                    >
+                      <CancelIcon fontSize='large' />
+                    </IconButton>
+                  ) : null}
+                </Grid>
               </Grid>
-              <Grid item className={classes.closerContainer}>
-                {closeable ? (
-                  <IconButton
-                    onClick={() => {
-                      setshowDitail(false);
-                      setCloseable(false);
-                    }}
-                  >
-                    <CancelIcon fontSize='large' />
-                  </IconButton>
-                ) : null}
-              </Grid>
-            </Grid>
-          </ClickAwayListener>
+            </ClickAwayListener>
+          </Box>
         </div>
       </Slide>
 
