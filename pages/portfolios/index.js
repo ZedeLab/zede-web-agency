@@ -3,7 +3,8 @@ import Header from "../../src/components/PageHeader";
 import Portfolios from "../../src/components/Portfolios";
 import { motion } from "framer-motion";
 import routeAnim from "../../public/animations/routingAnim.json";
-import data from "../../src/components/Portfolios/data.json";
+import data from "@zede-static/portfolios.json";
+
 const Portfolio = ({ pageData }) => {
   return (
     <>

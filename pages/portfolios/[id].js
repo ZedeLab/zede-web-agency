@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Header from "../../src/components/PageHeader";
 import Portfolio from "../../src/components/Portfolios/Detail";
-import data from "../../src/components/Portfolios/data.json";
+import data from "@zede-static/portfolios.json";
 import { motion } from "framer-motion";
 import routeAnim from "../../public/animations/routingAnim.json";
 

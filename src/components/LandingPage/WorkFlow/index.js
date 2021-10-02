@@ -2,7 +2,7 @@ import { Grid, makeStyles, Paper, Slide, Typography } from "@material-ui/core";
 import clx from "classnames";
 import { uniqueId } from "lodash";
 
-import data from "./data.json";
+import data from "@zede-static/workflow.json";
 import useMainStyle from "../../../utils/style/js/sharedStyle";
 import { useOnScreen } from "@zede-hooks/useOnScreen";
 import Header from "./Header";

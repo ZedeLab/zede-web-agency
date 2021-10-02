@@ -3,7 +3,7 @@ import Header from "../../src/components/PageHeader";
 import AboutZede from "../../src/components/AboutZede";
 import { motion } from "framer-motion";
 import routeAnim from "../../public/animations/routingAnim.json";
-import data from "../../src/components/AboutZede/data.json";
+import data from "@zede-static/aboutZede.json";
 
 const AboutUs = ({ pageData }) => {
   return (
