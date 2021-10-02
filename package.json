@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "next",
+    "dev": "next lint && next",
     "start": "next start",
+    "lint": "next lint",
     "build": "next build"
   },
   "keywords": [],
@@ -16,18 +17,24 @@
     "@material-ui/icons": "^4.11.2",
     "@material-ui/lab": "^4.0.0-alpha.57",
     "@sendgrid/mail": "^7.4.0",
-    "axios": "^0.21.0",
+    "axios": "^0.22.0",
     "classnames": "^2.2.6",
     "cors": "^2.8.5",
     "fg-loadcss": "^3.1.0",
     "framer-motion": "^2.9.5",
     "lodash": "^4.17.20",
-    "next": "^10.0.3",
+    "next": "^11.1.2",
     "next-connect": "^0.9.1",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-lottie": "^1.2.3",
+    "next-fonts": "^1.5.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-lottie-player": "^1.4.0",
     "react-material-ui-carousel": "^2.1.1",
-    "react-svg": "^11.1.4"
+    "react-svg": "^14.0.13"
+  },
+  "devDependencies": {
+    "eslint": "7.32.0",
+    "eslint-config-next": "11.1.2",
+    "eslint-plugin-unused-imports": "^1.1.5"
   }
 }

@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@zede/*": ["*"],
+            
+            "@zede-components/*": ["src/components/*"],
+            "@zede-hooks/*": ["src/hooks/*"],
+            "@zede-utils/*": ["src/utils/*"],
+            "@zede-static/*": ["src/static/*"],
+            "@zede-public/*": ["public/*"],
+        }
+    }
+}

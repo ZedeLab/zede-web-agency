@@ -1,10 +1,8 @@
-import { Grid, makeStyles, Paper, Slide, Typography } from "@material-ui/core";
-import clx from "classnames";
+import { Grid, makeStyles, Paper } from "@material-ui/core";
 import { uniqueId } from "lodash";
 
-import data from "./data.json";
+import data from "@zede-static/workflow.json";
 import useMainStyle from "../../../utils/style/js/sharedStyle";
-import { useOnScreen } from "../../../utils/hooks/useOnScreen";
 import Header from "./Header";
 import Section from "./Section";
 
@@ -51,7 +49,7 @@ const WorkFlow = (params) => {
         container
         direction='column'
         alignItems='center'
-        justify='center'
+        justifyContent='center'
         className={classes.container}
         style={{
           backgroundImage: `url(/images/dashed-path.webp)`,

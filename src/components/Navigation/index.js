@@ -1,9 +1,7 @@
-import Link from "next/link";
-import PropTypes from "prop-types";
+import cNames from "classnames";
 
 // Material-ui components
 import {
-  Button,
   ClickAwayListener,
   Fade,
   Hidden,
@@ -11,10 +9,6 @@ import {
   makeStyles,
   Paper,
   Slide,
-  Tab,
-  Tabs,
-  Typography,
-  useScrollTrigger,
 } from "@material-ui/core";
 
 import AppBar from "@material-ui/core/AppBar";
@@ -22,10 +16,11 @@ import Toolbar from "@material-ui/core/Toolbar";
 import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
 // Core components
-import NavLink from "./NavLink/NavLink";
+import NavLink from "./NavLink";
 import { useState } from "react";
-import { Router, useRouter } from "next/router";
+import { useRouter } from "next/router";
 import { ReactSVG } from "react-svg";
+import { useOnScreen } from "@zede-hooks/useOnScreen";
 
 const useStyle = makeStyles((theme) => ({
   wrapper: {
@@ -34,12 +29,20 @@ const useStyle = makeStyles((theme) => ({
     width: "100vw",
     maxWidth: "100%",
   },
+
+  pillow: {
+    height: theme.spacing(5),
+  },
   appBar: {
     // position: "relative",
-    height: "fit-content",
-
+    height: theme.mixins.toolbar,
+    backgroundColor: theme.palette.primary.dark,
     width: "100%",
     overflow: "hidden",
+    transition: `${theme.transitions.create(["box-shadow"], {
+      duration: theme.transitions.duration.standard,
+      easing: theme.transitions.easing.easeIn,
+    })}`,
   },
   toolbar: {
     display: "flex",
@@ -69,19 +72,24 @@ const useStyle = makeStyles((theme) => ({
     display: "flex",
     width: "100%",
     flexDirection: "column",
-    clor: "inherit",
-    backgroundColor: theme.palette.primary.light,
-    paddingTop: theme.spacing(16),
-    paddingLeft: theme.spacing(5),
+    color: "inherit",
+    backgroundColor: theme.palette.primary.main,
+    paddingTop: theme.spacing(1),
+    paddingLeft: theme.spacing(2),
     paddingBottom: theme.spacing(2),
     boxShadow: theme.shadows[0],
     border: "none",
     borderRadius: 0,
   },
   svgContainer: {
+    transition: `${theme.transitions.create(["transform", "padding"], {
+      duration: theme.transitions.duration.standard,
+      easing: theme.transitions.easing.easeIn,
+    })}`,
     "& svg": {
-      width: "64px",
-      height: "64px",
+      borderRadius: "5px",
+      width: "48px",
+      height: "48px",
       justifySelf: "flex-end",
       fill: theme.palette.secondary.dark,
       "& #ze": {
@@ -92,13 +100,22 @@ const useStyle = makeStyles((theme) => ({
       },
     },
   },
+  noShadow: {
+    boxShadow: "none",
+  },
+  withShadow: {
+    paddingTop: theme.spacing(1),
+    transform: "scale(1.3)",
+  },
 }));
 
-const navigation = (props) => {
+const Navigation = (props) => {
   const classes = useStyle();
   const [showMobNav, setShowMobNav] = useState(false);
   const route = useRouter();
-  const trigger = useScrollTrigger();
+
+  const [setRef, visible] = useOnScreen({ threshold: "0" });
+
   const clicked = (path) => {
     route.push(path);
   };
@@ -107,82 +124,70 @@ const navigation = (props) => {
       className={classes.linkWrapper}
       onClickCapture={() => setShowMobNav(false)}
     >
+      <div className={classes.pillow} />
       <NavLink path='/' underLine>
-        <Typography>Home</Typography>
+        Home
       </NavLink>
       <NavLink path='/about' underLine>
-        <Typography>About Us</Typography>
+        About Us
       </NavLink>
       <NavLink path='/team' underLine>
-        <Typography>Our Team</Typography>
+        Our Team
       </NavLink>
       <NavLink path='/portfolios' underLine>
-        <Typography>Portfolio</Typography>
+        Portfolio
       </NavLink>
       <NavLink path='/contact' underLine>
-        <Typography>Contact Us</Typography>
+        Contact Us
       </NavLink>
     </div>
   );
   return (
-    <Slide
-      appear={false}
-      direction='down'
-      in={!trigger}
-      className={classes.wrapper}
-    >
-      <div>
-        <AppBar className={classes.appBar}>
-          <Toolbar className={classes.toolbar}>
-            <NavLink path='/'>
-              <ReactSVG
-                className={classes.svgContainer}
-                src='/images/Zede-logo.svg'
-              />
-              {/* <img src='/images/Zede-logo.svg' width='60' alt='' /> */}
-            </NavLink>
-            <Hidden smDown>{navLinks}</Hidden>
-            <Hidden mdUp>
-              <IconButton
-                style={{ backgroundColor: "transparent" }}
-                onClick={() => setShowMobNav(!showMobNav)}
-              >
-                <Fade
-                  in={!showMobNav}
-                  unmountOnExit
-                  timeout={{
-                    enter: 600,
-                    exit: 100,
-                  }}
-                >
-                  <MenuIcon color='secondary' />
-                </Fade>
-                <Fade
-                  in={showMobNav}
-                  unmountOnExit
-                  timeout={{
-                    enter: 500,
-                    exit: 200,
-                  }}
-                >
+    <div ref={setRef}>
+      <div className={classes.pillow} />
+      <AppBar
+        className={cNames(classes.appBar, { [classes.noShadow]: visible })}
+      >
+        <Toolbar className={classes.toolbar}>
+          <NavLink path='/'>
+            <ReactSVG
+              className={cNames(classes.svgContainer, {
+                [classes.withShadow]: visible,
+              })}
+              src='/images/Zede-logo.svg'
+            />
+            {/* <img src='/images/Zede-logo.svg' width='60' alt='' /> */}
+          </NavLink>
+          <Hidden smDown>{navLinks}</Hidden>
+          <Hidden mdUp>
+            <IconButton
+              style={{ backgroundColor: "transparent" }}
+              onClick={() => setShowMobNav(!showMobNav)}
+            >
+              {showMobNav ? (
+                <Fade in>
                   <CloseIcon color='secondary' />
                 </Fade>
-              </IconButton>
-            </Hidden>
-          </Toolbar>
-        </AppBar>
-        <Hidden mdUp>
-          <Slide direction='down' in={showMobNav && !trigger} unmountOnExit>
-            <Paper variant='outlined' className={classes.mobNavWrapper}>
-              <ClickAwayListener onClickAway={() => setShowMobNav(false)}>
-                {navLinks}
-              </ClickAwayListener>
-            </Paper>
-          </Slide>
-        </Hidden>
-      </div>
-    </Slide>
+              ) : (
+                <Fade in>
+                  <MenuIcon color='secondary' />
+                </Fade>
+              )}
+            </IconButton>
+          </Hidden>
+        </Toolbar>
+      </AppBar>
+      <Hidden mdUp>
+        <Slide direction='down' in={showMobNav} unmountOnExit>
+          <Paper variant='outlined' className={classes.mobNavWrapper}>
+            <ClickAwayListener onClickAway={() => setShowMobNav(false)}>
+              {navLinks}
+            </ClickAwayListener>
+          </Paper>
+        </Slide>
+      </Hidden>
+    </div>
   );
 };
 
-export default navigation;
+export default Navigation;
