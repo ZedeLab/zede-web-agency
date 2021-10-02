@@ -10,7 +10,7 @@ import {
   Paper,
 } from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import mainTheme from "../src/utils/ThemeProvider";
+import globalTheme from "../src/utils/globalTheme";
 
 import { AnimatePresence } from "framer-motion";
 
@@ -21,11 +21,6 @@ export default function MyApp(props) {
   const { Component, pageProps } = props;
 
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
-
-  const theme = React.useMemo(
-    () => createTheme(mainTheme(prefersDarkMode ? "dark" : "light")),
-    [prefersDarkMode]
-  );
 
   React.useEffect(() => {
     // Remove the server-side injected CSS.
@@ -78,7 +73,7 @@ export default function MyApp(props) {
       <>
         <CssBaseline />
         <Paper>
-          <ThemeProvider theme={theme}>
+          <ThemeProvider theme={globalTheme}>
             <Nav />
             <AnimatePresence exitBeforeEnter>
               <Component {...pageProps} />
