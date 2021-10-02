@@ -10,6 +10,10 @@ const theme = createTheme({
   overrides: {
     MuiCssBaseline: {
       "@global": {
+        html: {
+          WebkitFontSmoothing: "auto",
+          WebkitTapHighlightColor: "transparent",
+        },
         "@font-face": [
           balooBhai,
           balooBhaiBold,

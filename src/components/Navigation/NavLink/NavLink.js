@@ -19,6 +19,9 @@ const useStyle = makeStyles((theme) => ({
   },
   link: {
     textDecoration: "none",
+    "&:focus": {
+      WebkitTapHighlightColor: "transparent",
+    },
   },
   label: {
     ...theme.typography.subtitle1,
