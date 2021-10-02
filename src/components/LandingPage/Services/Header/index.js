@@ -6,7 +6,7 @@ import {
   Slide,
   Typography,
 } from "@material-ui/core";
-import { useOnScreen } from "../../../../utils/hooks/useOnScreen";
+import { useOnScreen } from "@zede-hooks/useOnScreen";
 import { useRouter } from "next/router";
 
 const useStyle = makeStyles((theme) => {

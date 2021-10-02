@@ -4,7 +4,7 @@ import { uniqueId } from "lodash";
 
 import data from "./data.json";
 import useMainStyle from "../../../utils/style/js/sharedStyle";
-import { useOnScreen } from "../../../utils/hooks/useOnScreen";
+import { useOnScreen } from "@zede-hooks/useOnScreen";
 import Header from "./Header";
 import Section from "./Section";
 

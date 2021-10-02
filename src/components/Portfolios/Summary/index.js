@@ -1,6 +1,6 @@
 import { Grid, makeStyles, Paper, Slide, Typography } from "@material-ui/core";
 import Link from "next/link";
-import { useOnScreen } from "../../../utils/hooks/useOnScreen";
+import { useOnScreen } from "@zede-hooks/useOnScreen";
 
 const useStyle = makeStyles((theme) => ({
   wrapper: {

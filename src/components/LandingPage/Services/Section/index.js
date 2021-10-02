@@ -8,7 +8,7 @@ import {
   useTheme,
 } from "@material-ui/core";
 import { uniqueId } from "lodash";
-import { useOnScreen } from "../../../../utils/hooks/useOnScreen";
+import { useOnScreen } from "@zede-hooks/useOnScreen";
 import { ReactSVG } from "react-svg";
 
 const useStyle = makeStyles((theme) => ({

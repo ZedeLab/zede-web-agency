@@ -1,5 +1,5 @@
-import { Grid, makeStyles, Slide, Typography } from "@material-ui/core";
-import { useOnScreen } from "../../../../utils/hooks/useOnScreen";
+import { Fade, Grid, makeStyles, Typography } from "@material-ui/core";
+import { useOnScreen } from "@zede-hooks/useOnScreen";
 import clx from "classnames";
 const useStyle = makeStyles((theme) => {
   return {
@@ -44,7 +44,7 @@ const WorkFlowHeader = ({ intro, quote }) => {
       className={classes.container}
     >
       <Grid item>
-        <Slide direction='up' in={visible} timeout={800}>
+        <Fade direction='up' in={visible}>
           <Typography
             variant='h3'
             color='textSecondary'
@@ -52,14 +52,14 @@ const WorkFlowHeader = ({ intro, quote }) => {
           >
             {intro}
           </Typography>
-        </Slide>
+        </Fade>
       </Grid>
       <Grid item>
-        <Slide direction='up' in={visible} timeout={1000}>
+        <Fade direction='up' in={visible} timeout={500}>
           <Typography className={clx(classes.intro, classes.quote)}>
             {quote}
           </Typography>
-        </Slide>
+        </Fade>
       </Grid>
     </Grid>
   );

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import cNames from "classnames";
 import PropTypes from "prop-types";
 
 // Material-ui components
@@ -11,10 +11,6 @@ import {
   makeStyles,
   Paper,
   Slide,
-  Tab,
-  Tabs,
-  Typography,
-  useScrollTrigger,
 } from "@material-ui/core";
 
 import AppBar from "@material-ui/core/AppBar";
@@ -26,6 +22,7 @@ import NavLink from "./NavLink/NavLink";
 import { useState } from "react";
 import { Router, useRouter } from "next/router";
 import { ReactSVG } from "react-svg";
+import { useOnScreen } from "@zede-hooks/useOnScreen";
 
 const useStyle = makeStyles((theme) => ({
   wrapper: {
@@ -34,6 +31,7 @@ const useStyle = makeStyles((theme) => ({
     width: "100vw",
     maxWidth: "100%",
   },
+
   pillow: {
     height: theme.spacing(5),
   },
@@ -83,7 +81,6 @@ const useStyle = makeStyles((theme) => ({
   },
   svgContainer: {
     "& svg": {
-      boxShadow: theme.shadows[6],
       borderRadius: "5px",
       width: "48px",
       height: "48px",
@@ -97,13 +94,23 @@ const useStyle = makeStyles((theme) => ({
       },
     },
   },
+  noShadow: {
+    boxShadow: "none",
+  },
+  withShadow: {
+    "& svg": {
+      boxShadow: theme.shadows[6],
+    },
+  },
 }));
 
 const navigation = (props) => {
   const classes = useStyle();
   const [showMobNav, setShowMobNav] = useState(false);
   const route = useRouter();
-  const trigger = useScrollTrigger();
+
+  const [setRef, visible] = useOnScreen({ threshold: "0" });
+
   const clicked = (path) => {
     route.push(path);
   };
@@ -131,53 +138,50 @@ const navigation = (props) => {
     </div>
   );
   return (
-    <Slide
-      appear={false}
-      direction='down'
-      in={!trigger}
-      className={classes.wrapper}
-    >
-      <div>
-        <div className={classes.pillow} />
-        <AppBar className={classes.appBar}>
-          <Toolbar className={classes.toolbar}>
-            <NavLink path='/'>
-              <ReactSVG
-                className={classes.svgContainer}
-                src='/images/Zede-logo.svg'
-              />
-              {/* <img src='/images/Zede-logo.svg' width='60' alt='' /> */}
-            </NavLink>
-            <Hidden smDown>{navLinks}</Hidden>
-            <Hidden mdUp>
-              <IconButton
-                style={{ backgroundColor: "transparent" }}
-                onClick={() => setShowMobNav(!showMobNav)}
-              >
-                {showMobNav ? (
-                  <Fade in>
-                    <CloseIcon color='secondary' />
-                  </Fade>
-                ) : (
-                  <Fade in>
-                    <MenuIcon color='secondary' />
-                  </Fade>
-                )}
-              </IconButton>
-            </Hidden>
-          </Toolbar>
-        </AppBar>
-        <Hidden mdUp>
-          <Slide direction='down' in={showMobNav && !trigger} unmountOnExit>
-            <Paper variant='outlined' className={classes.mobNavWrapper}>
-              <ClickAwayListener onClickAway={() => setShowMobNav(false)}>
-                {navLinks}
-              </ClickAwayListener>
-            </Paper>
-          </Slide>
-        </Hidden>
-      </div>
-    </Slide>
+    <div ref={setRef}>
+      <div className={classes.pillow} />
+      <AppBar
+        className={cNames(classes.appBar, { [classes.noShadow]: visible })}
+      >
+        <Toolbar className={classes.toolbar}>
+          <NavLink path='/'>
+            <ReactSVG
+              className={cNames(classes.svgContainer, {
+                [classes.withShadow]: visible,
+              })}
+              src='/images/Zede-logo.svg'
+            />
+            {/* <img src='/images/Zede-logo.svg' width='60' alt='' /> */}
+          </NavLink>
+          <Hidden smDown>{navLinks}</Hidden>
+          <Hidden mdUp>
+            <IconButton
+              style={{ backgroundColor: "transparent" }}
+              onClick={() => setShowMobNav(!showMobNav)}
+            >
+              {showMobNav ? (
+                <Fade in>
+                  <CloseIcon color='secondary' />
+                </Fade>
+              ) : (
+                <Fade in>
+                  <MenuIcon color='secondary' />
+                </Fade>
+              )}
+            </IconButton>
+          </Hidden>
+        </Toolbar>
+      </AppBar>
+      <Hidden mdUp>
+        <Slide direction='down' in={showMobNav} unmountOnExit>
+          <Paper variant='outlined' className={classes.mobNavWrapper}>
+            <ClickAwayListener onClickAway={() => setShowMobNav(false)}>
+              {navLinks}
+            </ClickAwayListener>
+          </Paper>
+        </Slide>
+      </Hidden>
+    </div>
   );
 };
 

@@ -5,8 +5,7 @@ import clsx from "classnames";
 import { useRouter } from "next/router";
 const useStyle = makeStyles((theme) => ({
   wrapper: {
-    backgroundColor: theme.palette.primary.main,
-    "-webkit-mask-image": `linear-gradient(to top, rgba(255,0,0,0), 0.5%, ${theme.palette.secondary.light})`,
+    backgroundColor: theme.palette.primary.dark,
     position: "relative",
     width: "100vw",
     maxWidth: "100%",
