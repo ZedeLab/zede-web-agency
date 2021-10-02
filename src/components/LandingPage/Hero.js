@@ -71,7 +71,7 @@ const useStyle = makeStyles((theme) => ({
     margin: "auto",
     width: "100%",
     height: "100vh",
-    minHeight: "900px",
+    minHeight: "700px",
     position: "absolute",
     opacity: 0.5,
     zIndex: 0,
