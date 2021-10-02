@@ -26,7 +26,7 @@
     "next-connect": "^0.9.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-lottie": "^1.2.3",
+    "react-lottie-player": "^1.4.0",
     "react-material-ui-carousel": "^2.1.1",
     "react-svg": "^11.1.4"
   }
