@@ -34,10 +34,13 @@ const useStyle = makeStyles((theme) => ({
     width: "100vw",
     maxWidth: "100%",
   },
+  pillow: {
+    height: theme.spacing(5),
+  },
   appBar: {
     // position: "relative",
-    height: "fit-content",
-
+    height: theme.mixins.toolbar,
+    backgroundColor: theme.palette.primary.dark,
     width: "100%",
     overflow: "hidden",
   },
@@ -69,10 +72,10 @@ const useStyle = makeStyles((theme) => ({
     display: "flex",
     width: "100%",
     flexDirection: "column",
-    clor: "inherit",
-    backgroundColor: theme.palette.primary.light,
-    paddingTop: theme.spacing(16),
-    paddingLeft: theme.spacing(5),
+    color: "inherit",
+    backgroundColor: theme.palette.primary.main,
+    paddingTop: theme.spacing(1),
+    paddingLeft: theme.spacing(2),
     paddingBottom: theme.spacing(2),
     boxShadow: theme.shadows[0],
     border: "none",
@@ -80,8 +83,10 @@ const useStyle = makeStyles((theme) => ({
   },
   svgContainer: {
     "& svg": {
-      width: "64px",
-      height: "64px",
+      boxShadow: theme.shadows[6],
+      borderRadius: "5px",
+      width: "48px",
+      height: "48px",
       justifySelf: "flex-end",
       fill: theme.palette.secondary.dark,
       "& #ze": {
@@ -107,20 +112,21 @@ const navigation = (props) => {
       className={classes.linkWrapper}
       onClickCapture={() => setShowMobNav(false)}
     >
+      <div className={classes.pillow} />
       <NavLink path='/' underLine>
-        <Typography>Home</Typography>
+        Home
       </NavLink>
       <NavLink path='/about' underLine>
-        <Typography>About Us</Typography>
+        About Us
       </NavLink>
       <NavLink path='/team' underLine>
-        <Typography>Our Team</Typography>
+        Our Team
       </NavLink>
       <NavLink path='/portfolios' underLine>
-        <Typography>Portfolio</Typography>
+        Portfolio
       </NavLink>
       <NavLink path='/contact' underLine>
-        <Typography>Contact Us</Typography>
+        Contact Us
       </NavLink>
     </div>
   );
@@ -132,6 +138,7 @@ const navigation = (props) => {
       className={classes.wrapper}
     >
       <div>
+        <div className={classes.pillow} />
         <AppBar className={classes.appBar}>
           <Toolbar className={classes.toolbar}>
             <NavLink path='/'>
@@ -147,26 +154,15 @@ const navigation = (props) => {
                 style={{ backgroundColor: "transparent" }}
                 onClick={() => setShowMobNav(!showMobNav)}
               >
-                <Fade
-                  in={!showMobNav}
-                  unmountOnExit
-                  timeout={{
-                    enter: 600,
-                    exit: 100,
-                  }}
-                >
-                  <MenuIcon color='secondary' />
-                </Fade>
-                <Fade
-                  in={showMobNav}
-                  unmountOnExit
-                  timeout={{
-                    enter: 500,
-                    exit: 200,
-                  }}
-                >
-                  <CloseIcon color='secondary' />
-                </Fade>
+                {showMobNav ? (
+                  <Fade in>
+                    <CloseIcon color='secondary' />
+                  </Fade>
+                ) : (
+                  <Fade in>
+                    <MenuIcon color='secondary' />
+                  </Fade>
+                )}
               </IconButton>
             </Hidden>
           </Toolbar>

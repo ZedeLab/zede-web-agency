@@ -1,61 +1,70 @@
 import React from "react";
 import { useRouter } from "next/router";
-import { makeStyles } from "@material-ui/core/styles";
+import {
+  makeStyles,
+  useTheme,
+  useMediaQuery,
+  Box,
+  Typography,
+} from "@material-ui/core";
 import cNames from "classnames";
 import Link from "next/link";
-import { Typography } from "@material-ui/core";
 
-const Cutomlink = ({ lable, path, children, underLine }) => {
-  const useStyle = makeStyles((theme) => ({
-    link: {
-      textDecoration: "none",
-      color: "inherit",
-      "& >*": {
-        ...theme.typography.link,
-        marginLeft: theme.spacing(4),
+import { TimelineDot } from "@material-ui/lab";
 
-        // fontSize: "1.2rem",
-        [theme.breakpoints.down("sm")]: {
-          marginBottom: theme.spacing(1),
-          marginLeft: 0,
-          // fontWeight: 600,
-        },
-      },
-      "& active": {
-        outline: "none",
-      },
+const useStyle = makeStyles((theme) => ({
+  container: {
+    display: "flex",
+    jus: "center",
+  },
+  link: {
+    textDecoration: "none",
+  },
+  label: {
+    ...theme.typography.subtitle1,
+    color: theme.palette.text.primary,
+  },
+  selected: {
+    color: theme.palette.secondary.light,
+
+    [theme.breakpoints.down("sm")]: {},
+    "& :active": {
+      outline: "none",
     },
-    selected: {
-      color: theme.palette.secondary.dark,
+  },
+  dot: {
+    backgroundColor: theme.palette.secondary.light,
+    marginLeft: theme.spacing(1),
+  },
+}));
 
-      [theme.breakpoints.down("sm")]: {
-        borderBottom: underLine
-          ? `2px solid ${theme.palette.secondary.light}`
-          : "none",
-        // paddingBottom: theme.spacing(1),
-      },
-      "& active": {
-        outline: "none",
-      },
-    },
-  }));
+const CustomLink = ({ lable, path, children, underLine }) => {
   const classes = useStyle();
   const router = useRouter();
+  const theme = useTheme();
+  const smallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const isPortfolioPage =
+    router.pathname === path ||
+    (router.pathname.startsWith("/portfolios") && path === "/portfolios");
 
   return (
-    <Link href={path}>
-      <a
-        className={cNames(classes.link, {
-          [`${classes.selected}`]:
-            router.pathname == path ||
-            (router.pathname.startsWith("/portfolios") &&
-              path === "/portfolios"),
-        })}
-      >
-        {children}
-      </a>
-    </Link>
+    <Box mx={2} className={cNames(classes.container)}>
+      <Link href={path}>
+        <a className={cNames(classes.link)}>
+          <Typography
+            className={cNames(classes.label, {
+              [`${classes.selected}`]: isPortfolioPage,
+            })}
+          >
+            {children}
+          </Typography>
+        </a>
+      </Link>
+      {isPortfolioPage && smallScreen && typeof children === "string" ? (
+        <TimelineDot className={classes.dot} />
+      ) : null}
+    </Box>
   );
 };
 
-export default Cutomlink;
+export default CustomLink;
