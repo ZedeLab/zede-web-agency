@@ -98,9 +98,12 @@ const useStyle = makeStyles((theme) => ({
     boxShadow: "none",
   },
   withShadow: {
-    "& svg": {
-      boxShadow: theme.shadows[6],
-    },
+    transition: `${theme.transitions.create(["transform", "padding"], {
+      duration: theme.transitions.duration.enteringScreen,
+      easing: theme.transitions.easing.easeInOut,
+    })}`,
+    paddingTop: theme.spacing(1),
+    transform: "scale(1.3)",
   },
 }));
 

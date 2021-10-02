@@ -68,7 +68,8 @@ const useStyle = makeStyles((theme) => ({
   image: {
     width: "100%",
     height: "100%",
-
+    minHeight: "25rem",
+    minWidth: "25rem",
     borderRadius: theme.spacing(2),
     // boxShadow: theme.shadows[5],
     filter: "grayscale(60%)",
