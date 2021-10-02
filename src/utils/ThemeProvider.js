@@ -9,7 +9,7 @@ const theme = (mode = "light") => {
       type: "light",
 
       primary: {
-        main: "#2c2925",
+        main: "#1E1C19",
       },
       secondary: {
         main: "#73e8ff",
