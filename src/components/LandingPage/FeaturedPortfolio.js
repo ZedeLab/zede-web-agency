@@ -1,8 +1,8 @@
 import { Grid, makeStyles, Paper, Typography } from "@material-ui/core";
-import PortfolioSummery from "../../Portfolios/Summary";
-import data from "../../Portfolios/data.json";
+import PortfolioSummery from "../Portfolios/Summary";
+import data from "@zede-static/portfolios.json";
 import { uniqueId } from "lodash";
-import useMainStyle from "../../../utils/style/js/sharedStyle";
+import useMainStyle from "../../utils/style/js/sharedStyle";
 
 const useStyle = makeStyles((theme) => {
   const mainStyle = useMainStyle();

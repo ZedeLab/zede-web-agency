@@ -1,10 +1,8 @@
 import {
   Button,
   Fade,
-  FormControl,
   Grid,
   Icon,
-  Input,
   makeStyles,
   Paper,
   Snackbar,
@@ -14,11 +12,12 @@ import {
   useTheme,
 } from "@material-ui/core";
 import Alert from "@material-ui/lab/Alert";
-import sharedStyle from "../../utils/style/js/sharedStyle";
+import sharedStyle from "../utils/style/js/sharedStyle";
 import clsx from "classnames";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
-const emailRegExe = /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i;
+const emailRegExe =
+  /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i;
 
 const ContactUs = (params) => {
   const useStyle = makeStyles((theme) => {
@@ -45,7 +44,7 @@ const ContactUs = (params) => {
         ...mainStyle.microHeading,
         color: theme.palette.text.secondary,
       },
-      heighlightedText: {
+      highlightedText: {
         color: theme.palette.secondary.dark,
       },
       title: {
@@ -195,7 +194,7 @@ const ContactUs = (params) => {
       <Grid
         container
         direction={match ? "column-reverse" : "row"}
-        justify='space-between'
+        justifyContent='space-between'
         className={classes.container}
       >
         <Grid item md={6} sm={12} className={classes.section} id='contact-form'>
@@ -205,14 +204,14 @@ const ContactUs = (params) => {
               color='textSecondary'
               className={classes.title}
             >
-              Hello let's get in touch
+              Hello lets get in touch
             </Typography>
           </Grid>
           <Grid item xs={12}>
             <Typography className={classes.text}>
               Tell us about your vision and we’ll figure out the best option for
-              you and your project. Don't like Filling up forms ? Mail us then{" "}
-              <span className={classes.heighlightedText}>hello@zede.tech</span>
+              you and your project. Dont like Filling up forms ? Mail us then{" "}
+              <span className={classes.highlightedText}>hello@zede.tech</span>
             </Typography>
           </Grid>
           {/* Form section */}

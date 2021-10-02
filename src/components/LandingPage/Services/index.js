@@ -1,15 +1,6 @@
-import {
-  Button,
-  Grid,
-  makeStyles,
-  Fade,
-  Typography,
-  Paper,
-  useMediaQuery,
-  useTheme,
-} from "@material-ui/core";
+import { Grid, makeStyles, Paper } from "@material-ui/core";
 
-import data from "./data.json";
+import data from "@zede-static/services.json";
 import { ReactSVG } from "react-svg";
 import useCommonStyle from "../../../utils/style/js/sharedStyle";
 import Section from "./Section";

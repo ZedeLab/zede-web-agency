@@ -1,9 +1,7 @@
 import cNames from "classnames";
-import PropTypes from "prop-types";
 
 // Material-ui components
 import {
-  Button,
   ClickAwayListener,
   Fade,
   Hidden,
@@ -18,9 +16,9 @@ import Toolbar from "@material-ui/core/Toolbar";
 import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
 // Core components
-import NavLink from "./NavLink/NavLink";
+import NavLink from "./NavLink";
 import { useState } from "react";
-import { Router, useRouter } from "next/router";
+import { useRouter } from "next/router";
 import { ReactSVG } from "react-svg";
 import { useOnScreen } from "@zede-hooks/useOnScreen";
 
@@ -41,6 +39,10 @@ const useStyle = makeStyles((theme) => ({
     backgroundColor: theme.palette.primary.dark,
     width: "100%",
     overflow: "hidden",
+    transition: `${theme.transitions.create(["box-shadow"], {
+      duration: theme.transitions.duration.standard,
+      easing: theme.transitions.easing.easeIn,
+    })}`,
   },
   toolbar: {
     display: "flex",
@@ -80,6 +82,10 @@ const useStyle = makeStyles((theme) => ({
     borderRadius: 0,
   },
   svgContainer: {
+    transition: `${theme.transitions.create(["transform", "padding"], {
+      duration: theme.transitions.duration.standard,
+      easing: theme.transitions.easing.easeIn,
+    })}`,
     "& svg": {
       borderRadius: "5px",
       width: "48px",
@@ -98,16 +104,12 @@ const useStyle = makeStyles((theme) => ({
     boxShadow: "none",
   },
   withShadow: {
-    transition: `${theme.transitions.create(["transform", "padding"], {
-      duration: theme.transitions.duration.enteringScreen,
-      easing: theme.transitions.easing.easeInOut,
-    })}`,
     paddingTop: theme.spacing(1),
     transform: "scale(1.3)",
   },
 }));
 
-const navigation = (props) => {
+const Navigation = (props) => {
   const classes = useStyle();
   const [showMobNav, setShowMobNav] = useState(false);
   const route = useRouter();
@@ -188,4 +190,4 @@ const navigation = (props) => {
   );
 };
 
-export default navigation;
+export default Navigation;

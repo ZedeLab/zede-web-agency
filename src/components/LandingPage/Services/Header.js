@@ -1,11 +1,4 @@
-import {
-  Button,
-  Fade,
-  Grid,
-  makeStyles,
-  Slide,
-  Typography,
-} from "@material-ui/core";
+import { Button, Fade, makeStyles, Typography } from "@material-ui/core";
 import { useOnScreen } from "@zede-hooks/useOnScreen";
 import { useRouter } from "next/router";
 

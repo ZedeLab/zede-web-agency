@@ -7,7 +7,7 @@
             "@zede-components/*": ["src/components/*"],
             "@zede-hooks/*": ["src/hooks/*"],
             "@zede-utils/*": ["src/utils/*"],
-            "@zede-services/*": ["src/services/*"],
+            "@zede-static/*": ["src/static/*"],
             "@zede-public/*": ["public/*"],
         }
     }

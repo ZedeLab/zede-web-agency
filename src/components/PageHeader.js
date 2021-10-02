@@ -1,5 +1,4 @@
-import { Grid, makeStyles, Paper, Typography } from "@material-ui/core";
-import clsx from "classnames";
+import { makeStyles, Paper, Typography } from "@material-ui/core";
 import { ReactSVG } from "react-svg";
 
 const url = "/images/background.svg";

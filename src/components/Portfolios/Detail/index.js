@@ -1,10 +1,8 @@
 import {
-  Avatar,
   Chip,
   Grid,
   IconButton,
   makeStyles,
-  Paper,
   Typography,
   useTheme,
 } from "@material-ui/core";
@@ -14,7 +12,6 @@ import Link from "next/link";
 // Icons
 import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
-import CloseIcon from "@material-ui/icons/Close";
 import LanguageIcon from "@material-ui/icons/Language";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import { uniqueId } from "lodash";
@@ -143,7 +140,7 @@ const PortfolioDetail = ({ prevId, nextId, portfolioData }) => {
       <Grid item xs={12}>
         <Grid
           container
-          justify='flex-start'
+          justifyContent='flex-start'
           alignItems='flex-start'
           spacing={1}
         >
@@ -179,6 +176,7 @@ const PortfolioDetail = ({ prevId, nextId, portfolioData }) => {
                   target='_blank'
                   href={portfolioData.detail.url}
                   className={clx(classes.info, classes.link)}
+                  rel='noreferrer'
                 >
                   <Typography>
                     <LanguageIcon className={classes.infoIcon} />
@@ -189,6 +187,7 @@ const PortfolioDetail = ({ prevId, nextId, portfolioData }) => {
                   target='_blank'
                   href={portfolioData.detail.github}
                   className={clx(classes.info, classes.link)}
+                  rel='noreferrer'
                 >
                   <Typography>
                     <GitHubIcon className={classes.infoIcon} />

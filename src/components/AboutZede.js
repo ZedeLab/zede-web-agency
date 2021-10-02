@@ -1,7 +1,7 @@
 import { Grid, makeStyles, Paper, Slide, Typography } from "@material-ui/core";
 import { uniqueId } from "lodash";
 import { useOnScreen } from "@zede-hooks/useOnScreen";
-import sharedStyle from "../../utils/style/js/sharedStyle";
+import sharedStyle from "../utils/style/js/sharedStyle";
 
 const AboutZede = ({ data }) => {
   const useStyle = makeStyles((theme) => {
@@ -44,7 +44,7 @@ const AboutZede = ({ data }) => {
           <Grid
             container
             alignItems='center'
-            justify='center'
+            justifyContent='center'
             style={{ overflow: "hidden" }}
           >
             <Grid item md={8} xs={12}>
