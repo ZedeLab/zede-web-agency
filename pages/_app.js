@@ -5,7 +5,7 @@ import Head from "next/head";
 // Materuial-ui elements
 import { ThemeProvider, useMediaQuery, Paper } from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import globalTheme from "@zede-utils/GlobalTheme";
+import globalTheme from "../src/utils/globalTheme";
 
 import { AnimatePresence } from "framer-motion";
 

@@ -1,5 +1,5 @@
 import { Grid, makeStyles, Paper, Typography } from "@material-ui/core";
-import PortfolioSummery from "../Portfolios/Summery";
+import PortfolioSummery from "../Portfolios/Summary";
 import { uniqueId } from "lodash";
 
 const useStyle = makeStyles((theme) => ({

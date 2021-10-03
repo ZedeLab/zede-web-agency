@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Header from "../../src/components/PageHeader";
-import Contact from "../../src/components/Contact";
+import LetsTalk from "../../src/components/LetsTalk";
 import { motion } from "framer-motion";
 import routeAnim from "../../public/animations/routingAnim.json";
 
@@ -35,7 +35,7 @@ const ContactUs = (params) => {
             />
           </motion.div>
           <motion.div variants={routeAnim.fadeInUp}>
-            <Contact />
+            <LetsTalk />
           </motion.div>
         </motion.div>
       </motion.div>

@@ -1,5 +1,5 @@
 import { Grid, makeStyles, Paper } from "@material-ui/core";
-import PortfolioSummery from "./Summery";
+import PortfolioSummery from "./Summary";
 
 import { uniqueId } from "lodash";
 import Pagination from "@material-ui/lab/Pagination";

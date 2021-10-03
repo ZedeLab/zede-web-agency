@@ -41,7 +41,7 @@ const useStyle = makeStyles((theme) => ({
   },
 }));
 
-const CustomLink = ({ path, children }) => {
+const CustomLink = ({ lable, path, children, underLine }) => {
   const classes = useStyle();
   const router = useRouter();
   const theme = useTheme();
@@ -51,7 +51,7 @@ const CustomLink = ({ path, children }) => {
     (router.pathname.startsWith("/portfolios") && path === "/portfolios");
 
   return (
-    <Box mx={2} my={1} className={cNames(classes.container)}>
+    <Box mx={2} className={cNames(classes.container)}>
       <Link href={path}>
         <a className={cNames(classes.link)}>
           <Typography

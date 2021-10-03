@@ -4,7 +4,7 @@ import {
   balooBhaiBold,
   balooBhaiSemiBold,
   balooBhaiExtraBold,
-} from "@zede-utils/Fonts";
+} from "@zede-utils/globalFonts";
 
 const theme = createTheme({
   overrides: {
@@ -56,6 +56,7 @@ const theme = createTheme({
     h1: {
       marginTop: "20px",
       marginBottom: "10px",
+
       fontSize: "52px",
       lineHeight: 1.15,
       fontWeight: 700,
@@ -63,6 +64,7 @@ const theme = createTheme({
     h2: {
       marginTop: "20px",
       marginBottom: "10px",
+
       fontSize: "36px",
       lineHeight: 1.15,
       fontWeight: 700,
@@ -70,6 +72,7 @@ const theme = createTheme({
     h3: {
       marginTop: "20px",
       marginBottom: "10px",
+
       fontSize: "24px",
       lineHeight: 1.15,
       fontWeight: 700,
@@ -77,6 +80,7 @@ const theme = createTheme({
     h4: {
       marginTop: "10px",
       marginBottom: "10px",
+
       fontSize: "18px",
       lineHeight: "24px",
       fontWeight: 700,
@@ -90,6 +94,7 @@ const theme = createTheme({
 
     link: {
       textDecoration: "none",
+
       fontWeight: 400,
       fontSize: "18px",
     },
