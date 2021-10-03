@@ -73,6 +73,11 @@ const useStyle = makeStyles((theme) => ({
     height: "100vh",
     minHeight: "700px",
     position: "absolute",
+    overflow: "hidden",
+  },
+  anim: {
+    width: "100%",
+    height: "100%",
     opacity: 0.5,
     zIndex: 0,
     top: 0,
@@ -81,20 +86,15 @@ const useStyle = makeStyles((theme) => ({
     strokeWidth: 0,
     strokeOpacity: 0.5,
     fill: theme.palette.secondary.dark,
+    [theme.breakpoints.down("xs")]: {
+      transform: "scale(2)",
+    },
   },
 }));
 
 const Hero = (params) => {
   const classes = useStyle();
   const router = useRouter();
-  // const animOptions = {
-  //   loop: true,
-  //   autoplay: true,
-  //   animationData: animationData.default,
-  //   rendererSettings: {
-  //     preserveAspectRatio: "xMidYMid slice",
-  //   },
-  // };
 
   return (
     <Paper className={classes.wrapper}>
@@ -144,11 +144,8 @@ const Hero = (params) => {
         <Lottie
           loop
           play
+          className={classes.anim}
           animationData={animationData}
-          style={{
-            width: "100%",
-            height: "900px",
-          }}
         />
       </div>
     </Paper>
