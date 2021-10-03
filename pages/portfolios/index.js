@@ -3,24 +3,24 @@ import Header from "../../src/components/PageHeader";
 import Portfolios from "../../src/components/Portfolios";
 import { motion } from "framer-motion";
 import routeAnim from "../../public/animations/routingAnim.json";
-import data from "@zede-static/portfolios.json";
+import { getPortfolios } from "@zede-services/api";
 
-const Portfolio = ({ pageData }) => {
+const Portfolio = ({ portfolios }) => {
   return (
     <>
       <Head>
-        <title>{pageData.title} - Zede Tech agency</title>
-        <meta content={pageData.description} name='description' />
+        <title>{portfolios.title} - Zede Tech agency</title>
+        <meta content={portfolios.description} name='description' />
         {/* Open Graph tags */}
         <meta
           property='og:title'
-          content={`${pageData.title} - Zede Tech Agency`}
+          content={`${portfolios.title} - Zede Tech Agency`}
         />
         <meta
           property='og:image'
-          content={`${process.env.NEXT_PUBLIC_SERVER}${pageData.shareImgUrl}`}
+          content={`${process.env.NEXT_PUBLIC_SERVER}${portfolios.shareImgUrl}`}
         />
-        <meta property='og:description' content={pageData.description} />
+        <meta property='og:description' content={portfolios.description} />
       </Head>
 
       <motion.div exit={{ opacity: 0 }} initial='initial' animate='animate'>
@@ -32,7 +32,7 @@ const Portfolio = ({ pageData }) => {
             />
           </motion.div>
           <motion.div variants={routeAnim.fadeInUp}>
-            <Portfolios data={pageData.data} />
+            <Portfolios data={portfolios.data} />
           </motion.div>
         </motion.div>
       </motion.div>
@@ -41,12 +41,10 @@ const Portfolio = ({ pageData }) => {
 };
 
 export async function getStaticProps({ params }) {
-  const pageData = data;
+  const portfolios = await getPortfolios();
 
   return {
-    props: {
-      pageData: pageData,
-    }, // will be passed to the page component as props
+    props: { portfolios }, // will be passed to the page component as props
   };
 }
 

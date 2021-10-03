@@ -8,6 +8,7 @@
             "@zede-hooks/*": ["src/hooks/*"],
             "@zede-utils/*": ["src/utils/*"],
             "@zede-static/*": ["src/static/*"],
+            "@zede-services/*": ["src/services/*"],
             "@zede-public/*": ["public/*"],
         }
     }

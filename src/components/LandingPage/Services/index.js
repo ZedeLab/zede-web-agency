@@ -1,6 +1,5 @@
 import { Grid, makeStyles, Paper } from "@material-ui/core";
 
-import data from "@zede-static/services.json";
 import { ReactSVG } from "react-svg";
 import useCommonStyle from "../../../utils/style/js/sharedStyle";
 import Section from "./Section";
@@ -54,7 +53,7 @@ const useStyle = makeStyles((theme) => {
     },
   };
 });
-const Services = (params) => {
+const Services = ({ data }) => {
   const classes = useStyle();
 
   return (

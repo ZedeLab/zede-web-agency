@@ -3,24 +3,24 @@ import Header from "../../src/components/PageHeader";
 import AboutZede from "../../src/components/AboutZede";
 import { motion } from "framer-motion";
 import routeAnim from "../../public/animations/routingAnim.json";
-import data from "@zede-static/aboutZede.json";
+import { getAboutZede } from "@zede-services/api";
 
-const AboutUs = ({ pageData }) => {
+const AboutUs = ({ aboutZede }) => {
   return (
     <>
       <Head>
-        <title>{pageData.title} - Zede Tech Agency</title>
-        <meta content={pageData.description} name='description' />
+        <title>{aboutZede.title} - Zede Tech Agency</title>
+        <meta content={aboutZede.description} name='description' />
         {/* Open Graph tags */}
         <meta
           property='og:title'
-          content={`${pageData.title} - Zede Tech Agency`}
+          content={`${aboutZede.title} - Zede Tech Agency`}
         />
         <meta
           property='og:image'
-          content={`${process.env.NEXT_PUBLIC_SERVER}${pageData.shareImgUrl}`}
+          content={`${process.env.NEXT_PUBLIC_SERVER}${aboutZede.shareImgUrl}`}
         />
-        <meta property='og:description' content={pageData.description} />
+        <meta property='og:description' content={aboutZede.description} />
       </Head>
       <motion.div exit={{ opacity: 0 }} initial='initial' animate='animate'>
         <motion.div variants={routeAnim.stagger}>
@@ -31,7 +31,7 @@ const AboutUs = ({ pageData }) => {
             />
           </motion.div>
           <motion.div variants={routeAnim.fadeInUp}>
-            <AboutZede data={pageData.data} />
+            <AboutZede data={aboutZede.data} />
           </motion.div>
         </motion.div>
       </motion.div>
@@ -40,12 +40,10 @@ const AboutUs = ({ pageData }) => {
 };
 
 export async function getStaticProps({ params }) {
-  const pageData = data;
+  const aboutZede = await getAboutZede();
 
   return {
-    props: {
-      pageData: pageData,
-    }, // will be passed to the page component as props
+    props: { aboutZede }, // will be passed to the page component as props
   };
 }
 

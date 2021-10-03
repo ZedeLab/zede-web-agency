@@ -3,24 +3,24 @@ import Header from "../../src/components/PageHeader";
 import Team from "../../src/components/Team";
 import { motion } from "framer-motion";
 import routeAnim from "../../public/animations/routingAnim.json";
-import data from "@zede-static/team.json";
+import { getTeam } from "@zede-services/api";
 
-const OurTeam = ({ pageData }) => {
+const OurTeam = ({ team }) => {
   return (
     <>
       <Head>
-        <title>{pageData.title} - Zede Tech agency</title>
-        <meta content={pageData.description} name='description' />
+        <title>{team.title} - Zede Tech agency</title>
+        <meta content={team.description} name='description' />
         {/* Open Graph tags */}
         <meta
           property='og:title'
-          content={`${pageData.title} - Zede Tech Agency`}
+          content={`${team.title} - Zede Tech Agency`}
         />
         <meta
           property='og:image'
-          content={`${process.env.NEXT_PUBLIC_SERVER}${pageData.shareImgUrl}`}
+          content={`${process.env.NEXT_PUBLIC_SERVER}${team.shareImgUrl}`}
         />
-        <meta property='og:description' content={pageData.description} />
+        <meta property='og:description' content={team.description} />
       </Head>
       <motion.div exit={{ opacity: 0 }} initial='initial' animate='animate'>
         <motion.div variants={routeAnim.stagger}>
@@ -31,7 +31,7 @@ const OurTeam = ({ pageData }) => {
             />
           </motion.div>
           <motion.div variants={routeAnim.fadeInUp}>
-            <Team data={pageData.data} />
+            <Team data={team.data} />
           </motion.div>
         </motion.div>
       </motion.div>
@@ -40,12 +40,10 @@ const OurTeam = ({ pageData }) => {
 };
 
 export async function getStaticProps({ params }) {
-  const pageData = data;
+  const team = await getTeam();
 
   return {
-    props: {
-      pageData: pageData,
-    }, // will be passed to the page component as props
+    props: { team }, // will be passed to the page component as props
   };
 }
 
