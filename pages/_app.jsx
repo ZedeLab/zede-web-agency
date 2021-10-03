@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import Head from "next/head";
 
 // Materuial-ui elements
-import { ThemeProvider, useMediaQuery, Paper } from "@material-ui/core";
+import { ThemeProvider, Paper } from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import globalTheme from "../src/utils/globalTheme";
+import GlobalTheme from "@zede-utils/globalTheme";
 
 import { AnimatePresence } from "framer-motion";
 
@@ -14,8 +14,6 @@ import Nav from "../src/components/Navigation";
 import Footer from "../src/components/Footer";
 export default function MyApp(props) {
   const { Component, pageProps } = props;
-
-  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
 
   React.useEffect(() => {
     // Remove the server-side injected CSS.
@@ -61,7 +59,7 @@ export default function MyApp(props) {
       <>
         <CssBaseline />
         <Paper>
-          <ThemeProvider theme={globalTheme}>
+          <ThemeProvider theme={GlobalTheme}>
             <Nav />
             <AnimatePresence exitBeforeEnter>
               <Component {...pageProps} />
