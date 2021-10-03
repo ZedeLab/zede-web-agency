@@ -6,7 +6,9 @@ import Services from "../src/components/LandingPage/Services";
 import LetsTalk from "../src/components/LandingPage/LetsTalk";
 import { motion } from "framer-motion";
 import routeAnim from "../public/animations/routingAnim.json";
-const Home = (params) => {
+import { getPortfolios, getServices, getWorkFlow } from "../src/services/api";
+
+const Home = ({ services, workflow, portfolios }) => {
   return (
     <>
       <Head>
@@ -36,13 +38,13 @@ const Home = (params) => {
             <Hero />
           </motion.div>
           <motion.div variants={routeAnim.fadeInUp}>
-            <WorkFlow />
+            <WorkFlow data={workflow} />
           </motion.div>
           <motion.div id='landing-services' variants={routeAnim.fadeInUp}>
-            <Services />
+            <Services data={services} />
           </motion.div>
           <motion.div variants={routeAnim.fadeInUp}>
-            <FeaturedPortfolios />
+            <FeaturedPortfolios data={portfolios} />
           </motion.div>
           <motion.div variants={routeAnim.fadeInUp}>
             <LetsTalk />
@@ -52,5 +54,15 @@ const Home = (params) => {
     </>
   );
 };
+
+export async function getStaticProps({ params }) {
+  const services = await getServices();
+  const workflow = await getWorkFlow();
+  const portfolios = await getPortfolios();
+
+  return {
+    props: { services, workflow, portfolios }, // will be passed to the page component as props
+  };
+}
 
 export default Home;

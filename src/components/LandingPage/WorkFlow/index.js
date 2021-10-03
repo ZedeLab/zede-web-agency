@@ -1,47 +1,52 @@
 import { Grid, makeStyles, Paper } from "@material-ui/core";
 import { uniqueId } from "lodash";
 
-import data from "@zede-static/workflow.json";
-import useMainStyle from "../../../utils/style/js/sharedStyle";
 import Header from "./Header";
 import Section from "./Section";
 
-const useStyle = makeStyles((theme) => {
-  const mainStyle = useMainStyle();
-  return {
-    wrapper: {
-      ...mainStyle.wrapper,
-    },
+const useStyle = makeStyles((theme) => ({
+  wrapper: {
+    borderRadius: 0,
+    padding: `${theme.spacing(6)}px 0px`,
+    width: "100vw",
+    maxWidth: "100%",
+    overflow: "hidden",
+    boxShadow: theme.shadows[0],
+  },
 
-    container: {
-      ...mainStyle.container,
-    },
-    intro: {
-      textAlign: "center",
-      // padding: theme.spacing(2),
-    },
-    quote: {
-      color: theme.palette.text.hint,
-    },
-    sectionTitle: {
-      fontFamily: "'Open Sans', sans-serif",
-      fontSize: "1.6rem",
-      lineHeight: 1.3,
-      fontWeight: 300,
-      textTransform: "none",
+  container: {
+    width: "70vw",
+    margin: "auto",
 
-      [theme.breakpoints.down("sm")]: {
-        fontSize: "1.3rem",
-      },
+    [theme.breakpoints.down("sm")]: {
+      width: "90vw",
     },
-    subSection: {
-      width: "90%",
-      paddingTop: theme.spacing(5),
-    },
-  };
-});
+  },
+  intro: {
+    textAlign: "center",
+    // padding: theme.spacing(2),
+  },
+  quote: {
+    color: theme.palette.text.hint,
+  },
+  sectionTitle: {
+    fontFamily: "'Open Sans', sans-serif",
+    fontSize: "1.6rem",
+    lineHeight: 1.3,
+    fontWeight: 300,
+    textTransform: "none",
 
-const WorkFlow = (params) => {
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "1.3rem",
+    },
+  },
+  subSection: {
+    width: "90%",
+    paddingTop: theme.spacing(5),
+  },
+}));
+
+const WorkFlow = ({ data }) => {
   const classes = useStyle();
   return (
     <Paper className={classes.wrapper}>

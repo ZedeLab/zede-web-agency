@@ -1,39 +1,52 @@
 import { Grid, makeStyles, Paper, Slide, Typography } from "@material-ui/core";
 import { uniqueId } from "lodash";
 import { useOnScreen } from "@zede-hooks/useOnScreen";
-import sharedStyle from "../utils/style/js/sharedStyle";
+
+const useStyle = makeStyles((theme) => ({
+  wrapper: {
+    borderRadius: 0,
+    padding: `${theme.spacing(6)}px 0px`,
+    width: "100vw",
+    maxWidth: "100%",
+    overflow: "hidden",
+    boxShadow: theme.shadows[0],
+  },
+  container: {
+    width: "70vw",
+    margin: "auto",
+
+    [theme.breakpoints.down("sm")]: {
+      width: "90vw",
+    },
+  },
+  title: {
+    fontFamily: "Montserrat, sans-serif",
+    fontSize: "32px",
+    lineHeight: 1.15,
+    fontWeight: 600,
+    marginBottom: theme.spacing(5),
+  },
+  subTitle: {
+    fontFamily: "Montserrat, sans-serif",
+    fontSize: "32px",
+    lineHeight: 1.15,
+    fontWeight: 600,
+    fontWeight: 400,
+    fontSize: "30px",
+    marginBottom: theme.spacing(3),
+  },
+  text: {
+    lineBreak: "strict",
+    textAlign: "justify",
+  },
+  image: {
+    width: "100%",
+    maxWidth: "100px",
+    maxHeight: "100px",
+  },
+}));
 
 const AboutZede = ({ data }) => {
-  const useStyle = makeStyles((theme) => {
-    const mainStyle = sharedStyle();
-    return {
-      wrapper: {
-        ...mainStyle.wrapper,
-      },
-      container: {
-        ...mainStyle.container,
-      },
-      title: {
-        ...mainStyle.sectionHeading,
-        marginBottom: theme.spacing(5),
-      },
-      subTitle: {
-        ...mainStyle.sectionHeading,
-        fontWeight: 400,
-        fontSize: "30px",
-        marginBottom: theme.spacing(3),
-      },
-      text: {
-        lineBreak: "strict",
-        textAlign: "justify",
-      },
-      image: {
-        width: "100%",
-        maxWidth: "100px",
-        maxHeight: "100px",
-      },
-    };
-  });
   const classes = useStyle();
   const [setRef, visible] = useOnScreen({ threshold: "0.2" });
   let timeout = 300;

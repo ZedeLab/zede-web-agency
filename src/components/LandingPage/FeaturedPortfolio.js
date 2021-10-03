@@ -1,31 +1,36 @@
 import { Grid, makeStyles, Paper, Typography } from "@material-ui/core";
 import PortfolioSummery from "../Portfolios/Summary";
-import data from "@zede-static/portfolios.json";
 import { uniqueId } from "lodash";
-import useMainStyle from "../../utils/style/js/sharedStyle";
 
-const useStyle = makeStyles((theme) => {
-  const mainStyle = useMainStyle();
-  return {
-    wrapper: {
-      ...mainStyle.wrapper,
-    },
-    container: {
-      ...mainStyle.container,
-    },
-    microHeading: {
-      ...mainStyle.microHeading,
-    },
-    sectionHeading: {
-      ...mainStyle.sectionHeading,
-    },
-    section: {
-      padding: theme.spacing(2),
-    },
-  };
-});
+const useStyle = makeStyles((theme) => ({
+  wrapper: {
+    borderRadius: 0,
+    padding: `${theme.spacing(6)}px 0px`,
+    width: "100vw",
+    maxWidth: "100%",
+    overflow: "hidden",
+    boxShadow: theme.shadows[0],
+  },
+  container: {
+    width: "70vw",
+    margin: "auto",
 
-const FeaturePortfolios = () => {
+    [theme.breakpoints.down("sm")]: {
+      width: "90vw",
+    },
+  },
+  sectionHeading: {
+    fontFamily: "Montserrat, sans-serif",
+    fontSize: "32px",
+    lineHeight: 1.15,
+    fontWeight: 600,
+  },
+  section: {
+    padding: theme.spacing(2),
+  },
+}));
+
+const FeaturePortfolios = ({ data }) => {
   const classes = useStyle();
   return (
     <Paper className={classes.wrapper}>
