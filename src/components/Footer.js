@@ -11,59 +11,69 @@ import {
 import { loadCSS } from "fg-loadcss";
 import { useEffect } from "react";
 import clsx from "classnames";
-import sharedStyle from "../utils/style/js/sharedStyle";
 import { ReactSVG } from "react-svg";
 import { useRouter } from "next/router";
+
+const useStyle = makeStyles((theme) => ({
+  wrapper: {
+    borderRadius: 0,
+    padding: `${theme.spacing(6)}px 0px`,
+    width: "100vw",
+    maxWidth: "100%",
+    overflow: "hidden",
+    boxShadow: theme.shadows[0],
+    padding: `${theme.spacing(6)}px ${theme.spacing(5)}px`,
+    backgroundColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.primary.dark,
+    position: "relative",
+    bottom: 0,
+  },
+  container: {
+    width: "70vw",
+    margin: "auto",
+
+    [theme.breakpoints.down("sm")]: {
+      width: "90vw",
+    },
+  },
+  svgContainer: {
+    "& svg": {
+      width: "64px",
+      height: "64px",
+      fill: theme.palette.secondary.dark,
+      "& #ze": {
+        stroke: theme.palette.primary.dark,
+      },
+      "& #de": {
+        stroke: theme.palette.secondary.dark,
+      },
+    },
+  },
+  text: {
+    maxWidth: theme.spacing(55),
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+    width: "90%",
+  },
+  subTitle: {
+    marginBottom: theme.spacing(2),
+  },
+  linkContainer: {
+    display: "flex",
+    "& >*": {
+      marginRight: theme.spacing(1),
+    },
+  },
+  email: {
+    marginBottom: theme.spacing(2),
+    color: theme.palette.secondary.light,
+  },
+  copyright: {
+    textAlign: "center",
+  },
+}));
+
 const Footer = (params) => {
-  const useStyle = makeStyles((theme) => {
-    const mainStyle = sharedStyle();
-    return {
-      wrapper: {
-        ...mainStyle.wrapper,
-        backgroundColor: theme.palette.primary.dark,
-        position: "relative",
-        bottom: 0,
-      },
-      container: {
-        ...mainStyle.container,
-      },
-      svgContainer: {
-        "& svg": {
-          width: "64px",
-          height: "64px",
-          fill: theme.palette.secondary.dark,
-          "& #ze": {
-            stroke: theme.palette.primary.dark,
-          },
-          "& #de": {
-            stroke: theme.palette.secondary.dark,
-          },
-        },
-      },
-      text: {
-        maxWidth: theme.spacing(55),
-        marginTop: theme.spacing(2),
-        marginBottom: theme.spacing(2),
-        width: "90%",
-      },
-      subTitle: {
-        marginBottom: theme.spacing(2),
-      },
-      linkContainer: {
-        display: "flex",
-        "& >*": {
-          marginRight: theme.spacing(1),
-        },
-      },
-      email: {
-        marginBottom: theme.spacing(2),
-        color: theme.palette.secondary.light,
-      },
-      copyright: {
-        textAlign: "center",
-      },
-    };
-  });
   const classes = useStyle();
   const theme = useTheme();
   const match = useMediaQuery(theme.breakpoints.down("sm"));
