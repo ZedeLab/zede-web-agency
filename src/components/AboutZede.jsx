@@ -12,7 +12,7 @@ const useStyle = makeStyles((theme) => ({
     boxShadow: theme.shadows[0],
   },
   container: {
-    width: "70vw",
+    width: "80vw",
     margin: "auto",
 
     [theme.breakpoints.down("sm")]: {
@@ -60,7 +60,7 @@ const AboutZede = ({ data }) => {
             justifyContent='center'
             style={{ overflow: "hidden" }}
           >
-            <Grid item md={8} xs={12}>
+            <Grid item md={10} xs={12}>
               <Typography
                 variant='h3'
                 color='textSecondary'
@@ -91,7 +91,7 @@ const AboutZede = ({ data }) => {
             spacing={5}
             style={{ overflow: "hidden" }}
           >
-            <Grid item md={7} sm={12}>
+            <Grid item md={5} sm={12}>
               <Grid container spacing={3}>
                 {data.sectionTwo.medial.map((url) => (
                   <Grid item xs={4} key={uniqueId()}>
@@ -106,7 +106,7 @@ const AboutZede = ({ data }) => {
                 ))}
               </Grid>
             </Grid>
-            <Grid item md={5} sm={12}>
+            <Grid item md={7} sm={12}>
               <Typography
                 variant='h3'
                 color='textSecondary'
