@@ -5,7 +5,7 @@ import Head from "next/head";
 // Materuial-ui elements
 import { ThemeProvider, useMediaQuery, Paper } from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import globalTheme from "../src/utils/globalTheme";
+import GlobalTheme from "@zede-utils/GlobalTheme";
 
 import { AnimatePresence } from "framer-motion";
 
@@ -61,7 +61,7 @@ export default function MyApp(props) {
       <>
         <CssBaseline />
         <Paper>
-          <ThemeProvider theme={globalTheme}>
+          <ThemeProvider theme={GlobalTheme}>
             <Nav />
             <AnimatePresence exitBeforeEnter>
               <Component {...pageProps} />
