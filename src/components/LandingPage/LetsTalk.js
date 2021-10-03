@@ -7,72 +7,78 @@ import {
   Typography,
 } from "@material-ui/core";
 import clx from "classnames";
-import useCommonStyle from "../../utils/style/js/sharedStyle";
 import Lottie from "react-lottie-player";
 import * as animationData from "../../../public/animations/contactUs.json";
 import { ReactSVG } from "react-svg";
 import { useRouter } from "next/router";
 
-const useStyle = makeStyles((theme) => {
-  const mainStyle = useCommonStyle();
-  return {
-    root: {
-      boxShadow: theme.shadows[0],
-      width: "100vw",
-      maxWidth: "100%",
-    },
-    svgContainer: {
-      position: "relative",
-    },
-    svg: {
-      position: "relative",
-      bottom: "-0.49rem",
+const useStyle = makeStyles((theme) => ({
+  root: {
+    boxShadow: theme.shadows[0],
+    width: "100vw",
+    maxWidth: "100%",
+  },
+  svgContainer: {
+    position: "relative",
+  },
+  svg: {
+    position: "relative",
+    bottom: "-0.49rem",
 
-      right: 0,
-      "& svg": {
-        fill: theme.palette.primary.main,
-        // stroke: theme.palette.primary.main,
-      },
+    right: 0,
+    "& svg": {
+      fill: theme.palette.primary.main,
+      // stroke: theme.palette.primary.main,
     },
-    wrapper: {
-      ...mainStyle.wrapper,
-      backgroundColor: theme.palette.primary.main,
-    },
+  },
+  wrapper: {
+    borderRadius: 0,
+    padding: `${theme.spacing(6)}px 0px`,
+    width: "100vw",
+    maxWidth: "100%",
+    overflow: "hidden",
+    boxShadow: theme.shadows[0],
+    backgroundColor: theme.palette.primary.main,
+  },
 
-    container: {
-      ...mainStyle.container,
-    },
-    microHeading: {
-      ...mainStyle.microHeading,
-    },
-    sectionHeading: {
-      ...mainStyle.sectionHeading,
-      marginBottom: theme.spacing(3),
-    },
+  container: {
+    width: "70vw",
+    margin: "auto",
 
-    text: {
-      marginBottom: theme.spacing(5),
+    [theme.breakpoints.down("sm")]: {
+      width: "90vw",
     },
-    button: {
-      // color: theme.palette.common.white,
-      paddingTop: "16px",
-      paddingBottom: "16px",
-      boxShadow: "0 4px 11px 0 rgba(117, 69, 1, 0.33)",
-    },
-  };
-});
+  },
+  microHeading: {
+    fontFamily: "Montserrat, sans-serif",
+    fontSize: "11px",
+    fontWeight: 600,
+    letterSpacing: "2px",
+    textTransform: "uppercase",
+  },
+  sectionHeading: {
+    fontFamily: "Montserrat, sans-serif",
+    fontSize: "32px",
+    lineHeight: 1.15,
+    fontWeight: 600,
+    marginBottom: theme.spacing(3),
+  },
+
+  text: {
+    marginBottom: theme.spacing(5),
+  },
+  button: {
+    // color: theme.palette.common.white,
+    paddingTop: "16px",
+    paddingBottom: "16px",
+    boxShadow: "0 4px 11px 0 rgba(117, 69, 1, 0.33)",
+  },
+}));
 
 const LetsTalk = (params) => {
   const classes = useStyle();
   const router = useRouter();
-  // const animOptions = {
-  //   loop: true,
-  //   autoplay: true,
-  //   animationData: animationData.default,
-  //   rendererSettings: {
-  //     preserveAspectRatio: "xMidYMid slice",
-  //   },
-  // };
+
   return (
     <Paper className={classes.root}>
       <div className={classes.svgContainer}>

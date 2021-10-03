@@ -12,104 +12,115 @@ import {
   useTheme,
 } from "@material-ui/core";
 import Alert from "@material-ui/lab/Alert";
-import sharedStyle from "../utils/style/js/sharedStyle";
 import clsx from "classnames";
 import { useState } from "react";
 import axios from "axios";
 const emailRegExe =
   /^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i;
 
+const useStyle = makeStyles((theme) => ({
+  wrapper: {
+    borderRadius: 0,
+    padding: `${theme.spacing(6)}px 0px`,
+    width: "100vw",
+    maxWidth: "100%",
+    overflow: "hidden",
+    boxShadow: theme.shadows[0],
+  },
+  container: {
+    width: "70vw",
+    margin: "auto",
+    [theme.breakpoints.down("sm")]: {
+      width: "90vw",
+    },
+  },
+  text: {
+    color: theme.palette.text.secondary,
+    fontFamily: "Montserrat, sans-serif",
+    paddingBottom: theme.spacing(3),
+    width: "90%",
+  },
+  microText: {
+    fontFamily: "Montserrat, sans-serif",
+    fontSize: "11px",
+    fontWeight: 600,
+    letterSpacing: "2px",
+    textTransform: "uppercase",
+    color: theme.palette.text.secondary,
+  },
+  highlightedText: {
+    color: theme.palette.secondary.dark,
+  },
+  title: {
+    fontFamily: "Montserrat, sans-serif",
+    fontSize: "32px",
+    lineHeight: 1.15,
+    fontWeight: 600,
+    fontWeight: 400,
+    padding: `${theme.spacing(3)}px 0px ${theme.spacing(2)}px 0px`,
+  },
+
+  formContainer: {
+    display: "flex",
+    flexDirection: "column",
+  },
+
+  formItem: {
+    marginBottom: theme.spacing(1),
+  },
+
+  input: {
+    "& .MuiInputBase-input": {
+      color: theme.palette.text.secondary,
+      fontFamily: "Montserrat",
+      fontWeight: 400,
+      padding: theme.spacing(1),
+    },
+    "& .MuiFormLabel-root": {
+      fontFamily: "Montserrat",
+      fontWeight: 400,
+      color: theme.palette.primary.light,
+    },
+  },
+  button: {
+    width: "fit-content",
+    marginTop: theme.spacing(2),
+    boxShadow: theme.shadows[5],
+  },
+
+  contact: {
+    backgroundColor: "red",
+  },
+
+  contactTitle: {
+    fontFamily: "Montserrat, sans-serif",
+    lineHeight: 1.15,
+    fontSize: "24px",
+    paddingTop: theme.spacing(8),
+  },
+  contactIcon: {
+    color: theme.palette.secondary.dark,
+    transform: "scaleX(-1)",
+  },
+  address: {
+    paddingBottom: theme.spacing(2),
+  },
+  subTitle: {
+    fontFamily: "Montserrat, sans-serif",
+    fontSize: "11px",
+    fontWeight: 600,
+    letterSpacing: "2px",
+    textTransform: "uppercase",
+    color: theme.palette.text.secondary,
+    fontWeight: 400,
+    paddingBottom: theme.spacing(1),
+  },
+  socialMedia: {
+    paddingRight: theme.spacing(2),
+  },
+}));
+
 const ContactUs = (params) => {
-  const useStyle = makeStyles((theme) => {
-    const mainStyle = sharedStyle();
-    return {
-      wrapper: {
-        ...mainStyle.wrapper,
-        // backgroundColor: theme.palette.primary.dark,
-      },
-      container: {
-        width: "70vw",
-        margin: "auto",
-        [theme.breakpoints.down("sm")]: {
-          width: "90vw",
-        },
-      },
-      text: {
-        color: theme.palette.text.secondary,
-        fontFamily: "Montserrat, sans-serif",
-        paddingBottom: theme.spacing(3),
-        width: "90%",
-      },
-      microText: {
-        ...mainStyle.microHeading,
-        color: theme.palette.text.secondary,
-      },
-      highlightedText: {
-        color: theme.palette.secondary.dark,
-      },
-      title: {
-        ...mainStyle.sectionHeading,
-        fontWeight: 400,
-        padding: `${theme.spacing(3)}px 0px ${theme.spacing(2)}px 0px`,
-      },
-
-      formContainer: {
-        display: "flex",
-        flexDirection: "column",
-      },
-
-      formItem: {
-        marginBottom: theme.spacing(1),
-      },
-
-      input: {
-        "& .MuiInputBase-input": {
-          color: theme.palette.text.secondary,
-          fontFamily: "Montserrat",
-          fontWeight: 400,
-          padding: theme.spacing(1),
-        },
-        "& .MuiFormLabel-root": {
-          fontFamily: "Montserrat",
-          fontWeight: 400,
-          color: theme.palette.primary.light,
-        },
-      },
-      button: {
-        width: "fit-content",
-        marginTop: theme.spacing(2),
-        boxShadow: theme.shadows[5],
-      },
-
-      contact: {
-        backgroundColor: "red",
-      },
-
-      contactTitle: {
-        fontFamily: "Montserrat, sans-serif",
-        lineHeight: 1.15,
-        fontSize: "24px",
-        paddingTop: theme.spacing(8),
-      },
-      contactIcon: {
-        color: theme.palette.secondary.dark,
-        transform: "scaleX(-1)",
-      },
-      address: {
-        paddingBottom: theme.spacing(2),
-      },
-      subTitle: {
-        ...mainStyle.microHeading,
-        color: theme.palette.text.secondary,
-        fontWeight: 400,
-        paddingBottom: theme.spacing(1),
-      },
-      socialMedia: {
-        paddingRight: theme.spacing(2),
-      },
-    };
-  });
-
   const classes = useStyle();
   const theme = useTheme();
   const match = useMediaQuery(theme.breakpoints.down("sm"));

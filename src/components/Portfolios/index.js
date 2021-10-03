@@ -2,40 +2,45 @@ import { Grid, makeStyles, Paper } from "@material-ui/core";
 import PortfolioSummery from "./Summary";
 
 import { uniqueId } from "lodash";
-import sharedStyle from "../../utils/style/js/sharedStyle";
 import Pagination from "@material-ui/lab/Pagination";
 import { useState } from "react";
 import { PaginationItem } from "@material-ui/lab";
 
+const useStyle = makeStyles((theme) => ({
+  wrapper: {
+    borderRadius: 0,
+    padding: `${theme.spacing(6)}px 0px`,
+    width: "100vw",
+    maxWidth: "100%",
+    overflow: "hidden",
+    boxShadow: theme.shadows[0],
+  },
+
+  container: {
+    width: "70vw",
+    margin: "auto",
+
+    [theme.breakpoints.down("sm")]: {
+      width: "90vw",
+    },
+  },
+  pagination: {
+    backgroundColor: theme.palette.text.secondary,
+  },
+  paginationContainer: {
+    display: "flex",
+
+    justifyContent: "center",
+    color: theme.palette.primary.light,
+  },
+  paginationItem: {
+    color: theme.palette.primary.light,
+    boxShadow: theme.shadows[5],
+    fontSize: theme.spacing(2),
+  },
+}));
+
 const PortFolio = ({ data }) => {
-  const useStyle = makeStyles((theme) => {
-    const mainStyle = sharedStyle();
-
-    return {
-      wrapper: {
-        ...mainStyle.wrapper,
-        // backgroundColor: theme.palette.primary.main,
-      },
-
-      container: {
-        ...mainStyle.container,
-      },
-      pagination: {
-        backgroundColor: theme.palette.text.secondary,
-      },
-      paginationContainer: {
-        display: "flex",
-
-        justifyContent: "center",
-        color: theme.palette.primary.light,
-      },
-      paginationItem: {
-        color: theme.palette.primary.light,
-        boxShadow: theme.shadows[5],
-        fontSize: theme.spacing(2),
-      },
-    };
-  });
   const classes = useStyle();
   const [page, setPage] = useState(1);
   const perPage = 6;
