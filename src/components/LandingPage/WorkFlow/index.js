@@ -1,7 +1,6 @@
 import { Grid, makeStyles, Paper } from "@material-ui/core";
 import { uniqueId } from "lodash";
 
-import data from "@zede-static/workflow.json";
 import useMainStyle from "../../../utils/style/js/sharedStyle";
 import Header from "./Header";
 import Section from "./Section";
@@ -41,7 +40,7 @@ const useStyle = makeStyles((theme) => {
   };
 });
 
-const WorkFlow = (params) => {
+const WorkFlow = ({ data }) => {
   const classes = useStyle();
   return (
     <Paper className={classes.wrapper}>

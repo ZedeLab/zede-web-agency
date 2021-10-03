@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Header from "../../src/components/PageHeader";
 import Portfolio from "../../src/components/Portfolios/Detail";
-import data from "@zede-static/portfolios.json";
+import { getPortfolios } from "@zede-services/api";
 import { motion } from "framer-motion";
 import routeAnim from "../../public/animations/routingAnim.json";
 
@@ -37,6 +37,7 @@ const PortfolioDetail = ({ title, portfolio, prev, next }) => {
 };
 
 export async function getStaticPaths() {
+  const data = await getPortfolios();
   const paths = Object.keys(data.data).map((post) => ({
     params: { id: `${data.data[post].id}` },
   }));
@@ -45,6 +46,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
+  const data = await getPortfolios();
   const titleKeys = Object.keys(data.data);
   const portfolioTitle = titleKeys.filter(
     (title) => data.data[title].id === params.id
