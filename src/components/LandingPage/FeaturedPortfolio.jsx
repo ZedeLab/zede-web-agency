@@ -20,7 +20,6 @@ const useStyle = makeStyles((theme) => ({
     },
   },
   sectionHeading: {
-    fontFamily: "Montserrat, sans-serif",
     fontSize: "32px",
     lineHeight: 1.15,
     fontWeight: 600,

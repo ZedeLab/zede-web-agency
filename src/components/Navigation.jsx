@@ -31,10 +31,10 @@ const useStyle = makeStyles((theme) => ({
   },
 
   pillow: {
-    height: theme.spacing(5),
+    height: theme.spacing(8),
   },
+
   appBar: {
-    // position: "relative",
     height: theme.mixins.toolbar,
     backgroundColor: theme.palette.primary.dark,
     width: "100%",
@@ -87,16 +87,14 @@ const useStyle = makeStyles((theme) => ({
       easing: theme.transitions.easing.easeIn,
     })}`,
     "& svg": {
-      borderRadius: "5px",
-      width: "48px",
-      height: "48px",
+      width: "150px",
+      height: "60px",
       justifySelf: "flex-end",
       fill: theme.palette.secondary.dark,
-      "& #ze": {
-        stroke: theme.palette.primary.dark,
-      },
-      "& #de": {
+
+      "& #monitor": {
         stroke: theme.palette.secondary.dark,
+        fill: "transparent",
       },
     },
   },
@@ -105,7 +103,7 @@ const useStyle = makeStyles((theme) => ({
   },
   withShadow: {
     paddingTop: theme.spacing(1),
-    transform: "scale(1.3)",
+    transform: "scale(1.1)",
   },
 }));
 
@@ -145,6 +143,7 @@ const Navigation = (props) => {
   return (
     <div ref={setRef}>
       <div className={classes.pillow} />
+
       <AppBar
         className={cNames(classes.appBar, { [classes.noShadow]: visible })}
       >
@@ -154,7 +153,7 @@ const Navigation = (props) => {
               className={cNames(classes.svgContainer, {
                 [classes.withShadow]: visible,
               })}
-              src='/images/Zede-logo.svg'
+              src='/images/v-logo.svg'
             />
             {/* <img src='/images/Zede-logo.svg' width='60' alt='' /> */}
           </NavLink>

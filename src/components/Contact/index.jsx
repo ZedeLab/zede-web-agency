@@ -26,7 +26,7 @@ const useStyle = makeStyles((theme) => ({
   },
   text: {
     color: theme.palette.text.secondary,
-    fontFamily: "Montserrat, sans-serif",
+
     paddingBottom: theme.spacing(3),
     width: "90%",
   },
@@ -35,7 +35,6 @@ const useStyle = makeStyles((theme) => ({
     color: theme.palette.secondary.dark,
   },
   title: {
-    fontFamily: "Montserrat, sans-serif",
     fontSize: "32px",
     lineHeight: 1.15,
     fontWeight: 600,

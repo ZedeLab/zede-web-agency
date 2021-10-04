@@ -10,7 +10,7 @@ const useStyle = makeStyles((theme) => ({
     width: "100vw",
     maxWidth: "100%",
     height: "100vh",
-    minHeight: "900px",
+    // minHeight: "900px",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -32,7 +32,6 @@ const useStyle = makeStyles((theme) => ({
   },
 
   heroTitle: {
-    fontFamily: "Montserrat, sans-serif",
     fontSize: "3rem",
     lineHeight: 1.1,
     fontWeight: 900,
@@ -46,12 +45,11 @@ const useStyle = makeStyles((theme) => ({
     },
   },
   herodescription: {
-    textAlign: "justify",
     maxWidth: "700px",
     marginRight: "auto",
     marginBottom: "0px",
     marginLeft: "auto",
-    fontSize: "22px",
+    fontSize: "1.2rem",
     lineHeight: 1.4,
     fontWeight: 400,
     [theme.breakpoints.down("sm")]: {
@@ -106,8 +104,11 @@ const Hero = (params) => {
         spacing={5}
       >
         <Grid item className={classes.section}>
-          <Typography className={clsx(classes.text, classes.heroTitle)}>
-            Come to us with a vision. <br />
+          <Typography
+            variant='h1'
+            className={clsx(classes.text, classes.heroTitle)}
+          >
+            Come to us with a vision and <br />
             We’ll help you craft it.
             <br />
           </Typography>

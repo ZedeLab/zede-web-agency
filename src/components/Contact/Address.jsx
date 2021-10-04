@@ -3,7 +3,6 @@ import clsx from "classnames";
 
 const useStyle = makeStyles((theme) => ({
   contactTitle: {
-    fontFamily: "Montserrat, sans-serif",
     lineHeight: 1.15,
     fontSize: "24px",
     paddingTop: theme.spacing(8),
@@ -13,7 +12,6 @@ const useStyle = makeStyles((theme) => ({
     transform: "scaleX(-1)",
   },
   microText: {
-    fontFamily: "Montserrat, sans-serif",
     fontSize: "11px",
     fontWeight: 600,
     letterSpacing: "2px",
@@ -24,7 +22,6 @@ const useStyle = makeStyles((theme) => ({
     paddingBottom: theme.spacing(2),
   },
   subTitle: {
-    fontFamily: "Montserrat, sans-serif",
     fontSize: "11px",
     fontWeight: 600,
     letterSpacing: "2px",

@@ -50,14 +50,12 @@ const useStyle = makeStyles((theme) => ({
     },
   },
   microHeading: {
-    fontFamily: "Montserrat, sans-serif",
     fontSize: "11px",
     fontWeight: 600,
     letterSpacing: "2px",
     textTransform: "uppercase",
   },
   sectionHeading: {
-    fontFamily: "Montserrat, sans-serif",
     fontSize: "32px",
     lineHeight: 1.15,
     fontWeight: 600,

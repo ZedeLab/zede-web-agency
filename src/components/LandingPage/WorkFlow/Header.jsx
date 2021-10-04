@@ -12,12 +12,13 @@ const useStyle = makeStyles((theme) => {
     },
     quote: {
       color: theme.palette.text.hint,
+      marginTop: theme.spacing(2),
     },
     sectionTitle: {
-      fontFamily: "'Open Sans', sans-serif",
       fontSize: "1.6rem",
-      lineHeight: 1.3,
-      fontWeight: 300,
+      lineHeight: 1.8,
+      letterSpacing: 1.8,
+      fontWeight: 400,
       textTransform: "none",
 
       [theme.breakpoints.down("sm")]: {
@@ -46,7 +47,7 @@ const WorkFlowHeader = ({ intro, quote }) => {
       <Grid item>
         <Fade direction='up' in={visible}>
           <Typography
-            variant='h3'
+            variant='h5'
             color='textSecondary'
             className={clx(classes.intro, classes.sectionTitle)}
           >

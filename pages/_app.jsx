@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Head from "next/head";
 
 // Materuial-ui elements
-import { ThemeProvider, Paper } from "@material-ui/core";
+import { ThemeProvider, Paper, responsiveFontSizes } from "@material-ui/core";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import GlobalTheme from "@zede-utils/globalTheme";
 
@@ -23,6 +23,7 @@ export default function MyApp(props) {
     }
   }, []);
 
+  const theme = responsiveFontSizes(GlobalTheme);
   return (
     <>
       <Head>
@@ -59,7 +60,7 @@ export default function MyApp(props) {
       <>
         <CssBaseline />
         <Paper>
-          <ThemeProvider theme={GlobalTheme}>
+          <ThemeProvider theme={theme}>
             <Nav />
             <AnimatePresence exitBeforeEnter>
               <Component {...pageProps} />

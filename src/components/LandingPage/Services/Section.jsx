@@ -11,14 +11,17 @@ import { useOnScreen } from "@zede-hooks/useOnScreen";
 import { ReactSVG } from "react-svg";
 
 const useStyle = makeStyles((theme) => ({
+  container: {
+    minWidth: "25rem",
+  },
   title: {
-    fontFamily: "Montserrat, sans-serif",
     lineHeight: 1.15,
     color: theme.palette.text.primary,
     marginBottom: theme.spacing(5),
   },
 
   text: {
+    textAlign: "justify",
     color: theme.palette.text.primary,
     marginBottom: theme.spacing(3),
   },
@@ -48,12 +51,18 @@ const ServicesSection = ({ services }) => {
       container
       direction={matchSmallScreen ? "column" : "row"}
       wrap='wrap'
+      justifyContent='space-around'
       spacing={3}
       ref={setRef}
     >
       {Object.keys(services).map((title) => {
         return (
-          <Grid item xs={matchSmallScreen ? 12 : 4} key={uniqueId()}>
+          <Grid
+            item
+            xs={matchSmallScreen ? 12 : 4}
+            key={uniqueId()}
+            className={classes.container}
+          >
             <Slide direction='left' in={visible} timeout={(timeout += 300)}>
               <div className={classes.serviceContainer}>
                 <ReactSVG
@@ -63,10 +72,7 @@ const ServicesSection = ({ services }) => {
                 <Typography variant='h4' color='secondary'>
                   {title}
                 </Typography>
-                <Typography
-                  variant='body1'
-                  // className='paragraph-small short-paragraph'
-                >
+                <Typography variant='body1' className={classes.text}>
                   {services[title].content}
                 </Typography>
               </div>

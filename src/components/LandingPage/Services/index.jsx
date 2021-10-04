@@ -35,7 +35,6 @@ const useStyle = makeStyles((theme) => ({
   },
 
   title: {
-    fontFamily: "Montserrat, sans-serif",
     lineHeight: 1.15,
     color: theme.palette.text.primary,
     marginBottom: theme.spacing(5),
@@ -64,7 +63,7 @@ const Services = ({ data }) => {
       </div>
       <Paper className={classes.wrapper}>
         <Grid container spacing={5}>
-          <Grid item xs={12} sm={4}>
+          <Grid item xs={12} md={4}>
             <Grid container direction='column'>
               <Header
                 microTitle={data.sectionMicroTitle}
@@ -73,7 +72,7 @@ const Services = ({ data }) => {
               />
             </Grid>
           </Grid>
-          <Grid item xs={12} sm={8}>
+          <Grid item xs={12} md={8}>
             <Section services={data.services} />
           </Grid>
         </Grid>

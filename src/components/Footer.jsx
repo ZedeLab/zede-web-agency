@@ -38,14 +38,14 @@ const useStyle = makeStyles((theme) => ({
   },
   svgContainer: {
     "& svg": {
-      width: "64px",
-      height: "64px",
+      width: "150px",
+      height: "100px",
+      justifySelf: "flex-end",
       fill: theme.palette.secondary.dark,
-      "& #ze": {
-        stroke: theme.palette.primary.dark,
-      },
-      "& #de": {
+
+      "& #monitor": {
         stroke: theme.palette.secondary.dark,
+        fill: "transparent",
       },
     },
   },
@@ -105,7 +105,7 @@ const Footer = (params) => {
                 <a href={router.pathname === "" ? "#" : "/"}>
                   <ReactSVG
                     className={classes.svgContainer}
-                    src='/images/Zede-logo.svg'
+                    src='/images/logo.svg'
                   />
                 </a>
                 <Grid item>

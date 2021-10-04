@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 const useStyle = makeStyles((theme) => {
   return {
     title: {
-      fontFamily: "Montserrat, sans-serif",
       lineHeight: 1.15,
       color: theme.palette.text.primary,
       marginBottom: theme.spacing(5),
