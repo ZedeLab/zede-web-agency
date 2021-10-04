@@ -40,7 +40,6 @@ const useStyle = makeStyles((theme) => ({
   },
   title: {
     paddingTop: theme.spacing(8),
-    fontFamily: "Montserrat, sans-serif",
     fontSize: "36px",
     lineHeight: 1.15,
     fontWeight: 600,

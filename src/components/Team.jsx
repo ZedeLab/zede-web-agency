@@ -3,6 +3,10 @@ import TeamMember from "./TeamMember";
 import { uniqueId } from "lodash";
 
 const useStyle = makeStyles((theme) => ({
+  container: {
+    width: "80vw",
+    margin: "auto",
+  },
   teamsWrapper: {
     width: "100vw",
     maxWidth: "100%",
@@ -14,27 +18,21 @@ const useStyle = makeStyles((theme) => ({
   descriptionContainer: {
     padding: `${theme.spacing(5)}px ${theme.spacing(2)}px`,
   },
-  description: {
-    ...theme.typography.h2,
-    [theme.breakpoints.down("xs")]: {
-      ...theme.typography.h3,
-    },
-  },
+  description: {},
 }));
 const OurTeam = ({ data }) => {
   const classes = useStyle();
 
   return (
-    <Grid container direction='column' alignItems='center'>
-      <Grid
-        item
-        md={8}
-        sm={10}
-        xs={12}
-        className={classes.descriptionContainer}
-      >
+    <Grid
+      container
+      direction='column'
+      alignItems='flex-start'
+      className={classes.container}
+    >
+      <Grid item xs={10} className={classes.descriptionContainer}>
         <Typography
-          variant='h2'
+          variant='h3'
           color='textSecondary'
           className={classes.description}
         >

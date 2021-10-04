@@ -56,11 +56,6 @@ const WorkFlow = ({ data }) => {
         alignItems='center'
         justifyContent='center'
         className={classes.container}
-        style={{
-          backgroundImage: `url(/images/dashed-path.webp)`,
-          backgroundSize: "contain",
-          // backgroundRepeat: matches ? "repeat" : "no-repeat",
-        }}
       >
         <Grid item>
           <Header intro={data.intro} quote={data.quote} />

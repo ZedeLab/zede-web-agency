@@ -1,9 +1,9 @@
 import { createTheme } from "@material-ui/core";
 import {
-  balooBhai,
-  balooBhaiBold,
-  balooBhaiSemiBold,
-  balooBhaiExtraBold,
+  courierRegular,
+  courierBold,
+  playfairRegular,
+  PlayfairBold,
 } from "@zede-utils/Fonts";
 
 const theme = createTheme({
@@ -15,10 +15,10 @@ const theme = createTheme({
           WebkitTapHighlightColor: "transparent",
         },
         "@font-face": [
-          balooBhai,
-          balooBhaiBold,
-          balooBhaiSemiBold,
-          balooBhaiExtraBold,
+          courierRegular,
+          courierBold,
+          playfairRegular,
+          PlayfairBold,
         ],
       },
     },
@@ -34,35 +34,25 @@ const theme = createTheme({
     },
     text: {
       primary: "rgba(255, 255, 255)",
-      secondary: "#1E1C19",
+      secondary: "#383838",
+      hint: "#6B6B6B",
     },
     divider: "#73e8ff",
   },
   typography: {
-    fontFamily: [
-      "BalooBhai",
-      "-apple-system",
-      "BlinkMacSystemFont",
-      '"Segoe UI"',
-      "Roboto",
-      '"Helvetica Neue"',
-      "Arial",
-      "sans-serif",
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(","),
-
     h1: {
       marginTop: "20px",
       marginBottom: "10px",
       fontSize: "52px",
       lineHeight: 1.15,
+      letterSpacing: 2.1,
       fontWeight: 700,
+      fontFamily: "Courier",
     },
     h2: {
       marginTop: "20px",
       marginBottom: "10px",
+      letterSpacing: 1.8,
       fontSize: "36px",
       lineHeight: 1.15,
       fontWeight: 700,
@@ -71,21 +61,35 @@ const theme = createTheme({
       marginTop: "20px",
       marginBottom: "10px",
       fontSize: "24px",
-      lineHeight: 1.15,
+
       fontWeight: 700,
+      fontFamily: "Courier",
     },
     h4: {
       marginTop: "10px",
       marginBottom: "10px",
-      fontSize: "18px",
+      fontSize: "16px",
       lineHeight: "24px",
       fontWeight: 700,
+      fontFamily: "Courier",
+    },
+
+    h6: {
+      fontFamily: "Courier",
+    },
+    subtitle1: {
+      fontFamily: "Playfair",
+    },
+
+    body1: {
+      fontFamily: "Courier",
     },
     body2: {
       marginTop: "10px",
       marginBottom: "10px",
       fontSize: "14px",
       lineHeight: "34px",
+      fontFamily: "Courier",
     },
 
     link: {

@@ -20,20 +20,14 @@ const useStyle = makeStyles((theme) => ({
     },
   },
   title: {
-    fontFamily: "Montserrat, sans-serif",
-    fontSize: "32px",
-    lineHeight: 1.15,
-    fontWeight: 600,
-    marginBottom: theme.spacing(5),
+    fontWeight: 700,
+
+    marginBottom: theme.spacing(3),
+    color: theme.palette.primary.main,
   },
   subTitle: {
-    fontFamily: "Montserrat, sans-serif",
-    fontSize: "32px",
-    lineHeight: 1.15,
-    fontWeight: 600,
-    fontWeight: 400,
-    fontSize: "30px",
-    marginBottom: theme.spacing(3),
+    fontWeight: 200,
+    color: theme.palette.primary.main,
   },
   text: {
     lineBreak: "strict",

@@ -86,7 +86,6 @@ const useStyle = makeStyles((theme) => ({
     color: theme.palette.text.secondary,
   },
   title: {
-    fontFamily: "Montserrat, sans-serif",
     fontSize: "11px",
     fontWeight: 600,
     letterSpacing: "2px",
@@ -103,7 +102,6 @@ const useStyle = makeStyles((theme) => ({
   date: {
     color: theme.palette.primary.light,
     fontSize: "11px",
-    fontFamily: "Montserrat, sans-serif",
   },
   subTitle: {},
   tags: {

@@ -1,9 +1,12 @@
-import { Grid, makeStyles, Slide, Typography } from "@material-ui/core";
+import { Box, Grid, makeStyles, Slide, Typography } from "@material-ui/core";
 import { uniqueId } from "lodash";
 import { useOnScreen } from "@zede-hooks/useOnScreen";
 import { ReactSVG } from "react-svg";
 
 const useStyle = makeStyles((theme) => ({
+  container: {
+    marginTop: theme.spacing(5),
+  },
   sectionTitle: {
     fontFamily: "'Open Sans', sans-serif",
     fontSize: "1.6rem",
@@ -49,11 +52,12 @@ const WorkFlowSection = ({ index, title, mediaUrl, paragraphs }) => {
 
   // const [refMedia, visibleMedia] = useOnScreen({ threshold: "0.25" });
   return (
-    <div ref={setRef}>
+    <Box ref={setRef} className={classes.container}>
       <Grid
         key={uniqueId()}
         container
         alignItems='center'
+        justifyContent='space-between'
         direction={index % 2 === 0 ? "row" : "row-reverse"}
         className={classes.subSectionContainer}
       >
@@ -82,7 +86,7 @@ const WorkFlowSection = ({ index, title, mediaUrl, paragraphs }) => {
             </div>
           </Slide>
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={5}>
           <Slide
             direction={index % 2 === 0 ? "left" : "right"}
             in={visible}
@@ -92,7 +96,7 @@ const WorkFlowSection = ({ index, title, mediaUrl, paragraphs }) => {
           </Slide>
         </Grid>
       </Grid>
-    </div>
+    </Box>
   );
 };
 
