@@ -6,12 +6,12 @@ const useStyle = makeStyles((theme) => {
   return {
     title: {
       lineHeight: 1.15,
-      color: theme.palette.text.primary,
+      color: theme.palette.text.secondary,
       marginBottom: theme.spacing(5),
     },
 
     text: {
-      color: theme.palette.text.primary,
+      color: theme.palette.text.secondary,
       marginBottom: theme.spacing(3),
     },
     button: {
@@ -32,10 +32,10 @@ const WorkFlowHeader = ({ microTitle, title, text }) => {
         <Typography variant='body2' className={classes.text}>
           {microTitle}
         </Typography>
-        <Typography variant='h3' className={classes.title}>
+        <Typography variant='h2' className={classes.title}>
           {title}
         </Typography>
-        <Typography variant='subtitle1' className={classes.text}>
+        <Typography variant='body1' className={classes.text}>
           {text}
         </Typography>
         <Button

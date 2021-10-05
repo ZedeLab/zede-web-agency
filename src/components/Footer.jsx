@@ -23,10 +23,15 @@ const useStyle = makeStyles((theme) => ({
     overflow: "hidden",
     boxShadow: theme.shadows[0],
     padding: `${theme.spacing(6)}px ${theme.spacing(5)}px`,
-    backgroundColor: theme.palette.primary.main,
-    backgroundColor: theme.palette.primary.dark,
+
     position: "relative",
     bottom: 0,
+  },
+  light: {
+    backgroundColor: theme.palette.common.white,
+  },
+  dark: {
+    backgroundColor: theme.palette.common.black,
   },
   container: {
     width: "70vw",
@@ -50,23 +55,31 @@ const useStyle = makeStyles((theme) => ({
     },
   },
   text: {
-    maxWidth: theme.spacing(55),
-    marginTop: theme.spacing(2),
-    marginBottom: theme.spacing(2),
+    marginTop: theme.spacing(1),
+    marginBottom: theme.spacing(1),
     width: "90%",
   },
-  subTitle: {
+  textLight: {
+    color: theme.palette.text.secondary,
+  },
+  textDark: {
+    color: theme.palette.text.primary,
+  },
+  title: {
+    marginTop: theme.spacing(2),
     marginBottom: theme.spacing(2),
   },
   linkContainer: {
     display: "flex",
+    alignItems: "center",
     "& >*": {
       marginRight: theme.spacing(1),
+      textTransform: "capitalize",
     },
   },
   email: {
+    color: theme.palette.secondary.main,
     marginBottom: theme.spacing(2),
-    color: theme.palette.secondary.light,
   },
   copyright: {
     textAlign: "center",
@@ -78,6 +91,8 @@ const Footer = (params) => {
   const theme = useTheme();
   const match = useMediaQuery(theme.breakpoints.down("sm"));
   const router = useRouter();
+
+  const isHomePage = router.pathname === "/";
 
   useEffect(() => {
     const node = loadCSS(
@@ -91,7 +106,12 @@ const Footer = (params) => {
   }, []);
 
   return (
-    <Paper className={classes.wrapper}>
+    <Paper
+      className={clsx(classes.wrapper, {
+        [classes.light]: isHomePage,
+        [classes.dark]: !isHomePage,
+      })}
+    >
       <Grid container direction='column' className={classes.container}>
         <Grid item>
           <Grid
@@ -105,11 +125,25 @@ const Footer = (params) => {
                 <a href={router.pathname === "" ? "#" : "/"}>
                   <ReactSVG
                     className={classes.svgContainer}
-                    src='/images/logo.svg'
+                    src={
+                      isHomePage
+                        ? "/images/logo.svg"
+                        : "/images/logo_darkTheme.svg"
+                    }
                   />
                 </a>
                 <Grid item>
-                  <Typography className={clsx(classes.text, "ondark")}>
+                  <Typography
+                    varian='body1'
+                    className={clsx(
+                      classes.text,
+                      {
+                        [classes.textDark]: isHomePage,
+                        [classes.textLight]: !isHomePage,
+                      },
+                      classes.zedeInfo
+                    )}
+                  >
                     From empowering challenger brands to think big to helping
                     global brands feel closer to home, we leverage technology to
                     bring people closer to the products, content, and
@@ -124,7 +158,20 @@ const Footer = (params) => {
             <Grid item xs={3}>
               <Grid container spacing={1} direction='column'>
                 <Grid item className={classes.subTitle}>
-                  <Typography>Find Us</Typography>
+                  <Typography>
+                    <strong
+                      className={clsx(
+                        classes.text,
+                        {
+                          [classes.textDark]: isHomePage,
+                          [classes.textLight]: !isHomePage,
+                        },
+                        classes.title
+                      )}
+                    >
+                      Find Us
+                    </strong>
+                  </Typography>
                 </Grid>
 
                 <Grid item className={classes.linkContainer}>
@@ -132,28 +179,72 @@ const Footer = (params) => {
                     className={clsx(classes.linkIcon, "fab fa-facebook-f")}
                     color='secondary'
                   />
-                  <Typography>facebook</Typography>
+                  <Typography
+                    className={clsx(
+                      classes.text,
+                      {
+                        [classes.textDark]: isHomePage,
+                        [classes.textLight]: !isHomePage,
+                      },
+                      classes.link
+                    )}
+                  >
+                    facebook
+                  </Typography>
                 </Grid>
                 <Grid item className={classes.linkContainer}>
                   <Icon
                     className={clsx(classes.linkIcon, "fab fa-instagram")}
                     color='secondary'
                   />
-                  <Typography>instagram</Typography>
+                  <Typography
+                    className={clsx(
+                      classes.text,
+                      {
+                        [classes.textDark]: isHomePage,
+                        [classes.textLight]: !isHomePage,
+                      },
+                      classes.link
+                    )}
+                  >
+                    instagram
+                  </Typography>
                 </Grid>
                 <Grid item className={classes.linkContainer}>
                   <Icon
                     className={clsx(classes.linkIcon, "fab fa-twitter")}
                     color='secondary'
                   />
-                  <Typography>twitter</Typography>
+                  <Typography
+                    className={clsx(
+                      classes.text,
+                      {
+                        [classes.textDark]: isHomePage,
+                        [classes.textLight]: !isHomePage,
+                      },
+                      classes.link
+                    )}
+                  >
+                    twitter
+                  </Typography>
                 </Grid>
                 <Grid item className={classes.linkContainer}>
                   <Icon
                     className={clsx(classes.linkIcon, "fab fa-linkedin-in")}
                     color='secondary'
                   />
-                  <Typography>linkedIn</Typography>
+                  <Typography
+                    className={clsx(
+                      classes.text,
+                      {
+                        [classes.textDark]: isHomePage,
+                        [classes.textLight]: !isHomePage,
+                      },
+                      classes.link
+                    )}
+                  >
+                    linkedIn
+                  </Typography>
                 </Grid>
               </Grid>
             </Grid>
@@ -161,8 +252,17 @@ const Footer = (params) => {
             <Grid item xs={3}>
               <Grid container spacing={1} direction='column'>
                 <Grid item>
-                  <Typography className={classes.subTitle}>
-                    Let&#x27;s Talk
+                  <Typography
+                    className={clsx(
+                      classes.text,
+                      {
+                        [classes.textDark]: isHomePage,
+                        [classes.textLight]: !isHomePage,
+                      },
+                      classes.title
+                    )}
+                  >
+                    <strong>Let&#x27;s Talk</strong>
                   </Typography>
                 </Grid>
                 <Grid item>
@@ -171,7 +271,14 @@ const Footer = (params) => {
                     style={{ textDecoration: "none" }}
                   >
                     <Typography
-                      className={clsx(classes.email, "footer-paragraph")}
+                      className={clsx(
+                        classes.text,
+                        {
+                          [classes.textDark]: isHomePage,
+                          [classes.textLight]: !isHomePage,
+                        },
+                        classes.email
+                      )}
                     >
                       hello@zede.tech
                     </Typography>
@@ -182,7 +289,18 @@ const Footer = (params) => {
           </Grid>
         </Grid>
         <Divider />
-        <Grid item xs={12} className={classes.copyright}>
+        <Grid
+          item
+          xs={12}
+          className={clsx(
+            classes.text,
+            {
+              [classes.textDark]: isHomePage,
+              [classes.textLight]: !isHomePage,
+            },
+            classes.copyright
+          )}
+        >
           <small>©2020 Zede tech agency. All rights reserved.</small>
         </Grid>
       </Grid>

@@ -14,7 +14,7 @@ import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import LanguageIcon from "@material-ui/icons/Language";
 import GitHubIcon from "@material-ui/icons/GitHub";
-import { uniqueId } from "lodash";
+import { findLastIndex, uniqueId } from "lodash";
 
 const useStyle = makeStyles((theme) => ({
   wrapper: {
@@ -34,7 +34,8 @@ const useStyle = makeStyles((theme) => ({
   },
   button: {
     padding: "0.3rem",
-    borderRadius: theme.spacing(1),
+    borderRadius: "50%",
+    color: theme.palette.text.secondary,
     backgroundColor: theme.palette.secondary.main,
     marginLeft: theme.spacing(1),
     border: `solid ${theme.palette.grey[500]} ${theme.spacing(1)}`,
@@ -51,7 +52,7 @@ const useStyle = makeStyles((theme) => ({
   slideShow: {
     // height: "500px",
     width: "100%",
-    maxWidth: "800px",
+    maxWidth: "600px",
     overflow: "hidden",
     borderRadius: theme.spacing(2),
     // boxShadow: theme.shadows[5],
@@ -65,8 +66,8 @@ const useStyle = makeStyles((theme) => ({
   image: {
     width: "100%",
     height: "100%",
-    minHeight: "25rem",
-    minWidth: "25rem",
+    minHeight: "15rem",
+    minWidth: "15rem",
     borderRadius: theme.spacing(2),
     // boxShadow: theme.shadows[5],
     filter: "grayscale(60%)",
@@ -79,11 +80,12 @@ const useStyle = makeStyles((theme) => ({
     width: "100%",
     borderRadius: theme.spacing(2),
     border: "none",
-    padding: `${theme.spacing(5)}px ${theme.spacing(2)}px`,
+    paddingTop: theme.spacing(3),
   },
   info: {
-    // paddingTop: theme.spacing(2),
-    color: theme.palette.text.secondary,
+    display: findLastIndex,
+    alignItems: "center",
+    width: "fit-content",
   },
   title: {
     fontSize: "11px",
@@ -98,10 +100,11 @@ const useStyle = makeStyles((theme) => ({
   },
   infoIcon: {
     fontSize: theme.spacing(2),
+    marginRight: theme.spacing(1),
   },
   date: {
-    color: theme.palette.primary.light,
     fontSize: "11px",
+    fontWeight: 700,
   },
   subTitle: {},
   tags: {
@@ -138,11 +141,11 @@ const PortfolioDetail = ({ prevId, nextId, portfolioData }) => {
       <Grid item xs={12}>
         <Grid
           container
-          justifyContent='flex-start'
+          justifyContent='space-between'
           alignItems='flex-start'
           spacing={1}
         >
-          <Grid item md={7} sm={12}>
+          <Grid item md={5} sm={12}>
             <Carousel
               autoPlay={false}
               animation='slide'
@@ -160,70 +163,74 @@ const PortfolioDetail = ({ prevId, nextId, portfolioData }) => {
               ))}
             </Carousel>
           </Grid>
-          <Grid item md={4} sm={12}>
-            <Typography
-              variant='h4'
-              color='textPrimary'
-              className={clx(classes.info, classes.title)}
-            >
-              Project summary
-            </Typography>
-            {!portfolioData.private ? (
-              <>
-                <a
-                  target='_blank'
-                  href={portfolioData.detail.url}
-                  className={clx(classes.info, classes.link)}
-                  rel='noreferrer'
+          <Grid item md={6} sm={12}>
+            <Grid container direction='column'>
+              <Grid item md={12} sm={12}>
+                <Typography
+                  variant='h4'
+                  color='textPrimary'
+                  className={clx(classes.info, classes.title)}
                 >
-                  <Typography>
-                    <LanguageIcon className={classes.infoIcon} />
-                    {portfolioData.detail.url}
+                  Project summary
+                </Typography>
+                {!portfolioData.private ? (
+                  <>
+                    <a
+                      target='_blank'
+                      href={portfolioData.detail.url}
+                      className={clx(classes.info, classes.link)}
+                      rel='noreferrer'
+                    >
+                      <Typography>
+                        <LanguageIcon className={classes.infoIcon} />
+                        {portfolioData.detail.url}
+                      </Typography>
+                    </a>
+                    <a
+                      target='_blank'
+                      href={portfolioData.detail.github}
+                      className={clx(classes.info, classes.link)}
+                      rel='noreferrer'
+                    >
+                      <Typography>
+                        <GitHubIcon className={classes.infoIcon} />
+                        {portfolioData.detail.github}
+                      </Typography>
+                    </a>
+                  </>
+                ) : (
+                  <Typography color='error'>
+                    <LanguageIcon className={classes.infoIcon} /> private
                   </Typography>
-                </a>
-                <a
-                  target='_blank'
-                  href={portfolioData.detail.github}
-                  className={clx(classes.info, classes.link)}
-                  rel='noreferrer'
-                >
-                  <Typography>
-                    <GitHubIcon className={classes.infoIcon} />
-                    {portfolioData.detail.github}
+                )}
+                <Typography className={clx(classes.date)}>
+                  {portfolioData.detail.date}
+                </Typography>
+              </Grid>
+              <Grid item xs={12}>
+                <div className={classes.infoSection}>
+                  <Typography className={clx(classes.info, classes.detail)}>
+                    {portfolioData.description}
                   </Typography>
-                </a>
-              </>
-            ) : (
-              <Typography color='error'>
-                <LanguageIcon className={classes.infoIcon} /> private
-              </Typography>
-            )}
-            <Typography className={clx(classes.date)}>
-              {portfolioData.detail.date}
-            </Typography>
-          </Grid>
-          <Grid item md={7} sm={12}>
-            <div className={classes.infoSection}>
-              <Typography className={clx(classes.info, classes.detail)}>
-                {portfolioData.description}
-              </Typography>
-              <Typography
-                variant='h6'
-                className={clx(classes.info, classes.title)}
-              >
-                Technology
-              </Typography>
-              <div className={classes.tags}>
-                {portfolioData.detail.technologies.map((tag) => (
-                  <Chip
-                    key={uniqueId()}
-                    className={classes.tag}
-                    color='secondary'
-                    label={tag}
-                  />
-                ))}
-              </div>
-            </div>
+                  <Typography
+                    variant='h6'
+                    className={clx(classes.info, classes.title)}
+                  >
+                    Technology
+                  </Typography>
+                  <div className={classes.tags}>
+                    {portfolioData.detail.technologies.map((tag) => (
+                      <Chip
+                        key={uniqueId()}
+                        className={classes.tag}
+                        color='secondary'
+                        label={tag}
+                      />
+                    ))}
+                  </div>
+                </div>
+              </Grid>
+            </Grid>
           </Grid>
         </Grid>
       </Grid>

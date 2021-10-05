@@ -25,8 +25,6 @@ const useStyle = makeStyles((theme) => ({
     },
   },
   text: {
-    color: theme.palette.text.secondary,
-
     paddingBottom: theme.spacing(3),
     width: "90%",
   },
@@ -62,16 +60,16 @@ const ContactUs = (params) => {
       >
         <Grid item md={6} sm={12} className={classes.section} id='contact-form'>
           <Grid item xs={12}>
-            <Typography
-              variant='h3'
-              color='textSecondary'
-              className={classes.title}
-            >
+            <Typography variant='h3' className={classes.title}>
               Hello lets get in touch
             </Typography>
           </Grid>
           <Grid item xs={12}>
-            <Typography className={classes.text}>
+            <Typography
+              variant='body1'
+              color='textPrimary'
+              className={classes.text}
+            >
               Tell us about your vision and we’ll figure out the best option for
               you and your project. Dont like Filling up forms ? Mail us then{" "}
               <span className={classes.highlightedText}>hello@zede.tech</span>

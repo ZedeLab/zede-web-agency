@@ -10,20 +10,14 @@ const useStyle = makeStyles((theme) => ({
   },
 
   formItem: {
-    marginBottom: theme.spacing(1),
+    marginBottom: theme.spacing(2),
   },
 
   input: {
     "& .MuiInputBase-input": {
-      color: theme.palette.text.secondary,
-      fontFamily: "Montserrat",
       fontWeight: 400,
-      padding: theme.spacing(1),
-    },
-    "& .MuiFormLabel-root": {
-      fontFamily: "Montserrat",
-      fontWeight: 400,
-      color: theme.palette.primary.light,
+      padding: theme.spacing(2),
+      fontFamily: "Playfair",
     },
   },
   button: {
@@ -64,9 +58,8 @@ const ContactForm = (params) => {
       className={classes.formContainer}
     >
       <TextField
-        id='standard-basic'
-        label='name'
-        variant='standard'
+        variant='outlined'
+        placeholder='name'
         required
         color='secondary'
         {...register("name", { required: true, min: 3 })}
@@ -76,9 +69,8 @@ const ContactForm = (params) => {
       {errors.name && <span>Name is not valid</span>}
 
       <TextField
-        id='filled-basic'
-        variant='standard'
-        label='email'
+        variant='outlined'
+        placeholder='email'
         required
         color='secondary'
         {...register("email", { required: true, min: 4 })}
@@ -86,9 +78,8 @@ const ContactForm = (params) => {
       />
       {errors.email && <span>Email is not valid</span>}
       <TextField
-        id='outlined-basic'
-        variant='standard'
-        label='message'
+        variant='outlined'
+        placeholder='message'
         multiline
         rows={8}
         required

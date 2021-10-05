@@ -10,7 +10,7 @@ import GlobalTheme from "@zede-utils/globalTheme";
 import { AnimatePresence } from "framer-motion";
 
 // Core components
-import Nav from "../src/components/Navigation";
+import Nav from "../src/components/Header";
 import Footer from "../src/components/Footer";
 export default function MyApp(props) {
   const { Component, pageProps } = props;

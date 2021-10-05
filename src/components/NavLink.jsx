@@ -28,7 +28,7 @@ const useStyle = makeStyles((theme) => ({
     color: theme.palette.text.primary,
   },
   selected: {
-    color: theme.palette.secondary.light,
+    color: theme.palette.secondary.dark,
 
     [theme.breakpoints.down("sm")]: {},
     "& :active": {

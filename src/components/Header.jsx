@@ -28,15 +28,28 @@ const useStyle = makeStyles((theme) => ({
     margin: 0,
     width: "100vw",
     maxWidth: "100%",
+    position: "relative",
   },
 
   pillow: {
-    height: theme.spacing(8),
+    height: theme.mixins.toolbar.minHeight,
+  },
+  blurBox: {
+    width: "100vw",
+    height: theme.mixins.toolbar.minHeight,
+    position: "fixed",
+    zIndex: 300,
+    top: 0,
+    backgroundColor: "white",
+    opacity: 0.7,
+    filter: "grayscale(80%)",
   },
 
   appBar: {
-    height: theme.mixins.toolbar,
-    backgroundColor: theme.palette.primary.dark,
+    zIndex: 1000,
+    opacity: 0.95,
+    height: theme.mixins.toolbar.minHeight,
+    backgroundColor: "white",
     width: "100%",
     overflow: "hidden",
     transition: `${theme.transitions.create(["box-shadow"], {
@@ -58,7 +71,7 @@ const useStyle = makeStyles((theme) => ({
   linkWrapper: {
     display: "flex",
     flexDirection: "row",
-
+    marginTop: theme.spacing(1),
     [theme.breakpoints.down("sm")]: {
       flexDirection: "column",
       // width: "100%",
@@ -73,11 +86,11 @@ const useStyle = makeStyles((theme) => ({
     width: "100%",
     flexDirection: "column",
     color: "inherit",
-    backgroundColor: theme.palette.primary.main,
-    paddingTop: theme.spacing(1),
+    backgroundColor: theme.palette.primary.light,
+
     paddingLeft: theme.spacing(2),
     paddingBottom: theme.spacing(2),
-    boxShadow: theme.shadows[0],
+    boxShadow: theme.shadows[1],
     border: "none",
     borderRadius: 0,
   },
@@ -88,7 +101,7 @@ const useStyle = makeStyles((theme) => ({
     })}`,
     "& svg": {
       width: "150px",
-      height: "60px",
+      height: "100%",
       justifySelf: "flex-end",
       fill: theme.palette.secondary.dark,
 
@@ -101,9 +114,9 @@ const useStyle = makeStyles((theme) => ({
   noShadow: {
     boxShadow: "none",
   },
-  withShadow: {
+  onPageTop: {
     paddingTop: theme.spacing(1),
-    transform: "scale(1.1)",
+    // transform: "scale(1.1)",
   },
 }));
 
@@ -114,36 +127,23 @@ const Navigation = (props) => {
 
   const [setRef, visible] = useOnScreen({ threshold: "0" });
 
-  const clicked = (path) => {
-    route.push(path);
-  };
   const navLinks = (
     <div
       className={classes.linkWrapper}
       onClickCapture={() => setShowMobNav(false)}
     >
       <div className={classes.pillow} />
-      <NavLink path='/' underLine>
-        Home
-      </NavLink>
-      <NavLink path='/about' underLine>
-        About Us
-      </NavLink>
-      <NavLink path='/team' underLine>
-        Our Team
-      </NavLink>
-      <NavLink path='/portfolios' underLine>
-        Portfolio
-      </NavLink>
-      <NavLink path='/contact' underLine>
-        Contact Us
-      </NavLink>
+      <NavLink path='/'>Home</NavLink>
+      <NavLink path='/about'>About Us</NavLink>
+      <NavLink path='/team'>Our Team</NavLink>
+      <NavLink path='/portfolios'>Portfolio</NavLink>
+      <NavLink path='/contact'>Contact Us</NavLink>
     </div>
   );
   return (
-    <div ref={setRef}>
-      <div className={classes.pillow} />
-
+    <div ref={setRef} className={classes.wrapper}>
+      {/* <div className={classes.pillow} /> */}
+      <div className={classes.blurBox} />
       <AppBar
         className={cNames(classes.appBar, { [classes.noShadow]: visible })}
       >
@@ -151,7 +151,7 @@ const Navigation = (props) => {
           <NavLink path='/'>
             <ReactSVG
               className={cNames(classes.svgContainer, {
-                [classes.withShadow]: visible,
+                [classes.onPageTop]: showMobNav | visible,
               })}
               src='/images/v-logo.svg'
             />
