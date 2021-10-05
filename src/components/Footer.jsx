@@ -58,6 +58,7 @@ const useStyle = makeStyles((theme) => ({
     marginTop: theme.spacing(1),
     marginBottom: theme.spacing(1),
     width: "90%",
+    textAlign: "justify",
   },
   textLight: {
     color: theme.palette.text.secondary,
@@ -67,7 +68,6 @@ const useStyle = makeStyles((theme) => ({
   },
   title: {
     marginTop: theme.spacing(2),
-    marginBottom: theme.spacing(2),
   },
   linkContainer: {
     display: "flex",
@@ -79,10 +79,12 @@ const useStyle = makeStyles((theme) => ({
   },
   email: {
     color: theme.palette.secondary.main,
-    marginBottom: theme.spacing(2),
   },
   copyright: {
     textAlign: "center",
+  },
+  divider: {
+    margin: `${theme.spacing(3)}px 0px`,
   },
 }));
 
@@ -120,7 +122,7 @@ const Footer = (params) => {
             justifyContent='space-between'
             spacing={3}
           >
-            <Grid item xs={match ? 10 : 6}>
+            <Grid item xs={match ? 12 : 6}>
               <Grid container direction='column'>
                 <a href={router.pathname === "" ? "#" : "/"}>
                   <ReactSVG
@@ -250,7 +252,7 @@ const Footer = (params) => {
             </Grid>
 
             <Grid item xs={3}>
-              <Grid container spacing={1} direction='column'>
+              <Grid container direction='column'>
                 <Grid item>
                   <Typography
                     className={clsx(
@@ -288,7 +290,7 @@ const Footer = (params) => {
             </Grid>
           </Grid>
         </Grid>
-        <Divider />
+        <Divider className={classes.divider} />
         <Grid
           item
           xs={12}

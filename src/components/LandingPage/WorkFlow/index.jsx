@@ -19,7 +19,7 @@ const useStyle = makeStyles((theme) => ({
     margin: "auto",
 
     [theme.breakpoints.down("sm")]: {
-      width: "90vw",
+      width: "95vw",
     },
   },
 

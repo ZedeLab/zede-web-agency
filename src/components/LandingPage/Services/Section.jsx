@@ -21,6 +21,8 @@ const useStyle = makeStyles((theme) => ({
   // },
 
   text: {
+    width: "90%",
+    margin: "auto",
     textAlign: "justify",
     color: theme.palette.text.secondary,
     marginBottom: theme.spacing(3),
@@ -52,6 +54,7 @@ const ServicesSection = ({ services }) => {
       direction={matchSmallScreen ? "column" : "row"}
       wrap='wrap'
       justifyContent='space-around'
+      alignContent='center'
       spacing={3}
       ref={setRef}
     >
@@ -59,7 +62,7 @@ const ServicesSection = ({ services }) => {
         return (
           <Grid
             item
-            xs={matchSmallScreen ? 12 : 4}
+            xs={matchSmallScreen ? 10 : 4}
             key={uniqueId()}
             className={classes.container}
           >

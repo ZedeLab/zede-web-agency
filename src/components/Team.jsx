@@ -4,7 +4,7 @@ import { uniqueId } from "lodash";
 
 const useStyle = makeStyles((theme) => ({
   container: {
-    width: "80vw",
+    width: "90vw",
     margin: "auto",
     [theme.breakpoints.down("sm")]: {
       width: "95vw",
@@ -16,12 +16,27 @@ const useStyle = makeStyles((theme) => ({
     display: "flex",
     flexWrap: "wrap",
     justifyContent: "space-between",
+    [theme.breakpoints.down("sm")]: {
+      justifyContent: "center",
+    },
     // backgroundColor: "red",
   },
   descriptionContainer: {
+    width: "100%",
     padding: `${theme.spacing(5)}px ${theme.spacing(2)}px`,
+
+    textAlign: "center",
   },
-  description: {},
+  description: {
+    width: "90%",
+    textAlign: "center",
+
+    fontWeight: 400,
+    letterSpacing: "2px",
+    textTransform: "uppercase",
+    color: theme.palette.text.hint,
+    marginBottom: theme.spacing(2),
+  },
 }));
 const OurTeam = ({ data }) => {
   const classes = useStyle();
@@ -33,16 +48,10 @@ const OurTeam = ({ data }) => {
       alignItems='flex-start'
       className={classes.container}
     >
-      <Grid
-        item
-        xs={12}
-        sm={10}
-        md={8}
-        className={classes.descriptionContainer}
-      >
+      <Grid item xs={12} className={classes.descriptionContainer}>
         <Typography variant='h3' className={classes.description}>
-          A Perfect blend of creativity and wizardy. The best people formula for
-          great agency
+          A Perfect blend of creativity and wizardly. The best people formula
+          for great agency
         </Typography>
       </Grid>
       <Grid item xs={12}>
