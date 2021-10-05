@@ -16,7 +16,7 @@ const useStyle = makeStyles((theme) => ({
     margin: "auto",
 
     [theme.breakpoints.down("sm")]: {
-      width: "90vw",
+      width: "95vw",
     },
   },
   title: {
@@ -26,8 +26,14 @@ const useStyle = makeStyles((theme) => ({
     color: theme.palette.text.primary,
   },
   subTitle: {
-    fontWeight: 200,
-    color: theme.palette.text.primary,
+    width: "90%",
+    textAlign: "center",
+    fontSize: "11px",
+    fontWeight: 400,
+    letterSpacing: "2px",
+    textTransform: "uppercase",
+    color: theme.palette.text.hint,
+    marginBottom: theme.spacing(2),
   },
   text: {
     lineBreak: "strict",
@@ -36,7 +42,7 @@ const useStyle = makeStyles((theme) => ({
   },
   image: {
     width: "100%",
-    maxWidth: "100px",
+    maxWidth: "50px",
     maxHeight: "100px",
   },
 }));

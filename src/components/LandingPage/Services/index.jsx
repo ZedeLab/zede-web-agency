@@ -30,7 +30,7 @@ const useStyle = makeStyles((theme) => ({
     maxWidth: "100%",
     overflow: "hidden",
     boxShadow: theme.shadows[0],
-    padding: `${theme.spacing(6)}px ${theme.spacing(5)}px`,
+    padding: `${theme.spacing(6)}px ${theme.spacing(1)}px`,
     backgroundColor: theme.palette.common.black,
   },
 }));

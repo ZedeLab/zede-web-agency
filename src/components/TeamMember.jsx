@@ -26,7 +26,7 @@ const useStyle = makeStyles((theme) => ({
     minWidth: "300px",
     overflow: "hidden",
     boxShadow: theme.shadows[8],
-    filter: "grayscale(80%)",
+    filter: "grayscale(30%)",
 
     "&:hover": {
       filter: "grayscale(40%)",
