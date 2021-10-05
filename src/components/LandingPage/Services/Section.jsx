@@ -14,15 +14,15 @@ const useStyle = makeStyles((theme) => ({
   container: {
     minWidth: "25rem",
   },
-  title: {
-    lineHeight: 1.15,
-    color: theme.palette.text.primary,
-    marginBottom: theme.spacing(5),
-  },
+  // title: {
+  //   lineHeight: 1.15,
+  //   color: theme.palette.text.secondary,
+  //   marginBottom: theme.spacing(5),
+  // },
 
   text: {
     textAlign: "justify",
-    color: theme.palette.text.primary,
+    color: theme.palette.text.secondary,
     marginBottom: theme.spacing(3),
   },
   button: {
@@ -33,7 +33,7 @@ const useStyle = makeStyles((theme) => ({
     "& svg": {
       width: "64px",
       height: "64px",
-      fill: theme.palette.secondary.main,
+      fill: theme.palette.secondary.light,
     },
   },
 }));
@@ -69,7 +69,7 @@ const ServicesSection = ({ services }) => {
                   className={classes.svgContainer}
                   src={services[title].img}
                 />
-                <Typography variant='h4' color='secondary'>
+                <Typography variant='h4' color='textSecondary'>
                   {title}
                 </Typography>
                 <Typography variant='body1' className={classes.text}>

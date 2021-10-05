@@ -23,15 +23,16 @@ const useStyle = makeStyles((theme) => ({
     fontWeight: 700,
 
     marginBottom: theme.spacing(3),
-    color: theme.palette.primary.main,
+    color: theme.palette.text.primary,
   },
   subTitle: {
     fontWeight: 200,
-    color: theme.palette.primary.main,
+    color: theme.palette.text.primary,
   },
   text: {
     lineBreak: "strict",
     textAlign: "justify",
+    color: theme.palette.text.primary,
   },
   image: {
     width: "100%",

@@ -7,7 +7,7 @@ import Section from "./Section";
 const useStyle = makeStyles((theme) => ({
   wrapper: {
     borderRadius: 0,
-    padding: `${theme.spacing(6)}px 0px`,
+    padding: `${theme.spacing(2)}px 0px`,
     width: "100vw",
     maxWidth: "100%",
     overflow: "hidden",
@@ -22,20 +22,14 @@ const useStyle = makeStyles((theme) => ({
       width: "90vw",
     },
   },
-  intro: {
-    textAlign: "center",
-    // padding: theme.spacing(2),
-  },
-  quote: {
-    color: theme.palette.text.hint,
-  },
+
   sectionTitle: {
     fontFamily: "'Open Sans', sans-serif",
     fontSize: "1.6rem",
     lineHeight: 1.3,
     fontWeight: 300,
     textTransform: "none",
-
+    color: theme.palette.text.primary,
     [theme.breakpoints.down("sm")]: {
       fontSize: "1.3rem",
     },

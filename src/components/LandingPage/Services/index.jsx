@@ -18,7 +18,7 @@ const useStyle = makeStyles((theme) => ({
     width: "75vw",
     bottom: "-0.48rem",
     "& svg": {
-      fill: theme.palette.primary.main,
+      fill: theme.palette.common.black,
 
       margin: 0,
     },
@@ -31,26 +31,7 @@ const useStyle = makeStyles((theme) => ({
     overflow: "hidden",
     boxShadow: theme.shadows[0],
     padding: `${theme.spacing(6)}px ${theme.spacing(5)}px`,
-    backgroundColor: theme.palette.primary.main,
-  },
-
-  title: {
-    lineHeight: 1.15,
-    color: theme.palette.text.primary,
-    marginBottom: theme.spacing(5),
-  },
-
-  text: {
-    color: theme.palette.text.primary,
-    marginBottom: theme.spacing(3),
-  },
-  button: {
-    borderRadius: theme.spacing(5),
-    width: "fit-content",
-  },
-  serviceContainer: {
-    backgroundColor: "transparent",
-    padding: `${theme.spacing(2)}px ${theme.spacing(1)}px`,
+    backgroundColor: theme.palette.common.black,
   },
 }));
 const Services = ({ data }) => {

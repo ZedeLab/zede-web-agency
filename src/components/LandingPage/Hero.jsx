@@ -1,11 +1,11 @@
-import { Button, Grid, makeStyles, Paper, Typography } from "@material-ui/core";
+import { Box, Button, Grid, makeStyles, Typography } from "@material-ui/core";
 import Lottie from "react-lottie-player";
-import * as animationData from "../../../public/animations/heroAnim.json";
+import * as animationPlane from "../../../public/animations/plane.json";
 import clsx from "classnames";
 import { useRouter } from "next/router";
 const useStyle = makeStyles((theme) => ({
   wrapper: {
-    backgroundColor: theme.palette.primary.dark,
+    backgroundColor: "white",
     position: "relative",
     width: "100vw",
     maxWidth: "100%",
@@ -32,7 +32,6 @@ const useStyle = makeStyles((theme) => ({
   },
 
   heroTitle: {
-    fontSize: "3rem",
     lineHeight: 1.1,
     fontWeight: 900,
     textTransform: "uppercase",
@@ -49,15 +48,9 @@ const useStyle = makeStyles((theme) => ({
     marginRight: "auto",
     marginBottom: "0px",
     marginLeft: "auto",
-    fontSize: "1.2rem",
+
     lineHeight: 1.4,
     fontWeight: 400,
-    [theme.breakpoints.down("sm")]: {
-      fontSize: "20px",
-    },
-    [theme.breakpoints.down("xs")]: {
-      fontSize: "18px",
-    },
   },
 
   button: {
@@ -76,16 +69,28 @@ const useStyle = makeStyles((theme) => ({
   anim: {
     width: "100%",
     height: "100%",
-    opacity: 0.5,
+    opacity: 0.2,
     zIndex: 0,
     top: 0,
     left: 0,
-    stroke: theme.palette.secondary.dark,
     strokeWidth: 0,
     strokeOpacity: 0.5,
     fill: theme.palette.secondary.dark,
     [theme.breakpoints.down("xs")]: {
       transform: "scale(2)",
+    },
+  },
+  animPlane: {
+    margin: "auto",
+    width: "50%",
+    height: "100%",
+
+    stroke: "red",
+    strokeWidth: 0,
+    strokeOpacity: 0.5,
+    fill: theme.palette.secondary.dark,
+    [theme.breakpoints.down("xs")]: {
+      width: "100%",
     },
   },
 }));
@@ -95,7 +100,7 @@ const Hero = (params) => {
   const router = useRouter();
 
   return (
-    <Paper className={classes.wrapper}>
+    <Box className={classes.wrapper}>
       <Grid
         container
         direction='column'
@@ -117,6 +122,14 @@ const Hero = (params) => {
             tech develops cost efficient, future proof solutions for companies
             that aim for impact.
           </Typography>
+        </Grid>
+        <Grid item xs={12}>
+          <Lottie
+            loop
+            play
+            className={classes.animPlane}
+            animationData={animationPlane}
+          />
         </Grid>
         <Grid item className={classes.section}>
           <div>
@@ -141,15 +154,15 @@ const Hero = (params) => {
         </Grid>
       </Grid>
 
-      <div className={classes.animBackground}>
+      {/* <div className={classes.animBackground}>
         <Lottie
           loop
           play
           className={classes.anim}
           animationData={animationData}
         />
-      </div>
-    </Paper>
+      </div> */}
+    </Box>
   );
 };
 

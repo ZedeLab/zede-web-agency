@@ -1,4 +1,4 @@
-import { Box, Grid, makeStyles, Slide, Typography } from "@material-ui/core";
+import { Box, Fade, Grid, makeStyles, Typography } from "@material-ui/core";
 import { uniqueId } from "lodash";
 import { useOnScreen } from "@zede-hooks/useOnScreen";
 import { ReactSVG } from "react-svg";
@@ -27,9 +27,10 @@ const useStyle = makeStyles((theme) => ({
   },
   subSectionTitle: {
     paddingBottom: theme.spacing(3),
+    color: theme.palette.text.primary,
   },
   subSectionParagraph: {
-    color: theme.palette.text.secondary,
+    color: theme.palette.text.primary,
     textAlign: "justify",
     paddingBottom: theme.spacing(2),
   },
@@ -38,8 +39,8 @@ const useStyle = makeStyles((theme) => ({
       width: "100%",
       height: "100%",
       maxHeight: "350px",
-      fill: theme.palette.secondary.main,
-      stroke: theme.palette.primary.main,
+      fill: theme.palette.secondary.dark,
+      stroke: theme.palette.text.secondary,
       strokeWidth: "20px",
       textShadow: "5px",
     },
@@ -62,11 +63,7 @@ const WorkFlowSection = ({ index, title, mediaUrl, paragraphs }) => {
         className={classes.subSectionContainer}
       >
         <Grid item xs={12} sm={6}>
-          <Slide
-            direction={index % 2 === 0 ? "right" : "left"}
-            in={visible}
-            timeout={1000}
-          >
+          <Fade in={visible} timeout={1500}>
             <div>
               <Typography
                 variant='h3'
@@ -84,16 +81,12 @@ const WorkFlowSection = ({ index, title, mediaUrl, paragraphs }) => {
                 </Typography>
               ))}
             </div>
-          </Slide>
+          </Fade>
         </Grid>
         <Grid item xs={12} sm={5}>
-          <Slide
-            direction={index % 2 === 0 ? "left" : "right"}
-            in={visible}
-            timeout={1000}
-          >
+          <Fade in={visible} timeout={1000}>
             <ReactSVG className={classes.svgContainer} src={mediaUrl} />
-          </Slide>
+          </Fade>
         </Grid>
       </Grid>
     </Box>

@@ -27,14 +27,14 @@ const theme = createTheme({
     type: "light",
 
     primary: {
-      main: "#1E1C19",
+      main: "rgba(255, 255, 255)",
     },
     secondary: {
-      main: "#73e8ff",
+      main: "#3B7790",
     },
     text: {
-      primary: "rgba(255, 255, 255)",
-      secondary: "#383838",
+      primary: "#383838",
+      secondary: "rgba(255, 255, 255)",
       hint: "#6B6B6B",
     },
     divider: "#73e8ff",

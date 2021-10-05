@@ -15,13 +15,13 @@ const useStyle = makeStyles((theme) => ({
     height: "100%",
   },
   section: {
-    backgroundColor: theme.palette.primary.dark,
+    backgroundColor: theme.palette.primary.main,
 
     heigh: "10%",
     height: "fit-content",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2),
-    opacity: 0.6,
+    opacity: 0.8,
   },
 }));
 const PortfolioSummary = ({ id, imgUrl, title }) => {

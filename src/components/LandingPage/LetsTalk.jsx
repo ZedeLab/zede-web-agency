@@ -27,7 +27,7 @@ const useStyle = makeStyles((theme) => ({
 
     right: 0,
     "& svg": {
-      fill: theme.palette.primary.main,
+      fill: theme.palette.common.black,
       // stroke: theme.palette.primary.main,
     },
   },
@@ -38,7 +38,7 @@ const useStyle = makeStyles((theme) => ({
     maxWidth: "100%",
     overflow: "hidden",
     boxShadow: theme.shadows[0],
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.common.black,
   },
 
   container: {
@@ -54,16 +54,17 @@ const useStyle = makeStyles((theme) => ({
     fontWeight: 600,
     letterSpacing: "2px",
     textTransform: "uppercase",
+    color: theme.palette.text.secondary,
   },
   sectionHeading: {
-    fontSize: "32px",
-    lineHeight: 1.15,
     fontWeight: 600,
     marginBottom: theme.spacing(3),
+    color: theme.palette.text.secondary,
   },
 
   text: {
     marginBottom: theme.spacing(5),
+    color: theme.palette.text.secondary,
   },
   button: {
     // color: theme.palette.common.white,
@@ -90,7 +91,7 @@ const LetsTalk = (params) => {
           className={classes.container}
         >
           <Grid item xs={12} md={6}>
-            <Typography color='textPrimary' className={classes.microHeading}>
+            <Typography className={classes.microHeading}>
               lets work together
             </Typography>
             <Typography variant='h2' className={classes.sectionHeading}>

@@ -29,12 +29,9 @@ const useStyle = makeStyles((theme) => ({
   },
   paginationContainer: {
     display: "flex",
-
-    justifyContent: "center",
-    color: theme.palette.primary.light,
+    justifyContent: "flex-end",
   },
   paginationItem: {
-    color: theme.palette.primary.light,
     boxShadow: theme.shadows[5],
     fontSize: theme.spacing(2),
   },

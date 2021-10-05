@@ -19,8 +19,14 @@ const useStyle = makeStyles((theme) => ({
       width: "90vw",
     },
   },
+
+  microHeading: {
+    fontSize: "11px",
+    fontWeight: 600,
+    letterSpacing: "2px",
+    textTransform: "uppercase",
+  },
   sectionHeading: {
-    fontSize: "32px",
     lineHeight: 1.15,
     fontWeight: 600,
   },
@@ -35,16 +41,10 @@ const FeaturePortfolios = ({ data }) => {
     <Paper className={classes.wrapper}>
       <Grid container direction='column' className={classes.container}>
         <Grid item>
-          <Typography color='textSecondary' className={classes.microHeading}>
-            portfolio
-          </Typography>
+          <Typography className={classes.microHeading}>portfolio</Typography>
         </Grid>
         <Grid item>
-          <Typography
-            variant='h3'
-            color='textSecondary'
-            className={classes.sectionHeading}
-          >
+          <Typography variant='h3' className={classes.sectionHeading}>
             See what&#x27;s cooking at our labs
           </Typography>
         </Grid>

@@ -11,7 +11,7 @@ const useStyle = makeStyles((theme) => {
       // padding: theme.spacing(2),
     },
     quote: {
-      color: theme.palette.text.hint,
+      color: theme.palette.text.primary,
       marginTop: theme.spacing(2),
     },
     sectionTitle: {
@@ -20,7 +20,7 @@ const useStyle = makeStyles((theme) => {
       letterSpacing: 1.8,
       fontWeight: 400,
       textTransform: "none",
-
+      color: theme.palette.text.primary,
       [theme.breakpoints.down("sm")]: {
         fontSize: "1.3rem",
       },

@@ -6,13 +6,16 @@ const useStyle = makeStyles((theme) => ({
   container: {
     width: "80vw",
     margin: "auto",
+    [theme.breakpoints.down("sm")]: {
+      width: "95vw",
+    },
   },
   teamsWrapper: {
     width: "100vw",
     maxWidth: "100%",
     display: "flex",
     flexWrap: "wrap",
-    justifyContent: "center",
+    justifyContent: "space-between",
     // backgroundColor: "red",
   },
   descriptionContainer: {
@@ -30,12 +33,14 @@ const OurTeam = ({ data }) => {
       alignItems='flex-start'
       className={classes.container}
     >
-      <Grid item xs={10} className={classes.descriptionContainer}>
-        <Typography
-          variant='h3'
-          color='textSecondary'
-          className={classes.description}
-        >
+      <Grid
+        item
+        xs={12}
+        sm={10}
+        md={8}
+        className={classes.descriptionContainer}
+      >
+        <Typography variant='h3' className={classes.description}>
           A Perfect blend of creativity and wizardy. The best people formula for
           great agency
         </Typography>
